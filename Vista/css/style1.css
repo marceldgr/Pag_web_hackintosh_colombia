@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+header {
+  height: 100px;
+}
+
+.container_header {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#icon_menu {
+  display: none;
+}
+
+/*trabjar con el menu*/
+.menu nav ul {
+  display: flex;
+}
+
+.menu nav ul li {
+  list-style: none;
+  padding: 1px 15px;
+}
+
+.menu nav ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  transition: opacity 320ms;
+}
+
+.menu nav ul li a:hover {
+  opacity: 0.3;
+}
+
+/*boton de registro de usuario*/
+.btn_header_regist {
+  margin: 5px;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(71, 70, 70);
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  align-items: center;
+  cursor: pointer;
+  transition: background, color, 300ms;
+  width: 100%;
+}
+
+.btn_login {
+  width: 100%;
+  border-radius: 50px;
+  margin: 5px;
+  padding: 3px 10px;
+  border: none;
+  background-color: rgb(109, 107, 107);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background, color, 300ms;
+  align-items: center;
+}
+
+.btn_header_regist:hover {
+  background: cornflowerblue;
+  color: white;
+}
+
+.btn_login:hover {
+  background: cornflowerblue;
+  color: white;
+}
+
+/*imagenes */
+.logo img {
+  width: 250px;
+}
+
+/*portada cover*/
+main {
+  max-width: 1200px;
+  height: calc(100vh +800px);
+  padding: 50px;
+  margin: auto;
+}
+
+.cover {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+
+  .container_header,
+  main {
+    padding: 20px;
+  }
+
+  #icon_menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .header_registro {
+    display: flex;
+    width: 20%;
+  }
+
+  .menu nav ul {
+    padding: 20px 0px;
+    flex-direction: column;
+    background-color: rgba(209, 209, 209, 0.829);
+  }
+
+  .menu nav ul li {
+    padding: 10px 40px;
+  }
+
+  .menu {
+    height: 0px;
+    position: relative;
+    right: 10px;
+    top: 140px;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 0px 0px 30px -20px rgb(95, 93, 93);
+    border-radius: 10px;
+    transition: all 300ms;
+  }
+
+  .mostrar_menu {
+    height: 275px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/*descargas */
+.parte1 {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 15px;
+  display: flex;
+
+}
+
+.parte1 img {
+  width: 350px;
+  height: auto;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+  padding-right: 75px;
+  padding-top: 10px;
+  align-items: center;
+  display: flex;
+}
+
+.perso img {
+  width: 70%;
+  padding-left: 15px;
+  margin-left: 100px;
+}
+
+.titule_sistema h1 {
+  justify-content: justify;
+  font-size: 45px;
+  text-align: justify;
+  color: rgb(109, 107, 107);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.titule_sistema p {
+  padding-top: 15px;
+  font-size: 25px;
+  text-align: justify;
+  padding-right: 25px;
+}
+
+.texto h2 {
+  font-size: 30px;
+  color: rgb(109, 107, 107);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+  text-align: center;
+  align-items: center
+}
+
+.texto2 h2 {
+  font-size: 30px;
+  color: rgb(109, 107, 107);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+  text-align: center;
+  align-items: center
+}
+.descargar{
+  width: 250px;
+  margin-top: 15px;
+  height: 35px;
+  font-size: 17px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background, color, 300ms;
+}
+.descargar:hover{
+  background: cornflowerblue;
+  color: white;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* estilo para pag descarga _creacion usb_*/
+.creacion_usb {
+  max-width: 1200px;
+  display: flex;
+  margin-top: 20px;
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+  padding-top: 70px;
+}
+
+.persona1 img {
+  width: 450px;
+  height: 500px;
+  display: flex;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.titulo h1 {
+  justify-content: justify;
+  font-size: 55px;
+  align-items: center;
+  color: rgb(149, 149, 149);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.titulo h2 {
+  font-size: 40px;
+  justify-content: center;
+  position: relative;
+  margin: 10px;
+  padding: 3px;
+  color: rgb(149, 149, 149);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.titulo p {
+  font-size: 25px;
+  justify-content: center;
+  align-items: justify;
+  padding: 20px;
+  text-align: justify;
+}
+
+.memory_usb img {
+  width: 120px;
+  margin: 10px;
+  display: flex;
+  position: relative;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+
+}
+
+.usb_red img {
+  width: 120px;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.text_usb h2 {
+  font-size: 35px;
+  justify-content: center;
+}
+
+.text_usb p {
+  font-size: 25px;
+  text-align: justify;
+}
+
+.sistema {
+  max-width: 1200px;
+  margin-top: 10px;
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+  padding-top: 70px;
+  display: flex;
+}
+
+.sistema_grupo img {
+  width: 450px;
+  height: 420px;
+  display: flex;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.crear {
+  width: 100%;
+  height: auto;
+}
+
+.crear h2 {
+
+  font-size: 60px;
+  height: auto;
+  color: rgb(149, 149, 149);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.macos img {
+  width: 270px;
+  height: auto;
+  display: flex;
+  margin-top: 28px;
+}
+.crear .macos p {
+  text-align: justify;
+  font-size: 20px;
+
+}
+/*progrmas*/
+.aplicaciones {
+  max-width: 1200px;
+  margin-top: 1px;
+  height: auto;
+  margin: auto;
+  padding-top: 10px;
+  display: flex;
+
+}
+
+.aplicaciones img {
+  width: 40%;
+  height: 60%;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.lista_de_programas {
+  width: 100%;
+  margin: 50px;
+}
+
+.lista_de_programas h1 {
+  font-size: 60px;
+  color: rgb(134, 133, 133);
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.lista_de_programas p {
+  font-size: 25px;
+  text-align: justify;
+}
+
+.btn_1 {
+  width: 200px;
+  margin-top: 15px;
+  height: 35px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: background, color, 300ms;
+}
+
+.btn_1:hover {
+  background: cornflowerblue;
+  color: white;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+@media(max-width: 1020px) {
+
+  .creacion_usb {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .persona1 {
+    width: 200px;
+    height: auto;
+  }
+
+  .persona1 img {
+    width: 150px;
+    height: auto;
+  }
+
+  .sistema {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .sistema_grupo img {
+    display: none;
+
+  }
+
+  .crear {
+    width: 100%;
+    height: auto
+  }
+
+  .aplicaciones {
+    width: 100%;
+    height: auto;
+  }
+
+  .lista_de_programas {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .aplicaciones img {
+    display: none;
+  }
+
+  .btn_1 {
+    width: 300px;
+    height: auto;
+  }
+
+  .lista_de_programas p {
+    font-size: 24px;
+    text-align: justify;
+    margin: 20px;
+    height: auto;
+    width: 80%;
+  }
+}

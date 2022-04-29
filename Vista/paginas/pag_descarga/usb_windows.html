@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Vista/css/style2.css" >
+    <title>usb_windows</title>
+</head>
+
+<body>
+    <header>
+        <div class="container_header">
+            <a class="logo" href="/index.html">
+                <img src="/Vista/img/logo_hack/logo3.png" alt="">
+            </a>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="https://dortania.github.io/OpenCore-Install-Guide/">Guia Dortania</a></li>
+                        <li><a href="/Vista/paginas/mac_os.html">Mac Os</a></li>
+                        <li><a href="/Vista/paginas/Descargas.html">Descargas</a></li>
+                        <li><a href="/Vista/paginas/productos.html">Productos</a></li>
+                        <li><a href="/Vista/paginas/Tienda.html">Tienda</a></li>
+                        <li><a href="/Vista/paginas/Contactos.html">Contactos</a></li>
+                        <li><a href="pica_fija/index_pica_fija.html">pica y fija</a>
+                        </li>
+                    </ul>
+            </div>
+            <i class="fa-solid fa-bars" id="icon_menu"></i>
+            <div class="header_registro">
+                <a href="/vista/login/inicioPerfil.php">
+                    <input type="button" class="btn_header_regist" value="Registrarse">
+                    <div class="btn_logins">
+                        <input type="button" class="btn_login" value="Login">
+                    </div>
+                </a>
+                </nav>
+            </div>
+        </div>
+        <br>
+        <hr>
+    </header>
+    <section>
+        <article>
+            <div class="datos1">
+                <div class="datos">
+                    <h1>
+                        Hacer el instalador en Windows
+                    </h1>
+                    <p>
+                        Aunque no necesitas una nueva instalación de macOS para usar OpenCore, algunos usuarios
+                        prefieren
+                        tener
+                        una nueva pizarra con sus actualizaciones del gestor de arranque.
+                    </p>
+                    <ul>Para empezar, necesitarás lo siguiente:
+                        <li>
+                            Memoria USB de 4 GB
+                        </li>
+                        <li>
+                            Para que USB de más de 16 GB tenga formato en FAT32, utilice el método Rufus
+                        </li>
+                        <li>
+                            <a href="https://github.com/acidanthera/OpenCorePkg/releases">macrecovery.py</a>
+                        </li>
+                        <li>Esto requerirá la instalación de
+                            <a href="https://www.python.org/downloads/"> -- Python- </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </article>
+        <article>
+            <div class="article">
+                <div class="descarga">
+                    <h1>
+                        Descarga de macOS
+                    </h1>
+                    <p>
+                        Para agarrar instaladores heredados es súper fácil, primero coge una copia de <a
+                            href="https://github.com/acidanthera/OpenCorePkg/releases">OpenCorePkg</a> y dirígete a
+                        /Utilities/macrecovery/. A continuación, copia la ruta de la carpeta de la carpeta macrecovery:
+                    </p>
+                    <img src="/Vista/img/Sistema/windows/08.png">
+                    <p>
+                        Desde aquí, querrás abrir un símbolo del sistema y un cd en la carpeta macrecovery que copiamos
+                        anteriormente:
+                    </p>
+                    <img src="/vista/img/Sistema/windows/04.png">
+                    <p>
+                        Ahora ejecuta una de las siguientes opciones dependiendo de la versión de macOS que quieras
+                        (tenga en cuenta que estos scripts dependen de Python (abre una nueva ventana), por favor,
+                        instálelo si aún no lo ha hecho):
+                    </p>
+                    <img src="/vista/img/Sistema/windows/01.png">
+                    <div class="nota_monterey">
+                        <p>
+                            macOS 12, Monterrey Nota: Como este sistema operativo es bastante nuevo, todavía hay algunos
+                            problemas con ciertos sistemas que resolver. Para obtener más información, consulta aquí:<a
+                                href="https://dortania.github.io/OpenCore-Install-Guide/extras/monterey.html">macOS 12:
+                                Monterrey </a>
+                        <ul>
+                            <li>
+                                Para los usuarios primerizos, recomendamos macOS Catalina (10.15) o Big Sur (11)
+                            </li>
+                            <li>
+                                PRECAUCIÓN: Con macOS 11.3 y versiones posteriores, XhciPortLimit se rompe, lo que
+                                provoca bucles de arranque (abre una nueva ventana). Recomendamos a los usuarios que
+                                instalen un sistema operativo más antiguo (es decir, macOS 10.15, Catalina) o que
+                                encuentren un instalador de Big Sur 11.2.3 o anterior
+
+                            </li>
+                            <li>
+                                Para fines educativos, tenemos una copia proporcionada aquí: <a
+                                    href="https://archive.org/details/base-system_202102">macOS 11.2.1 20D75 Imagen de
+                                    recuperación</a>
+                                Si ya has <a
+                                    href="https://dortania.github.io/OpenCore-Post-Install/usb/#macos-and-the-15-port-limit">
+                                    asignado tus puertos USB</a> tus puertos USB y desactivado <h4>XhciPortLimit,</h4>
+                                puedes arrancar macOS 11.3+ sin problemas
+
+                            </li>
+
+                        </ul>
+                        Esto llevará algún tiempo, sin embargo, una vez que hayas terminado deberías obtener archivos
+                        BaseSystem o RecoveryImage:
+                        <img src="/Vista/img/Sistema/windows/011.png">
+                        </p>
+                        <div class="baseSystem">
+                            <h1>BaseSystem</h1>
+                            <img src="/vista/img/Sistema/windows/03.png" alt="">
+                        </div>
+                        <div class="recovery">
+                            <h1>Recovery</h1>
+                            <img src="/vista/img/Sistema/windows/010.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <article>
+            <div class="articles2">
+                <div class="instalacion">
+                    <h1> Hacer el instalador </h1>
+
+                    <p>
+                        Aquí formatearemos nuestro USB y añadiremos macOS a él, tenemos 2 opciones:
+                    </p>
+
+                    <div class="metodo1">
+                        <h1>
+                            Método de gestión de discos
+                        </h1>
+                        <p>
+                            Simplemente abra Administración de discos y formatee su USB como FAT32:
+
+                            Haz clic con el botón derecho en el botón Inicio de la barra de tareas y selecciona
+                            Administración de discos.
+
+                            Deberías ver todas tus particiones y discos. En la mitad inferior, verás tus
+                            dispositivos. Encuentra tu USB.
+
+                            Querrás formatear el USB para que tenga una partición FAT32.
+                        </p>
+                        <p>
+                            Si tiene varias particiones en el USB, haga clic con el botón derecho en cada partición
+                            y haga clic en Eliminar volumen para su USB (esto eliminará datos, se asegurará de tener
+                            copias de seguridad y solo eliminará particiones de su USB)
+                            Haz clic con el botón derecho en el espacio no asignado y crea un nuevo volumen simple.
+                            Asegúrate de que sea FAT32 y al menos uno o dos gigabytes grandes. Lómbralo "EFI".
+                            De lo contrario, haga clic con el botón derecho en la partición del USB y haga clic en
+                            Formato y configírela en FAT32.
+                        </p>
+                        <p>
+                            A continuación, ve a la raíz de esta unidad USB y crea una carpeta llamada
+                            com.apple.recovery.boot. A continuación, mueva los archivos BaseSystem o RecoveryImage
+                            descargados. Asegúrate de copiar los archivos .dmg y .chunklist en esta carpeta:
+                        </p>
+                        <img src="/vista/img/Sistema/windows/012.png" alt="">
+                        <p>
+                        <ul>
+                            <li>
+                                Ahora coge OpenCorePkg que descargaste antes y ábrelo.
+                            </li>
+                            <li>
+                                Aquí vemos las carpetas IA32 (CPU de 32 bits) y X64 (CPU de 64 bits), elige la que sea
+                                más adecuada para tu hardware y ábrela. A continuación, coge la carpeta EFI dentro y
+                                colócala en la raíz de la unidad USB junto a com.apple.recovery.boot. Una vez hecho
+                                esto, debería verse así:
+                            </li>
+                        </ul>
+
+                        </p><img src="/vista/img/Sistema/windows/05.png" alt=""><img
+                            src="/vista/img/Sistema/windows/02.png" alt="">
+
+                        <div class="metodo2">
+                            <h1>
+                                Método Rufus
+                            </h1>
+                            <ul>
+                                <li>
+                                    1. Descargar <a href="https://rufus.ie/es/">Rufus</a>
+                                </li>
+                                <li>
+                                    2. Establecer la selección BOOT como no arrancable.
+                                </li>
+                                <li>
+                                    3. Establecer el sistema de archivos como FAT32 grande.
+                                </li>
+                                <li>
+                                    4. Haz clic en Inicio.
+                                </li>
+                                <li>
+                                    5. Eliminar todos los archivos de ejecución automática en la partición de la unidad
+                                    USB.
+                                </li>
+                            </ul>
+                            <img src="/vista/img/Sistema/windows/09.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+
+    </section>
+
+
+    <script src="/vista/js/Script.js"></script>
+</body>
+
+</html>

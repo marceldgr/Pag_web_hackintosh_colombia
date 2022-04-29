@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgb(245, 248, 247);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 100px;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 2);
+}
+.container .left_Side {
+  position: relative;
+  background: #cbcdcf;
+  padding: 40px;
+}
+.profileText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: justify;
+  padding-bottom: 10px;
+}
+.profileText .imgBx {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px rgb(48, 48, 49);
+  display: flex;
+}
+.profileText .imgBx img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profileText h2 {
+  color: rgb(5, 85, 117);
+  font-size: 1.5em;
+  margin: top 20px;
+  text-transform: uppercase;
+  text-align: justify;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+.inforContacto ul {
+  position: relative;
+}
+.inforContacto ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.inforContacto ul li .icon {
+  display: inline-block;
+  width: 27px;
+  font-size: 20px;
+  color: #176dbd;
+}
+.inforContacto ul li span {
+  color: rgb(12, 65, 95);
+  font-weight: 300px;
+}
+.red_socila .titles {
+  padding-top: 30px;
+}
+.red_socila ul {
+  position: relative;
+}
+
+.red_socila ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.red_socila ul li .icon {
+  display: inline-block;
+  width: 27px;
+  font-size: 20px;
+  color: #176dbd;
+}
+.red_socila ul li span {
+  color: rgb(12, 65, 95);
+  font-weight: 300px;
+}
+.red_socila h3 {
+  color: rgb(5, 85, 117);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.infor.educativo ul {
+  position: relative;
+}
+.infor.educativo ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.infor.educativo h2 {
+  color: rgb(12, 65, 95);
+  font-weight: 400px;
+  text-align: justify;
+}
+
+.infor.educativo h5 {
+  color: rgb(36, 35, 35);
+  font-weight: 90px;
+}
+.infor.educativo h3 {
+  color: #096792;
+  font-weight: 90px;
+}
+.infor.idiomas h3 {
+  color: rgb(12, 65, 95);
+}
+.infor.idiomas ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.infor.idiomas ul li span {
+  color: rgb(12, 65, 95);
+  font-weight: 300px;
+}
+.infor.idiomas .percent {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgb(3, 38, 83);
+  display: block;
+  margin-top: 5px;
+}
+.infor.idiomas .percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #34afdf;
+}
+.inforHabilidades h3 {
+  color: rgb(12, 65, 95);
+}
+.inforHabilidades ul li span {
+  color: rgb(12, 65, 95);
+  font-weight: 300px;
+}
+.inforHabilidades .percent {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgb(3, 40, 83);
+  display: block;
+  margin-top: 5px;
+}
+.inforHabilidades .percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #34b7df;
+}
+.inforHabilidades ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.container .right_Side {
+  position: relative;
+  background: rgb(255, 255, 255);
+  padding: 40px;
+}
+.about {
+  margin-bottom: 20px;
+}
+.about:last-child {
+  margin-bottom: 0;
+}
+.about .NOMBRE {
+  color: #014a5c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.about .box2 .NOMBRE {
+  background-color: rgba(159, 177, 190, 0.308);
+  text-transform: uppercase;
+  padding: 15px;
+  margin-bottom: 1px;
+}
+.about .box2 span {
+  background-color: rgba(159, 177, 190, 0.308);
+  display: flex;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.titule {
+  color: #014a5c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+p {
+  color: #333;
+  font-size: 12px;
+  text-align: justify;
+}
+.about1 {
+  margin-bottom: 10px;
+}
+.titule2 {
+  color: #014a5c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+.about1:last-child {
+  margin-bottom: 1;
+}
+.about2 .box {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.about2 .box .Años_en_la_Empresa {
+  min-height: 15px;
+}
+.about2 .box .Años_en_la_Empresa h5 {
+  text-transform: uppercase;
+  color: rgb(103, 94, 107);
+  font-weight: 300;
+  font-size: 10px;
+}
+.about2 .box .text h4 {
+  border-bottom: 1px;
+  text-transform: uppercase;
+  color: #2a7da2;
+  font-size: 18px;
+}
+.regresar{
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+  color: rgb(237, 241, 243);
+  background: rgb(50, 75, 49);
+  border-radius: 50px;
+  outline: none;
+  
+}

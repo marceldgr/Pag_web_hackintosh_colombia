@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usb_macOS</title>
+    <script src="https://kit.fontawesome.com/bd0578e771.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Vista/css/style2.css" </head>
+
+<body>
+    <header>
+        <div class="container_header">
+            <a class="logo" href="index.html">
+                <img src="/Vista/img/logo_hack/logo3.png" alt="">
+            </a>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="https://dortania.github.io/OpenCore-Install-Guide/">Guia Dortania</a></li>
+                        <li><a href="/Vista/paginas/mac_os.html">Mac Os</a></li>
+                        <li><a href="/Vista/paginas/Descargas.html">Descargas</a></li>
+                        <li><a href="/Vista/paginas/productos.html">Productos</a></li>
+                        <li><a href="/Vista/paginas/Tienda.html">Tienda</a></li>
+                        <li><a href="/Vista/paginas/Contactos.html">Contactos</a></li>
+                        <li><a href="pica_fija/index_pica_fija.html">pica y fija</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <i class="fa-solid fa-bars" id="icon_menu"></i>
+            <div class="header_registro">
+                <a href="/vista/login/inicioPerfil.php">
+                    <input type="button" class="btn_header_regist" value="Registrarse">
+                    <div class="btn_logins">
+                        <input type="button" class="btn_login" value="Login">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </header>
+    <hr>
+    <br>
+    <article>
+        <div class="texto_insta_macos">
+            <h1> Hacer el instalador en macOS </h1>
+            <p> unque no necesitas una nueva instalación de macOS para usar OpenCore, algunos usuarios prefieren tener
+                una nueva pizarra con sus actualizaciones del gestor de arranque.
+                Para empezar, queremos conseguir una copia de macOS. Puedes saltarte esto y dirigirte a formatear el USB
+                si solo estás haciendo un stick OpenCore de arranque y no un instalador. Para todos los demás, puedes
+                descargar macOS desde el App Store o con el script de Munki. </p>
+            <h1> Descarga de macOS: Sistema operativo moderno </h1>
+            <p> Desde una máquina macOS que cumpla con los requisitos de la versión del sistema operativo que desea
+                instalar. Para las máquinas que necesitan una versión específica del sistema operativo o que no se
+                pueden
+                descargar de la App Store, puede utilizar la utilidad InstallInstallMacOS de Munki.
+            </p>
+            <h3> Para ejecutarlo, solo tienes que copiar y pegar el siguiente comando en una ventana de terminal:</h3>
+            <table class="tabla_texto">
+                <tr>
+                    <td>
+                        <p> mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl
+                            https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py > installinstallmacos.py && sudo python installinstallmacos.py
+                        </p>
+
+                    </td>
+                </tr>
+            </table>
+            </div>
+        <div class="text2_install_macos">
+            <p>
+                Esto va a llevar un tiempo, ya que estamos descargando todo el instalador de macOS de más de 10 GB, por lo que es muy recomendable leer el resto de la guía mientras esperas.</p>
+            <img src="/vista/img/Sistema/lista.png">
+            <p>Como puedes ver, tenemos una buena lista de instaladores de macOS. Si necesitas una versión concreta de macOS, puedes seleccionarla escribiendo el número junto a ella. </p>
+            <p>para mayor información: <a
+                    href="https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#downloading-macos-modern-os">Guia Dortania</a> </p>
+        </div>
+    </article>
+    <section>
+        <div class="text3_monterey">
+            <h2>Para macOS Monterey</h2>
+            <p>Como este sistema operativo es bastante nuevo, todavía hay algunos problemas con ciertos sistemas que resolver.  Para los usuarios primerizos, recomendamos macOS Catalina (10.15) o Big Sur (11) ya qeue son sistemas mas estables </p>
+        </div>
+    </section>
+
+    <script src="/vista/js/Script.js"></script>
+</body>
+
+</html>

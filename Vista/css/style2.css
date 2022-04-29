@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: #f5f5f5;
+}
+header {
+  height: 100px;
+}
+.container_header {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#icon_menu {
+  display: none;
+}
+/*trabjar con el menu*/
+.menu nav ul {
+  display: flex;
+}
+
+.menu nav ul li {
+  list-style: none;
+  padding: 1px 15px;
+}
+.menu nav ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  transition: opacity 320ms;
+}
+.menu nav ul li a:hover {
+  opacity: 0.3;
+}
+/*boton de registro de usuario*/
+.btn_header_regist {
+  margin: 5px;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(71, 70, 70);
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  align-items: center;
+  cursor: pointer;
+  transition: background, color, 300ms;
+  width: 100%;
+}
+.btn_login {
+  width: 100%;
+  border-radius: 50px;
+  margin: 5px;
+  padding: 3px 10px;
+  border: none;
+  background-color: rgb(109, 107, 107);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background, color, 300ms;
+  align-items: center;
+}
+.btn_header_regist:hover {
+  background: cornflowerblue;
+  color: white;
+}
+.btn_login:hover {
+  background: cornflowerblue;
+  color: white;
+}
+/*imagenes */
+.logo img {
+  width: 250px;
+}
+.texto_insta_macos {
+  height: 100%;
+  margin: auto;
+  padding: 30px;
+  padding-top: 70px;
+  justify-content: space-between;
+  align-items: center;
+}
+.texto_insta_macos h1 {
+  font-size: 50px;
+  text-align: center;
+  color: rgb(133, 133, 133);
+}
+.texto_insta_macos p {
+  font-size: 18px;
+  padding: 10px;
+  text-align: justify;
+  height: auto;
+  width: 100%;
+}
+.texto_insta_macos h3 {
+  font-size: 20px;
+  height: auto;
+  padding-top: 15px;
+  color: rgb(127, 124, 124);
+}
+.tabla_texto p {
+  background: rgb(75, 74, 74);
+  font-size: 13px;
+  color: rgb(83, 196, 241);
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  margin-top: 10px;
+  text-align: justify;
+}
+.text2_install_macos{
+  
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+.text3_monterey{
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+.text3_monterey h2{
+  font-size: 40px;
+  color: rgb(133, 133, 133);
+  text-align: center;
+  align-items: justify-content;
+  padding: 20px;
+}
+/*usbwindows*/
+section{
+  height: 100%;
+  
+}
+.datos1{
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  position: relative;
+  margin: auto;
+  padding-left: 100px;
+ }
+.datos1 h1{
+  font-size: 35px;
+  text-align: center;
+  color: rgb(133, 133, 133);
+  height: 50px;
+}
+.datos1 p{
+  font-size: 18px;
+  text-align: justify;
+}
+.datos1 ul li{
+  padding:5px;
+  margin: 8px;
+  width: 100%;
+  font-size: 18px;
+  
+}
+.descarga{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  padding-left: 90px;
+  justify-content: space-between;
+  text-align: justify;
+  position: relative;
+  margin: auto;
+}
+.descarga h1{
+  font-size: 35px;
+  text-align: center;
+  color: rgb(133, 133, 133);
+  height: 50px;
+}
+.descarga img{
+  width: 850px;
+  height:auto;
+  padding: 30px;
+  padding-left: 80px;
+  position: relative;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+.descarga p{
+  font-size: 18px;
+  
+}
+.descarga .nota_monterey p{
+  padding: 10px;
+  font-size: 22px;
+}
+ .descarga .nota_monterey ul li {
+  font-size: 18px;
+  padding-left: 30px;
+  height: 15%;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.articles2{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  padding-left: 90px;
+  justify-content: space-between;
+  text-align: justify;
+  position: relative;
+  margin: auto;
+}
+.instalacion h1{
+  font-size :35px;
+  padding:10px;
+  text-align: center;
+  color: rgb(133, 133, 133);
+}
+.instalacion p{
+  font-size : 18px;
+  padding: 11px;
+ 
+}
+.instalacion img{
+  width: 650px;
+  height:auto;
+  padding: 30px;
+  align-items: center;
+  position: relative;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+.metodo2 ul li{
+  font-size : 18px;
+  padding: 5px;
+}
+.metodo2 img{
+  width: 650px;
+  height: auto;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+  align-items: center;
+  position: relative;
+}

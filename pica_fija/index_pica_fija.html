@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICA Y FIJA</title>
+    <link rel="stylesheet" href="style/estilo.css">
+    
+    </head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="title_game">
+                    <h1 class="text-center">PICAS Y FIJAS</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="conataiener2">
+       
+        <div class="left_Side">
+             <div class="display">
+                <h4 class="text-center">Ingrese <span class> 4 digitos</span></h4>
+                <input type="number" name="display" id="numero" value="" height="50px">
+            </div>
+            <button  id="jugar"onclick="jugar()" > verificar</button>
+            <br>
+            <table class="teclado_numero">
+                <tr>
+                    <td><button class="btnumero" id="uno" value="1">1</button></td>
+                    <td><button class="btnumero" id="dos">2</button></td>
+                    <td><button class="btnumero" id="tres">3</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btnumero" id="cuatro">4</button></td>
+                    <td><button class="btnumero" id="cinco">5</button></td>
+                    <td><button class="btnumero" id="seis">6</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btnumero" id="siete">7</button></td>
+                    <td><button class="btnumero" id="ocho">8</button></td>
+                    <td><button class="btnumero" id="nueve">9</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btnumero" id="cero">0</button></td>
+                    <td><button  id="limpiar" onclick="Limpiar_texto()">C</button></td>
+                
+                </tr>
+                
+            </table>
+
+            
+            <button id="nuevo" onclick="nuevo_juego()" > Nuevo juego</button>
+        </div>
+        
+        <div class="right_Side">
+            <div class="ingrese_tables">
+                <h1>Resultados</h1>
+                <div class="tables">
+                    <table id="tbIntentos" style="width: 300px">
+                        <tr>
+                            <th> numero </th>
+                            <th>picas </th>
+                            <th>fijas</th>
+                            <th> #intento</th>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                            <td>.</td>
+                        </tr>                       
+
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+<script src="style/js/logica.js"></script>
+</html>
