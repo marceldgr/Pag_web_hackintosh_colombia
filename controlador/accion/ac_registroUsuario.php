@@ -18,10 +18,24 @@ if(isset($_POST['Administrador'])){
 } else{
     $Usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,0);
     $registro=registrarUsuario($Usuario);
+   
+   
+      if($registro){
+        echo '  <script> alert("Usuario creado exitosamente"); 
+                        window.location="../../Vista/login.php";
+                </script>';
 
-    if($registro)
-    header("Location:../../Vista/Login.php?msg= Se Registro exitos");
-    else
-    header("Location:../../Vista/Login.php?msg= Error de registro verifique datos");   
+
+      }
+    
+    else{
+        echo '  <script> alert("Usuario no creado o error de datos "); 
+                         window.location="../../Vista/login.php";
+                </script>';
+    }
+    
+
 }
+
+
 ?>
