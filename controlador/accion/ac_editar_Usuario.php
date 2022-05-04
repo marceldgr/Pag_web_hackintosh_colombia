@@ -10,7 +10,7 @@ $correo= $_POST['correo'];
 $contrasena= $_POST['contrasena'];
 
 
-$usuario = new Usuario($idUsuario,$nombre,$usuario,$correo,$contrasena,$Administrador);
+$usuario = new Usuario($idUsuario,$nombre,$Apellido,$usuario,$correo,$contrasena,$Administrador);
 editarUsuario($usuario);
 
 header("location:../../Vista/AdminUsuario.php");

@@ -47,7 +47,7 @@
                 </form>
                 <!--formulario_register-->
 
-                <form action="../controlador/accion/registro_usuario_be.php"  method="POST"
+                <form action="../controlador/accion/ac_registroUsuario.php"  method="POST"
                  class="formulario_register">
                     <h2>Registrarse</h2>
                     <input type="text" placeholder="Nombre" name="Nombre">
