@@ -14,21 +14,14 @@ class DataSource{
      public function ejecutarConsulta($sql="",$values=array()){
          if($sql != ""){
              $consulta=$this->conexion->prepare($sql);
-             $consulta->execute($sql);
+             $consulta->execute($values);
              $tabla_datos = $consulta->fetchAll(PDO::FETCH_ASSOC);
              $this->conexion=null;
              return $tabla_datos;
 
          }
      }
-     public function consultar($sql){
-        $consulta=$this->conexion->prepare($sql);
-        $consulta->execute($sql);
-        $tabla_datos = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        $this->conexion=null;
-        return $tabla_datos;
-     }
-     
+    
      public function ejecutarActulizacion($sql="",$values=array()){
          if($sql != ""){
              $consulta=$this->conexion->prepare($sql);

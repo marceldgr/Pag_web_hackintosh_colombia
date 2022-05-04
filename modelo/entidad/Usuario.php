@@ -1,33 +1,40 @@
 <?php
 class Usuario{
     public $id;
-    public $Nombre_completo;
+    public $Nombre;
+    public $Apellido;
+     public $Email;
     public $Usuario;
-    public $Email;
+   
     public $Password;
     public $Administrador;
 	/**
 	 */
-	public function __construct($id, $Nombre_completo, $Usuario,$Email,$Password,$Administrador) {
+	public function __construct($id,$Nombre,$Apellido,$Email, $Usuario,$Password,$Administrador) {
         $this->id=$id;
-        $this->Nombre_completo=$Nombre_completo;
-        $this->Usuario=$Usuario;
+        $this->Nombre=$Nombre;
+        $this->Apellido=$Apellido;
         $this->Email=$Email;
+        $this->Usuario=$Usuario;
         $this->Password=$Password;
         $this->Administrador=$Administrador;
 	}
     public function getId(){
         return $this->id;
     }
-    public function getNombre_completo(){
-        return $this->Nombre_completo;
+    public function getNombre(){
+        return $this->Nombre;
     }
-    public function getUsuario(){
-        return $this->Nsuario;
+    public function getApellido(){
+        return $this->Apellido;
     }
     public function getEmail(){
         return $this->Email;
     }
+    public function getUsuario(){
+        return $this->Nsuario;
+    }
+    
     public function getPassword(){
         return $this->Password;
     }
@@ -38,9 +45,12 @@ class Usuario{
         $this->id = $id;
         return $this;
     }
-    public function setNombre_completo($Nombre_completo){
-        $this->nombre_completo = $Nombre_completo;
+    public function setNombre($Nombre){
+        $this->nombre = $Nombre;
         return $this;
+    }
+    public function setApellidos($Apellidos){
+        $this->Apellidos = $Apellidos;
     }
     public function setUsuario($Usuario){
         $this->Usuario=$Usuario;

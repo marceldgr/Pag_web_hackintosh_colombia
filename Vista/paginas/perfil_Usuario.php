@@ -51,7 +51,7 @@
             <div class="foto_perfil">
                 <h2>Foto de perfil</h2>
                 <div class="box_img_user">
-                    <img src="/Vista/img/persona/usurio.png" >
+                    <img src="../img/persona/usurio.png" >
                 </div>
             </div>
             <div class="article_datos_usuario">
@@ -74,7 +74,7 @@
 
                     <div class="perosna">
                         <div class="box_img_per">
-                            <img src="/Vista/img/persona/per002.png">
+                            <img src="../img/persona/per002.png">
                         </div>
                     </div>
                     </div>
@@ -106,7 +106,7 @@
                             </form>
                             <div class="img_tarjeta">
                                 <div class="box_tarjeta">
-                                    <img src="/Vista/img/logo_hack/credit-card.png">
+                                    <img src="../img/logo_hack/credit-card.png">
                                 </div>
                             </div>
                         </div>

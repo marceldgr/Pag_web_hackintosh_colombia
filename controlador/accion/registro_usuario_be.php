@@ -7,12 +7,13 @@
   
     $Nombre= $_POST['Nombre'];
     $Apellido=$_POST['Apellido'];
-    $Usuario= $_POST['Usuario'];
     $Email= $_POST['Email'];
+    $Usuario= $_POST['Usuario'];
     $Password= $_POST['Password'];
-   /* $Administrador= $_POST['Administrador'];*/
+    $Administrador=0;
+ 
 
-    $query="INSERT INTO usuario( Nombre,Apellido, Usuario, Email, Password )VALUES('$Nombre','$Apellido','$Usuario','$Email','$Password') ";
+    $query= "INSERT INTO usuario(Nombre,Apellido,Email,Usuario, Password,Administrador ) VALUES('$Nombre','$Apellido','$Email','$Usuario','$Password','$Administrador')";
 
     $verificarEmail = mysqli_query($conexion," SELECT * FROM usuario WHERE Email= '$Email' ");
     if(mysqli_num_rows($verificarEmail)>0){

@@ -19,7 +19,7 @@
     <header>
         <div class="container_header">
             <a class="logo" href="index.html">
-                <img src="/Vista/img/logo_hack/logo3.png" alt="">
+                <img src="../img/logo_hack/logo3.png" alt="">
             </a>
             <div class="menu">
                 <nav>

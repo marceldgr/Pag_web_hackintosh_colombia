@@ -6,26 +6,28 @@ class UsuarioDAO{
     public function autenticarUsuario($Email,$Password){
         $data_Source = new DataSource();
         $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Email=:Email and Password=:Password",array(':Email'=>$Email,':Password'=>$Password));
-        //$data_Table=$data_Source->consultar(" SELECT * FROM usuario WHERE email='$Email' and password='$Password'");
+        
         $usuario=null;
         
         if(count($data_Table)==1){
             foreach($data_Table as $indice=>$valor){
 
-            $usuario= new Usuario(
-                $data_Table[$indice]["idusuario"],
-                $data_Table[$indice]["nombre_completo"],
-                $data_Table[$indice]["usuario"],
-                $data_Table[$indice]["email"],
-                $data_Table[$indice]["password"],
-                $data_Table[$indice]["administrador"]);
+            $usuario= new usuario(
+                $data_Table[$indice]["idUsuario"],
+                $data_Table[$indice]["Nombre"],
+                $data_Table[$indice]["Apellido"],
+                $data_Table[$indice]["Usuario"],
+                $data_Table[$indice]["Email"],
+                $data_Table[$indice]["Password"],
+                $data_Table[$indice]["Administrador"]);
             }
         }else{
-            $usuario= new Usuario(
+            $usuario= new usuario(
                 1,
                 "Deimer",
-                "nota",
+                "espinosa",
                 "deimer@gmail.com",
+                "nota",
                 "contra",
                 0);
             
@@ -34,11 +36,13 @@ class UsuarioDAO{
     }
     public function registrarUsuario(Usuario $usuario){
         $data_Source= new DataSource();
-        $stmt1="INSERT INTO usuario VALUES (NULL,:nombre_completo,:usuario,:correo,:contrasena,:Administrador)";
-        $resultado=$data_Source->ejecutarActulizacion($stmt1, array(':nombre_completo'=>$usuario->getnombre_completo(),
-        ':usuario'=>$usuario->getusuario(),
-        ':correo'=>$usuario->getEmail(),
-        ':contrasena'=>$usuario->getPassword(),
+        $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,Apellido,:Email,:Usuario,:Password,:Administrador)";
+        $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
+        ':Nombre'=>$usuario->getNombre(),
+        ':Apellido'=>$usuario->getApellido(),
+        ':Email'=>$usuario->getEmail(),
+        ':Usuario'=>$usuario->getUsuario(),
+        ':Password'=>$usuario->getPassword(),
         ':Administrador'=>$usuario->getAdministrador()));
         return $resultado;
     }
@@ -49,12 +53,13 @@ class UsuarioDAO{
         $usuarios=array();
 
         foreach($data_Table as $indice => $valor){
-            $usuario=new Usuario(
-                $data_Table[$indice]["id"],
-                $data_Table[$indice]["nombre_completo"],
-                $data_Table[$indice]["usuario"],
-                $data_Table[$indice]["correo"],
-                $data_Table[$indice]["contrasena"],
+            $usuario=new usuario(
+                $data_Table[$indice]["idUsuario"],
+                $data_Table[$indice]["Nombre"],
+                $data_Table[$indice]["Apellidos"],
+                $data_Table[$indice]["Email"],
+                $data_Table[$indice]["Usuario"],
+                $data_Table[$indice]["Password"],
                 $data_Table[$indice]["Administrador"]);
                 array_push($usuarios,$usuario);            
         }
@@ -71,23 +76,25 @@ class UsuarioDAO{
         $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :idUsuario",array(':idUsuario'=>$idUsuario));
         $usuario=null;
         if(count($data_Table)==1){
-            $usuario=new Usuario(
-            $data_Table[0]["id"],
-            $data_Table[0]["nombre_completo"],
-            $data_Table[0]["usuario"],
-            $data_Table[0]["correo"],
-            $data_Table[0]["contrasena"],
+            $usuario=new usuario(
+            $data_Table[0]["idUsuario"],
+            $data_Table[0]["Nombre"],
+            $data_Table[0]["Apellidos"],
+             $data_Table[0]["Email"],
+            $data_Table[0]["Usuario"],
+            $data_Table[0]["Password"],
             $data_Table[0]["Administrador"]);
         }
         return $usuario;
     }
     public function editarUsuario($usuario){
         $data_Source=new DataSource();
-        $stmt1="UPDATE usuario SET nombre_completo=:nombre_completo,usuario=:usuario,correo=:correo,contrasena=:contrasena,Administrador=:Administrador WHERE id=:idUsuario";
-        $resultado=$data_Source->ejecutarActulizacion($stmt1, array('nombre_completo'=>$usuario->getnombre_completo(),
-        'usuario'=>$usuario->getusuario(),
-        'correo'=>$usuario->getEmail(),
-        'contrasena'=>$usuario->getPassword(),
+        $stmt1="UPDATE usuario SET Nombre=:Nombre,Apellido=:Apellido,Usuario=:Usuario,Email=:Email,Password=:Password,Administrador=:Administrador WHERE id=:idUsuario";
+        $resultado=$data_Source->ejecutarActulizacion($stmt1, array('Nombre'=>$usuario->getNombre(),
+        'Apellido'=>$usuario->getApellido(),
+        'Email'=>$usuario->getEmail(),
+        'Usuario'=>$usuario->getUsuario(),
+       'Password'=>$usuario->getPassword(),
         'Administrador'=>$usuario->getAdministrador(),
         'idUsuario'=>$usuario->getId()));
         return $resultado;

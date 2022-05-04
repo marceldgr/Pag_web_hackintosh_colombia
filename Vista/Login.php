@@ -35,7 +35,7 @@
             <!--formulario_login-->
 
             <div class="container_logins-registers">
-            <form action="../controlador/accion/login_usuario_be.php" method="POST" class="formulario_login">
+            <form action="../controlador/accion/ac_login.php" method="POST" class="formulario_login">
                     <h2>Iniciar Sesión</h2>
                     <input type="text" placeholder="Email" name="Email">
                     <input type="password" placeholder="Password" name="Password">
@@ -47,7 +47,8 @@
                 </form>
                 <!--formulario_register-->
 
-                <form action="../controlador/accion/registro_usuario_be.php" method="POST" class="formulario_register">
+                <form action="../controlador/accion/registro_usuario_be.php"  method="POST"
+                 class="formulario_register">
                     <h2>Registrarse</h2>
                     <input type="text" placeholder="Nombre" name="Nombre">
                     <input type="text" placeholder="Apellido" name="Apellido">
