@@ -5,12 +5,11 @@ class Usuario{
     public $Apellido;
      public $Email;
     public $Usuario;
-   
-    public $Password;
+       public $Password;
     public $Administrador;
 	/**
 	 */
-	public function __construct($id,$Nombre,$Apellido,$Email, $Usuario,$Password,$Administrador) {
+	public function __construct($id,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador) {
         $this->id=$id;
         $this->Nombre=$Nombre;
         $this->Apellido=$Apellido;
@@ -32,7 +31,7 @@ class Usuario{
         return $this->Email;
     }
     public function getUsuario(){
-        return $this->Nsuario;
+        return $this->Usuario;
     }
     
     public function getPassword(){

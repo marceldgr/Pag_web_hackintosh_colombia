@@ -29,12 +29,12 @@ class UsuarioDAO{
                 "deimer@gmail.com",
                 "nota",
                 "contra",
-                0);
+                1);
             
         }
         return $usuario;
     }
-    public function registrarUsuario(Usuario $usuario){
+    public function registrarUsuario(usuario $usuario){
         $data_Source= new DataSource();
         $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,Apellido,:Email,:Usuario,:Password,:Administrador)";
         $resultado=$data_Source->ejecutarActulizacion($stmt1, array(

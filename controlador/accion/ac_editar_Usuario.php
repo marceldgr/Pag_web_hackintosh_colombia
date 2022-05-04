@@ -7,7 +7,7 @@ $nombre= $_POST['nombre'];
 $Apellido= $_POST['Apellido'];
 $usuario= $_POST['usuario'];
 $correo= $_POST['correo'];
-$contrasena= $_POST['contrasena'];
+$password= $_POST['Password'];
 
 
 $usuario = new Usuario($idUsuario,$nombre,$Apellido,$usuario,$correo,$contrasena,$Administrador);

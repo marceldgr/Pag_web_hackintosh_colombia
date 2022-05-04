@@ -37,8 +37,10 @@
             <div class="container_logins-registers">
             <form action="../controlador/accion/ac_login.php" method="POST" class="formulario_login">
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Email" name="Email">
-                    <input type="password" placeholder="Password" name="Password">
+                    <input name="Email" type="text" id="Email" class="from-controlador" placeholder=" Email" >
+
+                    <input name="Password" type="password" id= " password"  class ="form-control" placeholder="Password" >
+                    
                     <p class ="forget">
                         ¿Has olvidado tu password?
                         <a href="recuperar_password.html">recuperar password</a>
@@ -47,14 +49,13 @@
                 </form>
                 <!--formulario_register-->
 
-                <form action="../controlador/accion/ac_registroUsuario.php"  method="POST"
-                 class="formulario_register">
+                <form action="../controlador/accion/ac_registroUsuario.php"  method="POST" class="formulario_register">
                     <h2>Registrarse</h2>
-                    <input type="text" placeholder="Nombre" name="Nombre">
-                    <input type="text" placeholder="Apellido" name="Apellido">
-                    <input type="text" placeholder="Email" name="Email">
-                    <input type="text" placeholder="Usuario" name="Usuario">
-                    <input type="password" placeholder="Password" name="Password">
+                    <input name="Nombre" type="text" id="Nombre" class="form-control" placeholder="Nombre" >
+                    <input name="Apellido" type="text" id="Apellido" class="form-control" placeholder="Apellido">
+                    <input name="Email" type="text" id="Email" class="form-control" placeholder="Email" >
+                    <input name="Usuario" type="text" id="Usuario" class="form-control" placeholder="Usuario" >
+                    <input name="Password" type="password" id="password" class="form-control" placeholder="Password" >
                     <button>Registrarse</button>
                   
                 </form>
