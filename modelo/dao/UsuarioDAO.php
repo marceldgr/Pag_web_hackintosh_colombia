@@ -34,9 +34,9 @@ class UsuarioDAO{
         }
         return $usuario;
     }
-    public function registrarUsuario(usuario $usuario){
+    public function registrarUsuario(Usuario $usuario){
         $data_Source= new DataSource();
-        $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,Apellido,:Email,:Usuario,:Password,:Administrador)";
+        $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,:Apellido,:Email,:Usuario,:Password,:Administrador)";
         $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
         ':Nombre'=>$usuario->getNombre(),
         ':Apellido'=>$usuario->getApellido(),
