@@ -57,6 +57,30 @@ header {
     width: 250px;
 }
 
+.btn_login {
+    width: 100%;
+    border-radius: 50px;
+    margin: 5px;
+    padding: 3px 10px;
+    border: none;
+    background-color: rgb(109, 107, 107);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background, color, 300ms;
+    align-items: center;
+  }
+  
+  .btn_header_regist:hover {
+    background: cornflowerblue;
+    color: white;
+  }
+  
+  .btn_login:hover {
+    background: cornflowerblue;
+    color: white;
+  }
 /*--------------------------------------------------------------------------*/
 /*cuerpo del perfil de usuario*/
 .cuerpo {

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +25,12 @@
                         <li><a href="https://dortania.github.io/OpenCore-Install-Guide/">Guia Dortania</a></li>
                         <li><a href="../paginas/mac_os.html">Mac Os</a></li>
                         <li><a href="../paginas/Descargas.html">Descargas</a></li>
-                        <li><a href="../paginas/productos.html">Productos</a></li>
-                        <li><a href="../paginas/Tienda.html">Tienda</a></li>
+                        <li><a href="../paginas/productos.php">Productos</a></li>
+                        <li><a href="../paginas/Tienda.php">Tienda</a></li>
                         <li><a href="../paginas/Contactos.html">Contactos</a></li>
                         <li><a href="../../pica_fija/index_pica_fija.html">pica y fija</a>
                         </li>
+                        <li><a href="../paginas/perfil_Usuario.php">Perfil</a></li>
                     </ul>
                 </nav>
             </div>
@@ -33,7 +38,7 @@
             <div class="header_registro">
                 <a href="../../Vista/Login.php">
                   <div class="btn_logins">
-                        <input type="button" class="btn_login" value="Login">
+                        <input type="button" class="btn_login" value="Salir">
                     </div>
                 </a>
             </div>
@@ -42,6 +47,16 @@
     </header>
     <br>
     <hr>
+    <div class="nombre_user">
+        <h2>
+            hola
+        </h2>
+      
+        <?php if (isset($_SESSION['ID_USUARIO'])) 
+							echo $_SESSION['NOMBRE']; 
+						?>
+                        
+    </div>
     <script src="../js/Script.js"></script>
 </body>
 
