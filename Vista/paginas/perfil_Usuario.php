@@ -22,7 +22,7 @@
                         <li><a href="mac_os.html">Mac Os</a></li>
                         <li><a href="Descargas.html">Descargas</a></li>
                         <li><a href="productos.php">Productos</a></li>
-                        <li><a href="Tienda.php">Tienda</a></li>
+                        <li><a href="shop.html">Tienda</a></li>
                         <li><a href="Contactos.html">Contactos</a></li>
                         <li><a href="/pica_fija/index_pica_fija.html">pica y fija</a></li>
                         <li><a href="perfil_Usuario.php">Perfil</a></li>

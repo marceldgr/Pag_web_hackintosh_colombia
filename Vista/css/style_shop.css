@@ -10,13 +10,13 @@
 
 /* ================= VARIABLE ================ */
 :root {
-  --primary-color: hsl(0, 0%, 24%);
-  --primary-color-alt: hsl(214, 80%, 49%);
-  --second-color: #3e537c;
-  --second-color-alt: rgba(232, 229, 229, 0.65);
+  --primary-color: hsl(195, 4%, 20%);
+  --primary-color-alt: hsl(212, 61%, 61%);
+  --second-color: #848689;
+  --second-color-alt: rgba(7, 7, 7, 0.65);
   --third-color: hsl(220, 36%, 28%);
   --white-color: #fbfbfb;
-  --white-color-alt: hsl(12, 14%, 93%);
+  --white-color-alt: hsl(9, 10%, 87%);
   --fondo-color: #f5f5f5;
 }
 
