@@ -56,7 +56,7 @@ class UsuarioDAO{
             $usuario=new usuario(
                 $data_Table[$indice]["idUsuario"],
                 $data_Table[$indice]["Nombre"],
-                $data_Table[$indice]["Apellidos"],
+                $data_Table[$indice]["Apellido"],
                 $data_Table[$indice]["Email"],
                 $data_Table[$indice]["Usuario"],
                 $data_Table[$indice]["Password"],
@@ -77,10 +77,10 @@ class UsuarioDAO{
         $usuario=null;
         if(count($data_Table)==1){
             $usuario=new usuario(
-            $data_Table[0]["idUsuario"],
+            $data_Table[0]["id"],
             $data_Table[0]["Nombre"],
-            $data_Table[0]["Apellidos"],
-             $data_Table[0]["Email"],
+            $data_Table[0]["Apellido"],
+            $data_Table[0]["Email"],
             $data_Table[0]["Usuario"],
             $data_Table[0]["Password"],
             $data_Table[0]["Administrador"]);
