@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,8 +51,8 @@
             <div class="editar">
                 <form action="" class="EDITAR">
                     <h1>Editar</h1>
-                    <input type="text" placeholder="Nombre completo" name="nombre">
-                    <input type="text" placeholder="Correo Electronico" name="email">
+                    <input type="text" placeholder="Nombre completo" name="nombre" value=<?php echo  $_SESSION['NOMBRE']?> >
+                        <input type="text" placeholder="Correo Electronico" name="email">
                     <input type="text" placeholder="Usuario" name="usuario">
                     <input type="password" placeholder="contraseña" name="password">
                     <button class="Guardar"> Guardar</button>

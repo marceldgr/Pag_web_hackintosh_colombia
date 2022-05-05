@@ -10,6 +10,7 @@ if($user != null){
     //Si el usuario fue encontrado, se guarda su ID en una sesión con $_SESSION
     $_SESSION['ID_USUARIO'] = $user->getId();
     $_SESSION['NOMBRE'] = $user->getNombre(); 
+    
     if($user->getAdministrador() == 1){
         header("Location: ../../vista/paginas/perfil_admin.php");                
     }else{
