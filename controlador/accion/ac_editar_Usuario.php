@@ -2,15 +2,19 @@
 
 session_start();
 require_once (__DIR__.'/../mdb/mdbUsuario.php');
-$idUsuario= $_POST['idUsuario'];
+$idUsuario= $_SESSION['ID_USUARIO'];
 $nombre= $_POST['nombre'];
-$Apellido= $_POST['Apellido'];
+$Apellido= "";
+//$Apellido= $_POST['Apellido'];
 $usuario= $_POST['usuario'];
-$correo= $_POST['correo'];
-$password= $_POST['Password'];
+$correo= $_POST['email'];
+$password= $_POST['password'];
+$Administrador=0;
 
 
-$usuario = new Usuario($idUsuario,$nombre,$Apellido,$usuario,$correo,$contrasena,$Administrador);
+$usuario = new Usuario($idUsuario,$nombre,$Apellido,$usuario,$correo,$password,$Administrador);
 editarUsuario($usuario);
-
-header("location:../../Vista/AdminUsuario.php");
+echo '  <script> alert("Usuario Actualizado  exitosamente"); 
+                        window.location="../../vista/paginas/perfil_Usuario.php";
+                </script>';
+//header("location: ../../vista/paginas/perfil_Usuario.php");

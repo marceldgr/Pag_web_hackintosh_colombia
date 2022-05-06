@@ -49,11 +49,11 @@ session_start();
         <label class="toggle" for="toggle">editar</label>
         <div class="containerEditar">
             <div class="editar">
-                <form action="" class="EDITAR">
+                <form action="../../controlador/accion/ac_editar_Usuario.php" class="EDITAR" method="POST">
                     <h1>Editar</h1>
                     <input type="text" placeholder="Nombre completo" name="nombre" value=<?php echo  $_SESSION['NOMBRE']?> >
-                        <input type="text" placeholder="Correo Electronico" name="email">
-                    <input type="text" placeholder="Usuario" name="usuario">
+                        <input type="text" placeholder="Correo Electronico" name="email" value=<?php echo  $_SESSION['EMAIL']?> >
+                    <input type="text" placeholder="Usuario" name="usuario" value=<?php echo  $_SESSION['USUARIO']?>>
                     <input type="password" placeholder="contraseña" name="password">
                     <button class="Guardar"> Guardar</button>
                     <button class="Deshacer"> Deshacer</button>
@@ -75,11 +75,11 @@ session_start();
                 <form action="" class="Informacion">
                     <h1>Datos del usuario</h1>
                     <h5>Nombre Completo</h5>
-                    <input type="text" placeholder="Nombre completo" name="nombre_completo">
+                    <input type="text" placeholder="Nombre completo" name="nombre_completo" value=<?php echo  $_SESSION['NOMBRE']?>>
                     <h5>Emial</h5>
-                    <input type="text" placeholder="correo Electronico" name="correo_electronico">
+                    <input type="text" placeholder="correo Electronico" name="correo_electronico" value=<?php echo  $_SESSION['EMAIL']?> >
                     <h5>Nombre de usuario</h5>
-                    <input type="text" placeholder="Usuario" name="usuario">
+                    <input type="text" placeholder="Usuario" name="usuario" value=<?php echo  $_SESSION['USUARIO']?>>
                 </form>
             </div>
         </div>

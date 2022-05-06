@@ -13,23 +13,23 @@ class UsuarioDAO{
             foreach($data_Table as $indice=>$valor){
 
             $usuario= new usuario(
-                $data_Table[$indice]["idUsuario"],
+                $data_Table[$indice]["id"],
                 $data_Table[$indice]["Nombre"],
                 $data_Table[$indice]["Apellido"],
-                $data_Table[$indice]["Usuario"],
                 $data_Table[$indice]["Email"],
+                $data_Table[$indice]["Usuario"],  
                 $data_Table[$indice]["Password"],
                 $data_Table[$indice]["Administrador"]);
             }
         }else{
-            $usuario= new usuario(
+           /* $usuario= new usuario(
                 1,
                 "Deimer",
                 "espinosa",
                 "deimer@gmail.com",
                 "nota",
                 "contra",
-                1);
+                1);*/
             
         }
         return $usuario;
