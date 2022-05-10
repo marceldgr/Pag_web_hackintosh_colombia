@@ -90,11 +90,12 @@ class UsuarioDAO{
     public function editarUsuario($usuario){
         $data_Source=new DataSource();
         $stmt1="UPDATE usuario SET Nombre=:Nombre,Apellido=:Apellido,Usuario=:Usuario,Email=:Email,Password=:Password,Administrador=:Administrador WHERE id=:idUsuario";
-        $resultado=$data_Source->ejecutarActulizacion($stmt1, array('Nombre'=>$usuario->getNombre(),
+        $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
+        'Nombre'=>$usuario->getNombre(),
         'Apellido'=>$usuario->getApellido(),
         'Email'=>$usuario->getEmail(),
         'Usuario'=>$usuario->getUsuario(),
-       'Password'=>$usuario->getPassword(),
+        'Password'=>$usuario->getPassword(),
         'Administrador'=>$usuario->getAdministrador(),
         'idUsuario'=>$usuario->getId()));
         return $resultado;

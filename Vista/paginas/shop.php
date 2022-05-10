@@ -11,16 +11,17 @@
   <header>
     <div class="company-logo"><a class="logo" href="../../index.html">
         <img src="../img/logo_hack/logo3.png" alt="">
-    </a></div>
+    </a>
+  </div>
     <nav class="navbar">
       <ul class="nav-items">
         <li class="nav-item"><a href="../paginas/mac_os.html" class="nav-link">Mac os</a></li>
-        <li class="nav-item"><a href="../paginas/Descargas.html" class="nav-link">Descargas</a></li>
-        <li class="nav-item"><a href="../paginas/productos.php" class="nav-link">Productos</a></li>
-        <li class="nav-item"><a href="../paginas/Tienda.php" class="nav-link">Tienda</a></li>
-        <li class="nav-item"><a href="../paginas/Contactos.html" class="nav-link">Contacto</a></li>
-        <li class="nav-item"><a href="../../pica_fija/index_pica_fija.html" class="nav-link">juego</a></li>
-        <li class="nav-item"><a href="../paginas/perfil_Usuario.php" class="nav-link">Perfil</a></li>
+        <li class="nav-item"><a href="../paginas/Descargas.html" class="nav-link">DESCARGAS</a></li>
+        <li class="nav-item"><a href="../paginas/productos.php" class="nav-link">PRODUCTOS</a></li>
+        <li class="nav-item"><a href="../paginas/SHOP.php" class="nav-link">SHOP</a></li>
+        <li class="nav-item"><a href="../paginas/Contactos.html" class="nav-link">CONTACTOS</a></li>
+        <li class="nav-item"><a href="../../pica_fija/index_pica_fija.html" class="nav-link">JUEGO</a></li>
+        <li class="nav-item"><a href="../paginas/perfil_Usuario.php" class="nav-link">PERFIL</a></li>
       </ul>
     </nav>
     <div class="menu-toggle">

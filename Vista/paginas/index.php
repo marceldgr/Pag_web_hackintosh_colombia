@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,64 +11,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hackintosh_Colombia</title>
     <script src="https://kit.fontawesome.com/bd0578e771.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Vista/css/style_index.css">
+    <link rel="stylesheet" href="../css/style_index.css" >
 </head>
 
 <body>
     <header>
         <div class="container_header">
-            <a class="logo" href="index.html">
-                <img src="Vista/img/logo_hack/logo3.png" alt="">
+            <a class="logo" href="../paginas/index.php">
+                <img src="../img/logo_hack/logo3.png" alt="">
             </a>
             <div class="menu">
                 <nav>
                     <ul>
                         <li><a href="https://dortania.github.io/OpenCore-Install-Guide/">GUIA DORTANIA</a></li>
-                        <li><a href="Vista/paginas/mac_os.html">Mac Os</a></li>
-                        <li><a href="Vista/paginas/Descargas.html">DESCARGAS</a></li>
-                        <li><a href="Vista/paginas/shop.php">SHOP</a></li>
-                        <li><a href="Vista/paginas/Contactos.html">CONTACTOS</a></li>
+                        <li><a href="../paginas/mac_os.html">Mac Os</a></li>
+                        <li><a href="../paginas/Descargas.html">DESCARGAS</a></li>
+                        <li><a href="../paginas/shop.php">SHOP</a></li>
+                        <li><a href="../paginas/Contactos.html">CONTACTOS</a></li>
                         <li><a href="pica_fija/index_pica_fija.html">GAME</a>
                         </li>
+                        <li><a href="../paginas/perfil_Usuario.php">PEFIL</a></li>
                     </ul>
                 </nav>
-            </div>
+              </div>
             <i class="fa-solid fa-bars" id="icon_menu"></i>
             <div class="fotoPefil">
-                <a class="mostrarU" href="Vista/Login.php">
-                    <img src="Vista/img/logo_hack/logo2.png" alt="fotoPefil">
+                <?php echo  $_SESSION['NOMBRE']?>
+            <a class="mostrarU" href="Vista/Login.php">
+                <img src="../img/logo_hack/logo2.png" alt="fotoPefil">
+            </a>
+            <div class="header_registro">
+                <a href="../../Vista/Login.php">
+                    <div class="btn_logins">
+                        <input type="button" class="btn_login" value="Salir">
+                    </div>
                 </a>
-
             </div>
-
-        </div>
+            
+    </div>
     </header>
     <br>
     <hr>
     <main>
-
+          
         <div class="container">
             <h1>Hackitosh Colombia</h1>
             <div class="laptop">
-                <img src="Vista/img/Laptos/img0.png" alt="">
+                <img src="../img/Laptos/img0.png" alt="">
             </div>
         </div>
-        <br>
-
-        <!-- banner-->
+<br>
+  
+<!-- banner-->
         <div class="nostros">
-
+         
             <h2>
                 Bienvenidos
             </h2>
-
+         
             <div class="container_baner">
                 <div class="img_grupo">
-                    <img src="vista/img/persona/img02.png" id="grupo_persona" alt="">
+                    <img src="../img/persona/img02.png" id="grupo_persona" alt="">
                 </div>
 
                 <div class="lapfondo">
-                    <img src="vista/img/Laptos/laptop_fondo01.png" id="FondoLaptos" alt="">
+                    <img src="../img/Laptos/laptop_fondo01.png" id="FondoLaptos" alt="">
                 </div>
 
                 <div class="texto_baner">
@@ -79,10 +90,10 @@
 
             </div>
         </div>
-
-
-    </main>
-    <script src="Vista/js/Script.js"></script>
+    
+    
+</main>
+    <script src="../js/Script.js"></script>
 </body>
 
 </html>
