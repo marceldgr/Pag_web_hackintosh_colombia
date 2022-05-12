@@ -29,6 +29,10 @@ header {
 .menu nav ul {
   display: flex;
 }
+.mostrarU img {
+  width: 60px;  
+}
+
 .menu nav ul li {
   list-style: none;
   padding: 1px 15px;

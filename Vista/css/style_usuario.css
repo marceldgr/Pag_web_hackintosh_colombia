@@ -56,6 +56,9 @@ header {
 .logo img {
     width: 250px;
 }
+.mostrarU img {
+  width: 60px;  
+  }
 
 .btn_login {
     width: 100%;
