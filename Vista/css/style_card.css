@@ -29,9 +29,6 @@ header {
 .menu nav ul {
   display: flex;
 }
-.mostrarU img {
-  width: 60px;  
-}
 
 .menu nav ul li {
   list-style: none;
@@ -88,6 +85,10 @@ header {
 /*imagenes */
 .logo img {
   width: 250px;
+}
+
+.mostrarU img {
+  width: 60px;  
 }
 
 /*portada cover*/
