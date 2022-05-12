@@ -5,7 +5,8 @@ require_once(__DIR__."/../entidad/Usuario.php");
 class UsuarioDAO{
     public function autenticarUsuario($Email,$Password){
         $data_Source = new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Email=:Email and Password=:Password",array(':Email'=>$Email,':Password'=>$Password));
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Password=:Password and (Email=:Email or Usuario=:Email )",array(':Email'=>$Email,':Password'=>$Password));
+        
         
         $usuario=null;
         

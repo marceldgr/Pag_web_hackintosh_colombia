@@ -24,7 +24,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
         </div>
     <nav class="navbar">
             <ul class="nav-items">
-                <li class="nav-item"><a href="editarProductos.php"class="nav-link">Editar Productos</a></li>
+                <li class="nav-item"><a href="datos_admin/editarProductos.php"class="nav-link">Editar Productos</a></li>
                 <li class="nav-item"><a href="perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
             </ul>
         </nav>
