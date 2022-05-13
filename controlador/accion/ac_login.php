@@ -15,12 +15,12 @@ if($user != null){
     $_SESSION['USUARIO'] = $user->getUsuario();
     $_SESSION['ADMIN'] = $user->getAdministrador();
     if($user->getAdministrador() == 1){
-        header("Location: ../../vista/paginas/perfil_admin.php");                
+        header("Location: ../../Vista/paginas/perfil_admin.php");                
     }else{
-        header("Location: ../../vista/paginas/perfil_Usuario.php");
+        header("Location: ../../Vista/paginas/perfil_Usuario.php");
     }
 
 }else{
     //Si el usuario no existe se vuelve a mostrar el login
-    header("Location:../../vista/login.php");
+    header("Location:../../Vista/login.php");
 }
