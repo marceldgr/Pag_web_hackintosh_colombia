@@ -22,7 +22,7 @@ if(isset($_POST['Administrador'])){
    
       if($registro){
         echo '  <script> alert("Usuario creado exitosamente"); 
-                        window.location="../../Vista/login.php";
+                        window.location="../../Vista/Login.php";
                 </script>';
 
 
@@ -30,7 +30,7 @@ if(isset($_POST['Administrador'])){
     
     else{
         echo '  <script> alert("Usuario no creado o error de datos "); 
-                         window.location="../../Vista/login.php";
+                         window.location="../../Vista/Login.php";
                 </script>';
     }
     
