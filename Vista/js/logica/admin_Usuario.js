@@ -10,11 +10,11 @@ function ajaxVerUsuario(){
             
         }})
 }
-function ajaxRegistrarUsuario(Nombre,Apellidos,Email,Usuario,Password,Administrador){
+function ajaxRegistrarUsuario(Nombre,Apellido,Email,Usuario,Password,Administrador){
     $.ajax({
         data:{
                 "Nombre":Nombre,
-                "Apellidos":Apellidos,
+                "Apellido":Apellido,
                 "Email": Email,
                 "Usuario":Usuario,
                 "Password":Password,
@@ -22,10 +22,10 @@ function ajaxRegistrarUsuario(Nombre,Apellidos,Email,Usuario,Password,Administra
         },
         type : "POST",
         dataType:"json",
-        url: "../../../controlador/ajax/ajaxRegistrarUsuario.php",
+        url:"../../../controlador/ajax/ajaxRegistrarUsuario.php",
         success:function(result){
             $('#modal_Crear_Usuario').modal('hide');  
-            insertar_Usuario_Tabla(Nombre,Apellidos,Email,Usuario,Password,Administrador); 
+            insertar_Usuario_Tabla(Nombre,Apellido,Email,Usuario,Password,Administrador); 
         }})
 }
 function insertar_Usuario_Tabla(result){
@@ -72,8 +72,7 @@ function insertar_Datos_Usuario_Modal() {
             url:"../../../contralador/ajax/ajaxVerUsuario_id.php",
             success: function(data) {
                 let usuario=JSON.parse(data)
-                $("#modal_Editar_Usuario").modal(show);
-
+           
                 $("#modal_Editar_Usuario").modal('show');
 
                 $("#modal_Editar_Usuario input[name='idUsuario']").val(usuario.id)

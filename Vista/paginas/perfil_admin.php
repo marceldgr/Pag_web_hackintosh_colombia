@@ -30,7 +30,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                         <ul class="nav-items">
                             <li class="nav-item"><a href="datos_admin/editarProductos.php"class="nav-link">Editar Productos</a></li>
                             <li class="nav-item"><a href="perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
-                            <li class="nav-item"><a href="../datos_adimn/PerfilAdmin.html"class="nav-link">Perfil</a></li>
+                            <li class="nav-item"><a href="datos_adimn/PerfilAdmin.html"class="nav-link">Perfil</a></li>
                         </ul>
                     </nav>
             </div>
@@ -70,14 +70,14 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     </div>  
                     <div class="container-fluid">
                         <div class="justify-content-center row">
-                            <table class="table" id="usuariosRegistrados">
+                            <table class="table" id="usuario_Registrados">
                                 <thead>
                                     <tr>
                                     <th scope="col">Nombre</th>
-                                    <th scope="col">Apellidos</th>
+                                    <th scope="col">Apellido</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Usuario</th>
-                                    <th scope="col">Tipo de ROL</th>
+                                    <th scope="col">Administrador</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,7 +92,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Registrar usuario</h5>
+                                    <h5 class="modal-title" id="modal_Crear_Usuario">Registrar usuario</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -104,7 +104,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                             <div class="col-md-8"><input id="Nombre" placeholder="Nombre" type="text" class="form-control" name="Nombre"></div>
                                             </div>
                                             <div style="padding:7px 0;" class="justify-content-center row">
-                                            <div class="col-md-8"><input id="Apellido" placeholder="Apellidos " type="text" class="form-control" name="Apellidos"></div>
+                                            <div class="col-md-8"><input id="Apellido" placeholder="Apellido " type="text" class="form-control" name="Apellido"></div>
                                             </div>
                                             <div style="padding:7px 0;" class="justify-content-center row">
                                             <div class="col-md-8"><input id="Email" placeholder="Email" type="email" class="form-control" name="Email"></div>
@@ -113,7 +113,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                             <div class="col-md-8"><input id="Usuario" placeholder="Usuario " type="text" class="form-control" name="Usuario"></div>
                                             </div>
                                             <div style="padding:7px 0;" class="justify-content-center row">
-                                            <div class="col-md-8"><input id="Password" placeholder="Contraseña" type="password" class="form-control" name="Password"></div>
+                                            <div class="col-md-8"><input id="Password" placeholder="Password" type="password" class="form-control" name="Password"></div>
                                             </div>
                                             
                                             <div style="padding:7px 0;" class="justify-content-center row">
@@ -140,7 +140,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="ModalEditarLabel">Editar usuario</h5>
+                                                <h5 class="modal-title" id="Modal_Editar_Usuario">Editar usuario</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -152,7 +152,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                                         <div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="Nombre"></div>
                                                         </div>
                                                         <div style="padding:7px 0;" class="justify-content-center row">
-                                                        <div class="col-md-8"><input placeholder="Apellidos" type="text" class="form-control" name="Apellidos"></div>
+                                                        <div class="col-md-8"><input placeholder="Apellido" type="text" class="form-control" name="Apellido"></div>
                                                         </div>
                                                         <div style="padding:7px 0;" class="justify-content-center row">
                                                         <div class="col-md-8"><input placeholder="Email" type="email" class="form-control" name="Email"></div>
