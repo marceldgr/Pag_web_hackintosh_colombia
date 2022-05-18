@@ -22,9 +22,6 @@ if($user != null){
 
 }else{
     //Si el usuario no existe se vuelve a mostrar el login
-<<<<<<< Updated upstream
-    header("Location:../../Vista/login.php");
-=======
     header("Location:../../Vista/Login.php");
->>>>>>> Stashed changes
+
 }
