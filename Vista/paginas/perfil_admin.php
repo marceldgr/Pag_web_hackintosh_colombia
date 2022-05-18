@@ -14,41 +14,38 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adminstrador de usuario </title>
     <script src="https://kit.fontawesome.com/bd0578e771.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="../css/style_admin.css">
  </head>
 
 <body>
     <header>
-    <div class="company-logo"><a class="logo" href="../../index.html">
-        <img src="../img/logo_hack/logo3.png" alt="">
-         </a>
+        <div class="company-logo"><a class="logo" href="../../index.html">
+            <img src="../img/logo_hack/logo3.png" alt="">  </a>
         </div>
-        <div class="menu">
-            <nav class="navbar"> 
-                <ul class="nav-items">
-                    <li class="nav-item"><a href="datos_admin/editarProductos.php"class="nav-link">Editar Productos</a></li>
-                    <li class="nav-item"><a href="perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
-                    <li class="nav-item"><a href="../datos_adimn/PerfilAdmin.html"class="nav-link">Perfil</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-
-          
-            <div class="fotoPefil">
-                <a class="mostrarU" href="Vista/Login.php">
-                    <img src="../img/logo_hack/logo2.png" alt="fotoPefil">
-                </a>
+            <div class="menu">
+                    <nav class="navbar"> 
+                        <ul class="nav-items">
+                            <li class="nav-item"><a href="datos_admin/editarProductos.php"class="nav-link">Editar Productos</a></li>
+                            <li class="nav-item"><a href="perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
+                            <li class="nav-item"><a href="../datos_adimn/PerfilAdmin.html"class="nav-link">Perfil</a></li>
+                        </ul>
+                    </nav>
             </div>
-            <div class="header_registro">
-                <a href="../login.php">
-                    <div class="btn_cerrar">
-                        <input type="button" class="btn_close_login" value="Salir">
+                <div class="fotoPefil">
+                    <a class="mostrarU" href="Vista/Login.php">
+                        <img src="../img/logo_hack/logo2.png" alt="fotoPefil">
+                    </a>
+                </div>
+                     <div class="header_registro">
+                        <a href="../login.php">
+                            <div class="btn_cerrar">
+                                <input type="button" class="btn_close_login" value="Salir">
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-        </div>
-       
     </header>
     
     <hr>
@@ -57,53 +54,144 @@ if(!isset($_SESSION['ID_USUARIO'])){
       <h1><?php echo  $_SESSION['NOMBRE']?></h1>
         <div class="table">
             <form action="" class="table">
-                <table class="tableUsuario">
-                    <table style="width:100%">
-                        <tr>
-                            <th>id</th>
-                            <th>nombre completo</th>
-                            <th>usuario</th>
-                            <th>correo</th>
-                            
-                        </tr>
-                        
-                            <tr>
-                            <td><?php echo  $_SESSION['ID_USUARIO']?></td>
-                            <td><?php echo  $_SESSION['NOMBRE']?></td>
-                            <td><?php echo  $_SESSION['USUARIO']?></td>
-                            <td><?php echo  $_SESSION['EMAIL']?></td>
-                           
-                    
-                            <td>
-                                <input type="button" class="btn_editarUser" value="Editar" </input>
-
-                            </td>
-                            <td>
-                                <input type="button" class="Eliminar_user" value="Eliminar" </input>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                            
-                            <td>
-                                <input type="button" class="btn_editarUser" value="Editar" </input>
-
-                            </td>
-                            <td>
-                                <input type="button" class="Eliminar_user" value="Eliminar" </input>
-                            </td>
-                        </tr>
-                    </table>
+                
             </form>
-
         </div>
+        <br>
+        <hr>
 
+                    <!-- Button trigger modal -->
+                    <div class="container-fluid">
+                        <div class="justify-content-center row">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Usuario">
+                            Crear usuario</button>
+                        </div> 
+                        <br>
+                    </div>  
+                    <div class="container-fluid">
+                        <div class="justify-content-center row">
+                            <table class="table" id="usuariosRegistrados">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellidos</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Tipo de ROL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        
+                                </tbody>
+                            </table>
+                        </div>   
+                    </div>
+
+                    <!-- Modal1 -->
+                    <div class="modal fade" id="modal_Crear_Usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Registrar usuario</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form action="../../controlador/accion/ac_registroUsuario.php" method="post">
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div style="padding:7px 0;" class="justify-content-center row">
+                                            <div class="col-md-8"><input id="Nombre" placeholder="Nombre" type="text" class="form-control" name="Nombre"></div>
+                                            </div>
+                                            <div style="padding:7px 0;" class="justify-content-center row">
+                                            <div class="col-md-8"><input id="Apellido" placeholder="Apellidos " type="text" class="form-control" name="Apellidos"></div>
+                                            </div>
+                                            <div style="padding:7px 0;" class="justify-content-center row">
+                                            <div class="col-md-8"><input id="Email" placeholder="Email" type="email" class="form-control" name="Email"></div>
+                                            </div>
+                                            <div style="padding:7px 0;" class="justify-content-center row">
+                                            <div class="col-md-8"><input id="Usuario" placeholder="Usuario " type="text" class="form-control" name="Usuario"></div>
+                                            </div>
+                                            <div style="padding:7px 0;" class="justify-content-center row">
+                                            <div class="col-md-8"><input id="Password" placeholder="Contraseña" type="password" class="form-control" name="Password"></div>
+                                            </div>
+                                            
+                                            <div style="padding:7px 0;" class="justify-content-center row">
+                                                <div class="col-md-8">
+                                                    <select id="Administrador" class="form-control" name="Administrador">
+                                                        <option>Elegir rol</option>
+                                                        <option value="1">Administrador</option>
+                                                        <option value="0">Usuario</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                                <div class="justify-content-center row">
+                                                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary" id="crear">Crear</button>
+                                                </div>
+                                        </div>
+                                    </div>
+                                 </form>
+                            <!-- end modal -->
+
+                            <!-- Modal2 -->
+                                <div class="modal fade" id="modal_Editar_Usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="ModalEditarLabel">Editar usuario</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form action="../../controlador/accion/ac_editar_Usuario.php" method="post">
+                                                <div class="modal-body">
+                                                    <div class="container-fluid">
+                                                        <div style="padding:7px 0;" class="justify-content-center row">
+                                                        <div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="Nombre"></div>
+                                                        </div>
+                                                        <div style="padding:7px 0;" class="justify-content-center row">
+                                                        <div class="col-md-8"><input placeholder="Apellidos" type="text" class="form-control" name="Apellidos"></div>
+                                                        </div>
+                                                        <div style="padding:7px 0;" class="justify-content-center row">
+                                                        <div class="col-md-8"><input placeholder="Email" type="email" class="form-control" name="Email"></div>
+                                                        </div>
+                                                        <div style="padding:7px 0;" class="justify-content-center row">
+                                                        <div class="col-md-8"><input placeholder="Usuario" type="text" class="form-control" name="Usuario"></div>
+                                                        </div>
+                                                        <div style="padding:7px 0;" class="justify-content-center row">
+                                                        <div class="col-md-8"><input placeholder="Pasword" type="password" class="form-control" name="Password"></div>
+                                                        </div>
+                                                        <div class="rol col-md-8">
+                                                            <select class=" form-control" name="Administrador">
+                                                                <option>Elegir rol</option>
+                                                                <option value="1">Administrador</option>
+                                                                <option value="0">Usuario</option>
+                                                            </select>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                        <input hidden type="number" class="form-control" name="idUsuario">
+                                                            <div class="justify-content-center row">
+                                                                <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                                            </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <!-- end modal -->
+                            </div>
+                        </div>
+                    </div>
     </div>
     <script src="../js/perfil_admin.js"></script>
+    <script src="../js/librerias/jquery-3.3.1.min.js"></script>
+    <script src="../js/logica/admin_Usuario.js"></script>
+    <script src="../js/librerias/sweetalert2.js"></script>
+    <script src="../js/librerias/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -13,12 +13,12 @@ function ajaxVerUsuario(){
 function ajaxRegistrarUsuario(Nombre,Apellidos,Email,Usuario,Password,Administrador){
     $.ajax({
         data:{
-                "nombre":Nombre,
-                "apellidos":Apellidos,
-                "email": Email,
-                "usuario":Usuario,
-                "password":Password,
-                "administrador":Administrador
+                "Nombre":Nombre,
+                "Apellidos":Apellidos,
+                "Email": Email,
+                "Usuario":Usuario,
+                "Password":Password,
+                "Administrador":Administrador
         },
         type : "POST",
         dataType:"json",
