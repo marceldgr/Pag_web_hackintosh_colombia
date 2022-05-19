@@ -35,7 +35,7 @@
             <!--formulario_login-->
 
             <div class="container_logins-registers">
-            <form action="../controlador/accion/ac_login.php" method="POST" class="formulario_login">
+            <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login">
                     <h2>Iniciar Sesión</h2>
                     <input name="Email" type="text" id="Email" class="from-controlador" placeholder=" Email" >
 
@@ -45,7 +45,7 @@
                         ¿Has olvidado tu password?
                         <a href="recuperar_password.html">recuperar password</a>
                     </p>
-                    <button>Entrer</button>
+                    <button>Entrar</button>
                 </form>
                 <!--formulario_register-->
 
@@ -63,6 +63,11 @@
         </div>
     </main>
     <script src="js/script_login.js"></script>
+    <script src="js/logica/login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/librerias/jquery-3.3.1.min.js"></script>
+	<script src="js/librerias/jquery-ui.min.js"></script>
+    <script src="js/librerias/sweetalert2.min.js"></script>
 </body>
 
 </html>
