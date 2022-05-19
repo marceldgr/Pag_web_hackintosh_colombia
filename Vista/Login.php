@@ -27,7 +27,7 @@
                 </div>
                 <div class="box_registros">
                     <h3>¿Aún no tiene una cuenta?</h3>
-                    <p>Registrarse para que puedas inicar sesión.</p>
+                    <p>Registrate para que puedas inicar sesión.</p>
                     <button id="btn_registrar">Registarse</button>
                 </div>
             </div>
@@ -35,17 +35,15 @@
             <!--formulario_login-->
 
             <div class="container_logins-registers">
-            <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login">
+            <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login" id="formulario_login">
                     <h2>Iniciar Sesión</h2>
                     <input name="Email" type="text" id="Email_log" class="from-controlador" placeholder=" Email" >
-
                     <input name="Password" type="password" id="password_log"  class ="form-control" placeholder="Password" >
-                    
-                    <p class ="forget">
+                     <p class ="forget">
                         ¿Has olvidado tu password?
                         <a href="recuperar_password.html">recuperar password</a>
                     </p>
-                    <button>Entrar</button>
+                    <button id=" btn_entrar">Entrar</button>
                 </form>
                 <!--formulario_register-->
 
@@ -63,8 +61,6 @@
         </div>
     </main>
     <script src="js/librerias/jquery-3.3.1.min.js"></script>
-    <script src="js/logica/login.js"></script>
-    <script src="js/script_login.js"></script>
     <script src="js/logica/login.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="js/librerias/jquery-3.3.1.min.js"></script>
