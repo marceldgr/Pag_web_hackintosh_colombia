@@ -37,9 +37,9 @@
             <div class="container_logins-registers">
             <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login">
                     <h2>Iniciar Sesión</h2>
-                    <input name="Email" type="text" id="Email" class="from-controlador" placeholder=" Email" >
+                    <input name="Email" type="text" id="Email_log" class="from-controlador" placeholder=" Email" >
 
-                    <input name="Password" type="password" id= " password"  class ="form-control" placeholder="Password" >
+                    <input name="Password" type="password" id="password_log"  class ="form-control" placeholder="Password" >
                     
                     <p class ="forget">
                         ¿Has olvidado tu password?
@@ -62,6 +62,8 @@
             </div>
         </div>
     </main>
+    <script src="js/librerias/jquery-3.3.1.min.js"></script>
+    <script src="js/logica/login.js"></script>
     <script src="js/script_login.js"></script>
     <script src="js/logica/login.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
