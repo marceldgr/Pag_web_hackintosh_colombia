@@ -3,9 +3,9 @@ class Usuario{
     public $id;
     public $Nombre;
     public $Apellido;
-     public $Email;
+    public $Email;
     public $Usuario;
-       public $Password;
+    public $Password;
     public $Administrador;
 	/**
 	 */

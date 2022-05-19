@@ -11,11 +11,15 @@ $Password= $_POST['PASSWORD'];
 $Administrador=0;
 
 
+<<<<<<< Updated upstream
 
 $usuario = new Usuario($idUsuario,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador);
 
 
 
+=======
+$usuario = new Usuario($idUsuario,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador);
+>>>>>>> Stashed changes
 editarUsuario($usuario);
 echo '  <script> alert("Usuario Actualizado  exitosamente"); 
                         window.location="../../vista/paginas/perfil_Usuario.php";
