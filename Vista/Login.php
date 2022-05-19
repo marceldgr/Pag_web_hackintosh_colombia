@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
 </head>
 <body>
@@ -32,19 +33,22 @@
                 </div>
             </div>
 
-            <!--formulario_login-->
+            <!--"../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login" id="formulario_login"-->
 
             <div class="container_logins-registers">
-            <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login" id="formulario_login">
-                    <h2>Iniciar Sesión</h2>
-                    <input name="Email" type="text" id="Email_log" class="from-controlador" placeholder=" Email" >
-                    <input name="Password" type="password" id="password_log"  class ="form-control" placeholder="Password" >
+              
+                    <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login" id="formulariologin">                   
+                <h2>Iniciar Sesión</h2>
+                    <input name="Email" type="text" id="Email" class="from-controlador" placeholder=" Email" >
+                    <input name="Password" type="password" id="password"  class ="form-control" placeholder="Password" >
                      <p class ="forget">
                         ¿Has olvidado tu password?
                         <a href="recuperar_password.html">recuperar password</a>
                     </p>
-                    <button id=" btn_entrar">Entrar</button>
+                    <button id="btn_entrar" class="btn btn-lg btn-primary btn-block">Iniciar Sesión</button>
                 </form>
+                
+            
                 <!--formulario_register-->
 
                 <form action="../controlador/accion/ac_registroUsuario.php"  method="POST" class="formulario_register">
@@ -63,7 +67,7 @@
     <script src="js/librerias/jquery-3.3.1.min.js"></script>
     <script src="js/logica/login.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="js/librerias/jquery-3.3.1.min.js"></script>
+  
 	<script src="js/librerias/jquery-ui.min.js"></script>
     <script src="js/librerias/sweetalert2.min.js"></script>
 </body>
