@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 $(document).ready(function() {
     id=null;
     $(document).on('click','#btnEntrar',function(){
@@ -47,25 +47,15 @@ function ajaxLogin(Email, Password){
 }
 
 
-
-
-
-
-
-
-
-
-function onSignIn(googleUser){
-=======
 /*function onSignIn(googleUser){
->>>>>>> Stashed changes
+
     let profile=googleUser.getBasicProfile()
     localStorage.setItem('id',profile.getId())
     localStorage.setItem('name',profile.getName())
     localStorage.setItem('email',profile.getEmail())
     localStorage.setItem('image',profile.getImageUrl())
     window.location.replace(" ")
-}*/
+}
 $(document).ready(function(){
     
     $(document).on('click','#btnIniciar',function(){
@@ -109,4 +99,4 @@ function ajaxLogin(user,pass){
         console.log("Complete");
     })
     
-}
+}*/
