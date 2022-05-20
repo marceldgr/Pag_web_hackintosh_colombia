@@ -1,28 +1,47 @@
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     id=null;
     $(document).on('click','#btnEntrar',function(){
-        Email=$("#email").val();
-        Password=$("#password").val();
-        if(email!=" " && password!=" "){
+        Email=$("#Email_log").val();
+        Password=$("#password_log").val();
+        if(Email!=" " && Password!=" "){
             ajaxLogin(Email,Password);
 
         }
     });
+});*/
+$(document).on('submit','#formlg',function(e){
+    e.preventDefault();
+    Email=$("#Email_log").val();
+    Password=$("#password_log").val();
+    if(Email!="" && Password!=""){
+        ajaxLogin(Email,Password);
+
+    }
 });
+
 function ajaxLogin(Email, Password){
-    $ajax({
+    $.ajax({
         data:{
             "Email": Email,
             "Password": Password
         },
-        type:"POST",
-        dataType:"json",
-        url:"../../../controlador/ajax/ajaxLogin.php"
+        type:"post",
+        //dataType:"json",
+        cache: false,
+        url:"./../controlador/ajax/ajaxLogin.php"
     })
-    .done(function(response) {
+    .done(function(out) {
+        var limite=out.indexOf(');');
+        
+        //console.log(out);
+        out=out.slice(24,limite);
+        console.log(out);
+        var response=JSON.parse(out);
         var msj = response.msg;
-        if(msj!=""){
+        console.log(response.ruta);
+        window.location.href =response.ruta;
+        /*if(msj!=""){
             Swal.fire({
                 text: msj,
                 icon: response.type,
@@ -34,9 +53,10 @@ function ajaxLogin(Email, Password){
                     $(Location).attr('href',response.ruta);
                 }
             })
-        }
+        }*/ 
     })
     .fail(function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus);
         Swal.fire({
             title:"alerta",
             text:"la solicitud a fallado"+errorThrown
