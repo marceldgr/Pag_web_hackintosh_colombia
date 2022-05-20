@@ -12,8 +12,8 @@ function registrarUsuario(Usuario $usuario){
 }
 function VerUsuarios(){
     $dao=new UsuarioDAO();
-    $usuarios=$dao->VerUsuario();
-    return $usuarios;
+    $usuario=$dao->VerUsuario();
+    return $usuario;
 }
 function eliminarUsuario($idUsuario){
     $dao=new UsuarioDAO();

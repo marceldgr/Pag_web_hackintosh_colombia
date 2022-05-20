@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once(__DIR__ ."/../../mdb/mdbUsuario.php");
-require_once(__DIR__ ."/../../../modelo/entidad/Usuario.php");
+require_once(__DIR__ ."/../mdb/mdbUsuario.php");
+require_once(__DIR__ ."/../../modelo/entidad/Usuario.php");
 $Nombre=filter_input(INPUT_POST,'Nombre');
 $Apellido=filter_input(INPUT_POST,'Apellido');
 $Email=filter_input(INPUT_POST,'Email');
@@ -17,4 +17,3 @@ $resultado=['estado'=>$estado,'msg'=>$msg];
 
 echo json_encode($resultado);
 
-?>

@@ -5,20 +5,20 @@ $(document).ready(function() {
         Email=$("#Email").val();
         Password=$("#Password").val();
         if(Email!=" " && Password!=" "){
-            ajaxLogin(Email,Password);
+            ajax_Login(Email,Password);
 
         }
     });
 });
-function ajaxLogin(Email, Password){
-    $ajax({
+function ajax_Login(Email, Password){
+    $.ajax({
         data:{
             "Email": Email,
             "Password": Password
         },
         type:"POST",
         dataType:"json",
-        url:"../../../controlador/ajax/ajaxLogin.php"
+        url:"../controlador/ajax/ajaxLogin.php"
     })
     .done(function(response) {
         var mesj = response.msg;
@@ -36,7 +36,7 @@ function ajaxLogin(Email, Password){
             })
         }
     })
-    .fail(function(jqXHR, textStatus, errorThrown){
+    .fail(function(jqxhr, textStatus, errorThrown){
         Swal.fire({
             title:"alerta",
             text:"la solicitud a fallado"+errorThrown

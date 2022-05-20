@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['ID_USUARIO'])){
-    header("location:login.php");
+    header("location:../login.php");
 }
 ?>
 
@@ -70,7 +70,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     </div>  
                     <div class="container-fluid">
                         <div class="justify-content-center row">
-                            <table class="table" id="usuario_Registrados">
+                            <table class="table" id="usuarioRegistrados">
                                 <thead>
                                     <tr>
                                     <th scope="col">Nombre</th>
@@ -187,7 +187,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                         </div>
                     </div>
     </div>
-    <script src="../js/perfil_admin.js"></script>
+   
     <script src="../js/librerias/jquery-3.3.1.min.js"></script>
     <script src="../js/logica/admin_Usuario.js"></script>
     <script src="../js/librerias/sweetalert2.js"></script>

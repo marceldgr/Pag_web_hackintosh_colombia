@@ -4,7 +4,7 @@ require_once(__DIR__."/../entidad/Usuario.php");
 
 class UsuarioDAO{
     public function autenticarUsuario($Email,$Password){
-        echo '  <script> alert("entro en dao"); </script>';
+        
         $data_Source = new DataSource();
         $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Password=:Password and (Email=:Email or Usuario=:Email )",array(':Email'=>$Email,':Password'=>$Password));
         
@@ -24,21 +24,14 @@ class UsuarioDAO{
                 $data_Table[$indice]["Administrador"]);
             }
         }else{
-           /* $usuario= new usuario(
-                1,
-                "Deimer",
-                "espinosa",
-                "deimer@gmail.com",
-                "nota",
-                "contra",
-                1);*/
-            
+                      
         }
         return $usuario;
     }
     public function registrarUsuario(Usuario $usuario){
         $data_Source= new DataSource();
         $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,:Apellido,:Email,:Usuario,:Password,:Administrador)";
+
         $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
         ':Nombre'=>$usuario->getNombre(),
         ':Apellido'=>$usuario->getApellido(),
@@ -65,7 +58,7 @@ class UsuarioDAO{
                 $data_Table[$indice]["Administrador"]);
                 array_push($usuarios,$usuario);            
         }
-        return $usuario;
+        return $usuarios;
     }
     public function eliminarUsuario($idUsuario){
         $data_Source=new DataSource();

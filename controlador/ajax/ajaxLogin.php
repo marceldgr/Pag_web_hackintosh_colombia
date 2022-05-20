@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require_once (__DIR__. "/../mdb/mdbUsuario.php");
+require_once (__DIR__."/../mdb/mdbUsuario.php");
 $Email=filter_input(INPUT_POST, 'Email');
 $Password=filter_input(INPUT_POST,'Password');
 
-$user = autenticarUsuario($Email, $Password);
-$Administrador=0;
+$user = autenticarUsuario($Email,$Password);
+$Admin=0;
 $ruta="#";
 $msg="Usuario o contraseña no válido. Intente con otros datos";
 
@@ -19,16 +19,16 @@ if($user!=null){
     $_SESSION['USUARIO'] = $user->getUsuario();
     $_SESSION['ADMIN'] = $user->getAdministrador();
 
-}
+
 if($user->getAdministrador() == 1){
-    $ruta ="../../Vista/paginas/perfil_admin.php";                
+    $ruta ="/../Vista/paginas/perfil_admin.php";                
 }else{
-    $ruta="../../Vista/paginas/perfil_usuario.php";
+    $ruta="/../Vista/paginas/perfil_usuario.php";
 }
 
-/*$msg = "Puede iniciar satisfatoriamente";
-*/
+$msg = "Puede iniciar satisfatoriamente";
 
+}
 
 $resultado = [
 'msg' => $msg,

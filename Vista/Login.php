@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style_login.css">
-    <link rel="stylesheet" href="css/sweetalert2.min.css">
+   
 
 </head>
 <body>
@@ -37,7 +38,7 @@
 
             <div class="container_logins-registers">
               
-                    <form action="../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login" id="formulariologin">                   
+                    <form action="../controlador/accion/ac_login.php" method="POST" class="formulario_login" >                   
                 <h2>Iniciar Sesión</h2>
                     <input name="Email" type="text" id="Email" class="from-controlador" placeholder=" Email" >
                     <input name="Password" type="password" id="password"  class ="form-control" placeholder="Password" >
@@ -67,9 +68,8 @@
     <script src="js/librerias/jquery-3.3.1.min.js"></script>
     <script src="js/logica/login.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-  
-	<script src="js/librerias/jquery-ui.min.js"></script>
-    <script src="js/librerias/sweetalert2.min.js"></script>
+      <script src="js/librerias/sweetalert.min.js"></script>
+    
 </body>
 
 </html>

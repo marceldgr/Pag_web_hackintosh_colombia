@@ -1,16 +1,18 @@
 $(document).ready(function(){
-    ajaxVerUsuario();
-});
-function ajaxVerUsuario(){
+    ajax_Ver_Usuario();
+})
+function ajax_Ver_Usuario(){
     $.ajax({
-        url:"../../../controlador/ajax/ajaxVerUsuario.php",success:function(result){
-            insertar_Usuario_Tabla(JSON.parse(result))},
+        url:"controlador/ajax/ajaxVerUsuario.php",
+        success:function(result){
+            insertar_Usuario_en_Tabla(JSON.parse(result))
+        },
             error:function(xhr){
                 alert("Ocurrio un error: " + xhr.status+" "+xhr.statusText);
             
-        }})
+        }});
 }
-function ajaxRegistrarUsuario(Nombre,Apellido,Email,Usuario,Password,Administrador){
+function ajax_Registrar_Usuario(Nombre,Apellido,Email,Usuario,Password,Administrador){
     $.ajax({
         data:{
                 "Nombre":Nombre,
@@ -22,13 +24,13 @@ function ajaxRegistrarUsuario(Nombre,Apellido,Email,Usuario,Password,Administrad
         },
         type : "POST",
         dataType:"json",
-        url:"../../../controlador/ajax/ajaxRegistrarUsuario.php",
+        url:"../controlador/ajax/ajaxRegistrarUsuario.php",
         success:function(result){
             $('#modal_Crear_Usuario').modal('hide');  
-            insertar_Usuario_Tabla(Nombre,Apellido,Email,Usuario,Password,Administrador); 
+            insertar_Usuario_en_Tabla(Nombre,Apellido,Email,Usuario,Password,Administrador); 
         }})
 }
-function insertar_Usuario_Tabla(result){
+function insertar_Usuario_en_Tabla(result){
     let usuario=''
     $.each(result, function(i){
         usuario+='<tr id="'+result[i].id+'>'
@@ -38,18 +40,19 @@ function insertar_Usuario_Tabla(result){
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Usuario+'</td>'
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Password+'</td>'
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Administrador+'</td>'
-        +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="../../../controlador/accion/ac_editar_Usuario.php" class="editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
-        +'<a href="/../../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
+        +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="../controlador/accion/ac_editar_Usuario.php" class="editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
+
+        +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
         +'</tr>'
     }) 
-    $("#usuario_Registrados tbody").append(usuario)
+    $("#usuarioRegistrados tbody").append(usuario)
     insertar_Datos_Usuario_Modal()
 }
-
-function insertar_Usuario_Tabla(Nombre,Apellidos,Email,Usuario,Password,Administrador){
+//Para agregar un usuario en la tabla despues de que se crea
+function insertar_Usuario_En_Tabla(Nombre,Apellidos,Email,Usuario,Password,Administrador){
     let usuario=''
     let id='0'
-    usuario+='<tr id='+id+'>'
+    usuario +='<tr id='+id+'>'
     +'<td width="100"  style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Nombre+'</td>'
     +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Apellidos+'</td>'
     +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Email+'</td>'
@@ -57,19 +60,20 @@ function insertar_Usuario_Tabla(Nombre,Apellidos,Email,Usuario,Password,Administ
     +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Password+'</td>'
     +'<td width="10" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Administrador+'</td>'
     
-    +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="#" class="editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
-    +'<a href="../controlador/accion/act_eliminarUsuario.php?idUsuario='+id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
+    +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="#" class="Editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
+
+    +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
     +'</tr>'
-    $("#usuario_Registrados tbody").append(usuario);
+    $("#usuarioRegistrados tbody").append(usuario);
     insertar_Datos_Usuario_Modal();
 }
 function insertar_Datos_Usuario_Modal() {
-    $(".editar").on("click", function(){
+    $(".Editar").on("click", function(){
         let idUsuario=$(this).closest("tr").attr("id");
         $.ajax({
             type:'POST',
             data:{idUsuario:parseInt(idUsuario,10)},
-            url:"../../../contralador/ajax/ajaxVerUsuario_id.php",
+            url:"../contralador/ajax/ajaxVerUsuario_id.php",
             success: function(data) {
                 let usuario=JSON.parse(data)
            

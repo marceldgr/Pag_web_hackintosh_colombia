@@ -3,13 +3,13 @@ $(document).ready(function() {
 })
 
 function VerUsuarios() {
-    $.ajax({url:"../../../controlador/ajax/ajaxVerUsuario.php",
+    $.ajax({url:"controlador/ajax/ajaxVerUsuario.php",
     success: function(result){
-        agregarUsuario_tabla(JSON.parse(result))
+        agregar_Usuario_tabla(json.parse(result))
     }
     })
 }
-function agregarUsuario_tabla(result){
+function agregar_Usuario_tabla(result){
     let usuarios=' '
     $.each(result, function(i){
         usuarios +='<tr id='+result[i].id+'>'
@@ -17,21 +17,23 @@ function agregarUsuario_tabla(result){
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Apellido+'</td>'
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Email+'</td>'
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Usuario+'</td>'
+        +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Password+'</td>'
                 
-        +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="../../../controlador/accion/ac_editar_Usuario" class="editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
-        +'<a href="../../../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
+        +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href=".#" class="editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
+
+        +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
         +'</tr>'
     })
     $("#usuario_Registrados tbody").append(usuarios)
     insertar_Datos_Usuario_Modal()
 }
 function insertar_Datos_Usuario_Modal(){
-    $(".editar").on("click", function(){
-        let idUsuario=$(this).click("tr").attr("id");
+    $(".Editar").on("click", function(){
+        let idUsuario=$(this).closest("tr").attr("id");
         
         $.ajax({
             type: "POST",
-            data:{idUsuario:parseInt(idUsuario,10)},
+            data:{idUsuario: parseInt(idUsuario,10)},
             success: function(data){
                 let usuario=JSON.parse(data)
                 $("#modal_Editar_Usuario").modal("show");
