@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    VerUsuarios()
+    VerUsuario()
 })
 
-function VerUsuarios() {
+function VerUsuario() {
     $.ajax({url:"../../controlador/ajax/ajaxVerUsuario.php",
     success: function(result){
-        agregar_Usuario_tabla(json.parse(result))
+        agregar_Usuario_tabla(JSON.parse(result))
     }
     })
 }
 function agregar_Usuario_tabla(result){
-    let usuarios=' '
+    let usuario=' '
     $.each(result, function(i){
-        usuarios +='<tr id='+result[i].id+'>'
+        usuario +='<tr id='+result[i].id+'>'
         +'<td width="100"  style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Nombre+'</td>'
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Apellido+'</td>'
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Email+'</td>'
@@ -24,7 +24,7 @@ function agregar_Usuario_tabla(result){
         +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
         +'</tr>'
     })
-    $("#usuario_Registrados tbody").append(usuarios)
+    $("#usuario_Registrados tbody").append(usuario)
     insertar_Datos_Usuario_Modal()
 }
 function insertar_Datos_Usuario_Modal(){
@@ -39,7 +39,7 @@ function insertar_Datos_Usuario_Modal(){
                 $("#modal_Editar_Usuario").modal("show");
                 $("#modal_Editar_Usuario input[name='idUsuario']").val(idUsuario.idUsuario)
                 $("#modal_Editar_Usuario input[name='Nombre']").val(usuario.Nombre)
-                $("#modal_Editar_Usuario input[name='Apellidos']").val(usuario.Apellidos)
+                $("#modal_Editar_Usuario input[name='Apellidos']").val(usuario.Apellido)
                 $("#modal_Editar_Usuario input[name='Email']").val(usuario.Email)
                 $("#modal_Editar_Usuario input[name='Usuario']").val(usuario.Usuario)
                 $("#modal_Editar_Usuario input[name='Password']").val(usuario.Password)
