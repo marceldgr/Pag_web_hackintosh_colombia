@@ -37,7 +37,6 @@
             <!--"../controlador/ajax/ajaxLogin.php" method="POST" class="formulario_login" id="formulario_login"-->
 
             <div class="container_logins-registers">
-<<<<<<< HEAD
             <form action=""  class="formulario_login" id="formlg">
                     <h2>Iniciar Sesión</h2>
                     <input name="Email" type="text" id="Email_log" class="from-controlador" placeholder=" Email" >
@@ -50,18 +49,6 @@
                     </p>
                     <input type="submit" value="Iniciar Sesion">
                    <!-- <button id="btnEntrar">Entrar</button>-->
-=======
-              
-                    <form action="../controlador/accion/ac_login.php" method="POST" class="formulario_login" >                   
-                <h2>Iniciar Sesión</h2>
-                    <input name="Email" type="text" id="Email" class="from-controlador" placeholder=" Email" >
-                    <input name="Password" type="password" id="password"  class ="form-control" placeholder="Password" >
-                     <p class ="forget">
-                        ¿Has olvidado tu password?
-                        <a href="recuperar_password.html">recuperar password</a>
-                    </p>
-                    <button id="btn_entrar" class="btn btn-lg btn-primary btn-block">Iniciar Sesión</button>
->>>>>>> 159eed4193ef3bc980880d60deed445098270990
                 </form>
                 
             
@@ -82,16 +69,10 @@
     </main>
     <script src="js/librerias/jquery-3.3.1.min.js"></script>
     <script src="js/logica/login.js"></script>
-<<<<<<< HEAD
     <script src="js/script_login.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="js/librerias/jquery-ui.min.js"></script>
     <script src="js/librerias/sweetalert2.min.js"></script>
-=======
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <script src="js/librerias/sweetalert.min.js"></script>
-    
->>>>>>> 159eed4193ef3bc980880d60deed445098270990
 </body>
 
 </html>

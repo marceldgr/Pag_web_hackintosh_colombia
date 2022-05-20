@@ -28,3 +28,9 @@ function editarUsuario($usuario){
     $dao=new UsuarioDAO();
     $dao->editarUsuario($usuario);
 }
+function VerUsuario_Por_email($Email){
+    $dao=new UsuarioDAO();
+    $usuario=$dao->VerUsuario_Por_email($Email);
+    return $usuario;
+
+}
