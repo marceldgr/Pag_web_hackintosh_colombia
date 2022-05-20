@@ -10,10 +10,10 @@ function registrarUsuario(Usuario $usuario){
     $usuario=$dao->registrarUsuario($usuario);
     return $usuario;
 }
-function VerUsuarios(){
+function VerUsuario(){
     $dao=new UsuarioDAO();
-    $usuarios=$dao->VerUsuario();
-    return $usuarios;
+    $usuario=$dao->VerUsuario();
+    return $usuario;
 }
 function eliminarUsuario($idUsuario){
     $dao=new UsuarioDAO();
