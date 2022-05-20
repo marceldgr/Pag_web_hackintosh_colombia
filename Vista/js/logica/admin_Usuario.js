@@ -3,7 +3,7 @@ $(document).ready(function(){
 })
 function ajax_Ver_Usuario(){
     $.ajax({
-        url:"controlador/ajax/ajaxVerUsuario.php",
+        url:"../../controlador/ajax/ajaxVerUsuario.php",
         success:function(result){
             insertar_Usuario_en_Tabla(JSON.parse(result))
         },
@@ -23,8 +23,8 @@ function ajax_Registrar_Usuario(Nombre,Apellido,Email,Usuario,Password,Administr
                 "Administrador":Administrador
         },
         type : "POST",
-        dataType:"json",
-        url:"../controlador/ajax/ajaxRegistrarUsuario.php",
+        dataType:"JSON",
+        url:"../../controlador/ajax/ajaxRegistrarUsuario.php",
         success:function(result){
             $('#modal_Crear_Usuario').modal('hide');  
             insertar_Usuario_en_Tabla(Nombre,Apellido,Email,Usuario,Password,Administrador); 
@@ -73,9 +73,9 @@ function insertar_Datos_Usuario_Modal() {
         $.ajax({
             type:'POST',
             data:{idUsuario:parseInt(idUsuario,10)},
-            url:"../contralador/ajax/ajaxVerUsuario_id.php",
+            url:"../../contralador/ajax/ajaxVerUsuario_id.php",
             success: function(data) {
-                let usuario=JSON.parse(data)
+                let usuario=json.parse(data)
            
                 $("#modal_Editar_Usuario").modal('show');
 

@@ -10,7 +10,7 @@ function registrarUsuario(Usuario $usuario){
     $usuario=$dao->registrarUsuario($usuario);
     return $usuario;
 }
-function VerUsuarios(){
+function VerUsuario(){
     $dao=new UsuarioDAO();
     $usuario=$dao->VerUsuario();
     return $usuario;

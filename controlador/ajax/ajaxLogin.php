@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once (__DIR__."/../mdb/mdbUsuario.php");
+require_once (__DIR__."../mdb/mdbUsuario.php");
 $Email=filter_input(INPUT_POST, 'Email');
 $Password=filter_input(INPUT_POST,'Password');
 
@@ -21,9 +21,9 @@ if($user!=null){
 
 
 if($user->getAdministrador() == 1){
-    $ruta ="/../Vista/paginas/perfil_admin.php";                
+    $ruta ="../../Vista/paginas/perfil_admin.php";                
 }else{
-    $ruta="/../Vista/paginas/perfil_usuario.php";
+    $ruta="../../Vista/paginas/perfil_usuario.php";
 }
 
 $msg = "Puede iniciar satisfatoriamente";

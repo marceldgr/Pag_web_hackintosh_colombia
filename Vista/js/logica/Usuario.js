@@ -3,7 +3,7 @@ $(document).ready(function() {
 })
 
 function VerUsuarios() {
-    $.ajax({url:"controlador/ajax/ajaxVerUsuario.php",
+    $.ajax({url:"../../controlador/ajax/ajaxVerUsuario.php",
     success: function(result){
         agregar_Usuario_tabla(json.parse(result))
     }
@@ -35,7 +35,7 @@ function insertar_Datos_Usuario_Modal(){
             type: "POST",
             data:{idUsuario: parseInt(idUsuario,10)},
             success: function(data){
-                let usuario=JSON.parse(data)
+                let usuario=json.parse(data)
                 $("#modal_Editar_Usuario").modal("show");
                 $("#modal_Editar_Usuario input[name='idUsuario']").val(idUsuario.idUsuario)
                 $("#modal_Editar_Usuario input[name='Nombre']").val(usuario.Nombre)

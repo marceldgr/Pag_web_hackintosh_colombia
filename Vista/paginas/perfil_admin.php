@@ -6,7 +6,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
 	<link rel="stylesheet" href="../css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="../css/style_admin.css">
+   
  </head>
 
 <body>
@@ -52,14 +53,10 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <div class="lista">
         <h1>Administar Usuarios</h1>
       <h1><?php echo  $_SESSION['NOMBRE']?></h1>
-        <div class="table">
-            <form action="" class="table">
-                
-            </form>
-        </div>
+       
         <br>
         <hr>
-
+    </div>
                     <!-- Button trigger modal -->
                     <div class="container-fluid">
                         <div class="justify-content-center row">
@@ -81,9 +78,10 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        
+                                     
                                 </tbody>
                             </table>
+                            
                         </div>   
                     </div>
 
@@ -133,6 +131,9 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                         </div>
                                     </div>
                                  </form>
+                                 </div>
+                            </div>
+                        </div>
                             <!-- end modal -->
 
                             <!-- Modal2 -->
@@ -178,15 +179,14 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                                                 <button type="submit" class="btn btn-primary">Guardar</button>
                                                             </div>
                                                 </div>
+                                            
                                             </form>
                                         </div>
                                     </div>
-                                </div>   
+                                 </div>  
                                 <!-- end modal -->
-                            </div>
-                        </div>
-                    </div>
-    </div>
+                            
+    
    
     <script src="../js/librerias/jquery-3.3.1.min.js"></script>
     <script src="../js/logica/admin_Usuario.js"></script>
