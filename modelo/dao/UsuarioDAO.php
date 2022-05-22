@@ -94,5 +94,22 @@ class UsuarioDAO{
         return $resultado;
 
     }
+    public function VerUsuario_Por_email($Email){
+        $data_Source=new DataSource();
+
+        $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE email=:Email",array(':Email'=>$Email));
+
+        if(count($data_Table)==1){
+            $usuario=new Usuario(
+                $data_Table[0]["id"],
+                $data_Table[0]["Nombre"],
+                $data_Table[0]["Apellido"],
+                $data_Table[0]["Email"],
+                $data_Table[0]["Usuario"],
+                $data_Table[0]["Password"],
+                $data_Table[0]["Administrador"]);
+            }
+        return $usuario;
+    }
 }
 ?>
