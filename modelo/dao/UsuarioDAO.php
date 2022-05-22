@@ -4,15 +4,9 @@ require_once(__DIR__."/../entidad/Usuario.php");
 
 class UsuarioDAO{
     public function autenticarUsuario($Email,$Password){
-<<<<<<< HEAD
         //echo '  <script> alert("entro en dao"); </script>';
-=======
-        
->>>>>>> 159eed4193ef3bc980880d60deed445098270990
         $data_Source = new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Password=:Password and (Email=:Email or Usuario=:Email )",array(':Email'=>$Email,':Password'=>$Password));
-        
-       
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Password=:Password and (Email=:Email or Usuario=:Email )",array(':Email'=>$Email,':Password'=>$Password));     
         $usuario=null;
         
         if(count($data_Table)==1){
@@ -53,11 +47,11 @@ class UsuarioDAO{
 
         foreach($data_Table as $indice => $valor){
             $usuario=new usuario(
-                $data_Table[$indice]["idUsuario"],
+                $data_Table[$indice]["id"],
                 $data_Table[$indice]["Nombre"],
                 $data_Table[$indice]["Apellido"],
                 $data_Table[$indice]["Email"],
-                $data_Table[$indice]["Usuario"],
+                $data_Table[$indice]["Usuario"],  
                 $data_Table[$indice]["Password"],
                 $data_Table[$indice]["Administrador"]);
                 array_push($usuarios,$usuario);            

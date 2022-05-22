@@ -3,8 +3,10 @@ $(document).ready(function(){
 })
 function ajax_Ver_Usuario(){
     $.ajax({
+        cache: false,
         url:"../../controlador/ajax/ajaxVerUsuario.php",
         success:function(result){
+            console.log(result);
             insertar_Usuario_en_Tabla(JSON.parse(result))
         },
             error:function(xhr){
