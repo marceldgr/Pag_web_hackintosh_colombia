@@ -45,7 +45,7 @@
                     
                     <p class ="forget">
                         ¿Has olvidado tu password?
-                        <a href="recuperar_password.html">recuperar password</a>
+                        <a href="paginas/olvidocontrasena.php" >recuperar password</a>
                     </p>
                     <input type="submit" value="Iniciar Sesion">
                    <!-- <button id="btnEntrar">Entrar</button>-->
