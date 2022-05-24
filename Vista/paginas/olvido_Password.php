@@ -27,5 +27,6 @@
     <script src="../js/librerias/bootstrap.bundle.min.js"></script>
     <script src="../js/librerias/sweetalert2.js"></script>
     <script src="../js/logica/olvidocontrasena.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
