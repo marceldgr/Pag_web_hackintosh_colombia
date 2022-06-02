@@ -74,6 +74,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <th scope="col">Apellido</th>
                     <th scope="col">Email</th>
                     <th scope="col">Usuario</th>
+                    <th scope="col">Password</th>
                     <th scope="col">Administrador</th>
                     </tr>
                 </thead>

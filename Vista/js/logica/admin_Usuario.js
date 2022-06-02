@@ -47,7 +47,7 @@ function insertar_Usuario_en_Tabla(result){
         +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
         +'</tr>'
     }) 
-    $("#usuarioRegistrado tbody").append(usuario)
+    $("#usuarioRegistrados tbody").append(usuario)
     insertar_Datos_Usuario_Modal()
 }
 //Para agregar un usuario en la tabla despues de que se crea
