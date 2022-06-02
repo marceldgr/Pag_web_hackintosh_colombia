@@ -31,7 +31,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                         <ul class="nav-items">
                             <li class="nav-item"><a href="datos_admin/editarProductos.php"class="nav-link">Editar Productos</a></li>
                             <li class="nav-item"><a href="perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
-                            <li class="nav-item"><a href="datos_adimn/PerfilAdmin.html"class="nav-link">Perfil</a></li>
+                            <li class="nav-item"><a href="datos_admin/PerfilAdmin.php"class="nav-link">Perfil</a></li>
                         </ul>
                     </nav>
             </div>
