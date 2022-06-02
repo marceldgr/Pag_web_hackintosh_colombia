@@ -15,17 +15,17 @@ if($user != null){
     $mail->isSMTP();
     $mail->CharSet = 'UTF-8';
             $mail->Encoding = "base64";
-            $mail->Host = "smtp.servidor.com";
+            $mail->Host = "smtp.gmail.com";
             $mail->Port = 587;
             $mail->SMTPAuth = true;
-            $mail->Username = "usuario@servidor.com"; // Usuario servidor de correo
-            $mail->Password = "contrasena123";      // Contraseña del usuario
-            $mail->setFrom('usuario@servidor.com', 'Administrador de Hackintosh');
+            $mail->Username = "colombia.h.ackintohs.01@gmail.com"; // Usuario servidor de correo
+            $mail->Password = "Unimagdalena01";      // Contraseña del usuario
+            $mail->setFrom('colombia.h.ackintohs.01@gmail.com', 'Administrador de Hackintosh');
             $mail->addReplyTo('usuario@servidor.com', 'Administrador de Hackintosh');
             $mail->AddAddress($Email);
             $mail->Subject  = "Cambio de contraseña en su cuenta";
             $mail->IsHTML(true);
-            $body= file_get_contents("mensajecorreo.html");
+            $body= file_get_contents("/../../Vista/paginas/datos_admin/msj_Emil.html");
             $body = str_replace('%usuario%', $user->getNombre(), $body);
             $body = str_replace('%password%', $user->getPassword(), $body);
             $mail->MsgHTML($body);
