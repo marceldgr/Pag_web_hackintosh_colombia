@@ -23,7 +23,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
 
 <body>
     <header>
-        <div class="company-logo"><a class="logo" href="../../index.html">
+        <div class="company-logo"><a class="logo" href="">
             <img src="../img/logo_hack/logo3.png" alt="">  </a>
         </div>
             <div class="menu">

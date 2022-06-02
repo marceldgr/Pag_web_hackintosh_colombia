@@ -15,15 +15,16 @@ session_start();
 <body>
     <header>
         <div class="container_header">
-            <a class="logo" href="index.php">
-                <img src="../img/logo_hack/logo3.png" alt="">
+            <a class="logo" href="../perfil_admin.php">
+                <img src="../../img/logo_hack/logo3.png" alt="">
             </a>
+            
             <div class="menu">
                 <nav class="navbar"> 
                     <ul class="nav-items">
-                        <li class="nav-item"><a href="datos_admin/editarProductos.php"class="nav-link">Editar Productos</a></li>
-                        <li class="nav-item"><a href="perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
-                        <li class="nav-item"><a href="datos_admin/PerfilAdmin.php"class="nav-link">Perfil</a></li>
+                        <li class="nav-item"><a href="editarProductos.php"class="nav-link">Editar Productos</a></li>
+                        <li class="nav-item"><a href="../perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
+                        <li class="nav-item"><a href="PerfilAdmin.php"class="nav-link">Perfil</a></li>
                     </ul>
                 </nav>
 
