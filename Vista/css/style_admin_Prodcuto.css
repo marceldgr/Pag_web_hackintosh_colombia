@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400");
+
+**,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.btn_close_login{
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 50px;
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: rgb(109, 107, 107);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background, color, 300ms;
+  align-items: center;
+}
+.btn_close_login:hover {
+    background: cornflowerblue;
+    color: white;
+  }
+/*-------------------------------------------------------*/
+
+.lista h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: rgb(151, 158, 162)
+}
+.table {
+    margin-right: 50px;
+    margin-left:50px;
+   
+}
+.table tr,td,th{
+border: 1px solid black;
+font-size:12px;
+padding: 2px;
+}
+.table td {
+ text-align: center;
+}
+
+.table th{
+background-color: rgb(139, 154, 181);
+color: rgb(28, 44, 52);
+}
+.table form input{
+    width: 100%;
+    padding: px;
+    font-size: 16px;
+    background-color: rgb(99, 108, 124);
+    color: white;
+  
+}
+/*--------------------------**/
+/*lo que se copiar para el resto*/
+
+:root {
+    --primary-color: hsl(195, 4%, 20%);
+    --primary-color-alt: hsl(212, 61%, 61%);
+    --second-color: #848689;
+    --second-color-alt: rgba(7, 7, 7, 0.65);
+    --third-color: hsl(220, 36%, 28%);
+    --white-color: #fbfbfb;
+    --white-color-alt: hsl(9, 10%, 87%);
+    --fondo-color: #f5f5f5;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    width: 
+    100%;
+    height: auto;
+  }
+  .bx {
+    font-size: 2.5rem;
+  }
+  .container {
+    padding: 80px;
+  }
+  body {
+    font-family: "Raleway", sans-serif;
+    font-size: 50px;
+    background-color: var(--white-color);
+    align-items: center;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    padding: 1rem 1rem;
+  }
+  .company-logo {
+      width: 400px;
+    font-size: 2rem;
+    background: -webkit-linear-gradient(
+      120deg,
+      var(--primary-color-alt),
+      var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+  }
+  .nav-items {
+    display: flex;
+  }
+  .nav-item {
+      
+    margin: 01rem;
+  }
+  .nav-link {
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    position: relative;
+    background: -webkit-linear-gradient(
+      var(--primary-color-alt),
+      var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .nav-link::before {
+    content: "";
+    background: linear-gradient(var(--primary-color), var(--primary-color-alt));
+    width: 100%;
+    height: 0.05rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 150ms;
+  }
+  .nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .bx-menu,
+  .bx-x {
+    cursor: pointer;
+    background: -webkit-linear-gradient(
+      120deg,
+      var(--primary-color-alt),
+      var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    display: none !important;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 100px;
+      padding-bottom: 1px;
+
+    }
+    /* ================= HEADER ================ */
+    header {
+      padding: 10px; 
+      padding-bottom: 1px;
+    }
+    .navbar {
+      background-color: var(--dark-color);
+      position: absolute;
+      top: 3rem;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 500ms;
+    }
+    .show-navbar {
+      display: flex;
+      transform: scaleY(1);
+      transform-origin: top;
+      transition: transform 300ms;
+    }
+    .nav-items {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-item {
+      margin: 0.5rem 0;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    .bx-menu {
+      display: block !important;
+    }
+    .show-bx {
+      display: block !important;
+    }
+    .hide-bx {
+      display: none !important;
+    }
+  }
+  @media (min-width: 769px) {
+    header {
+      padding: 1rem;
+    }
+}
+.mostrarU img {
+  width: 60px;  
+}

@@ -92,13 +92,7 @@ session_start();
         </div>
             <!--**************************************************************-->
             
-            <hr>
             
-                <a href="../../Vista/paginas/datos_admin/tarjeta.html">
-                    <div class="btn_logins">
-                        <input type="button" class="btn_card" value="add card">
-                    </div>
-                </a>
 
         
     </div>
