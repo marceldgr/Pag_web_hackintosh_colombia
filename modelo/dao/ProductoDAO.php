@@ -1,9 +1,9 @@
 <?php
 require_once("dataSource.php");
-require_once(__DIR__."/../entidad/Usuario.php");
+require_once(__DIR__."/../entidad/Producto.php");
 
-class UsuarioDAO{
-    public function autenticarUsuario($Email,$Password){
+class ProductoDAO{
+   /* public function autenticarUsuario($Email,$Password){
         //echo '  <script> alert("entro en dao"); </script>';
         $data_Source = new DataSource();
         $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Password=:Password and (Email=:Email or Usuario=:Email )",array(':Email'=>$Email,':Password'=>$Password));     
@@ -19,16 +19,14 @@ class UsuarioDAO{
                 $data_Table[$indice]["Email"],
                 $data_Table[$indice]["Usuario"],  
                 $data_Table[$indice]["Password"],
-                $data_Table[$indice]["Img_perfil"],
-                $data_Table[$indice]["Administrador"],
-                $data_Table[$indice]["Estado"]);
+                $data_Table[$indice]["Administrador"]);
             }
         }else{
                       
         }
         return $usuario;
-    }
-    public function registrarUsuario(Usuario $usuario){
+    }*/
+    public function registrarProducto(Producto $producto){
         $data_Source= new DataSource();
         $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,:Apellido,:Email,:Usuario,:Password,:Administrador)";
 
@@ -41,7 +39,7 @@ class UsuarioDAO{
         ':Administrador'=>$usuario->getAdministrador()));
         return $resultado;
     }
-    public function VerUsuario(){
+    public function VerProductos(){
         $data_Source=new DataSource();
         $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario",NULL);
         $usuario=null;
@@ -55,38 +53,34 @@ class UsuarioDAO{
                 $data_Table[$indice]["Email"],
                 $data_Table[$indice]["Usuario"],  
                 $data_Table[$indice]["Password"],
-                $data_Table[$indice]["Img_perfil"],
-                $data_Table[$indice]["Administrador"],
-                $data_Table[$indice]["Estado"]);
+                $data_Table[$indice]["Administrador"]);
                 array_push($usuarios,$usuario);            
         }
         return $usuarios;
     }
-    public function eliminarUsuario($idUsuario){
+    public function eliminarProducto($idProducto){
         $data_Source=new DataSource();
         $stmt1 = "DELETE FROM usuario WHERE id = :idUsuario";
         $resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idUsuario'=>$idUsuario));
         return $resultado;
     }
-    public function VerUsuarios_id($idUsuario){
+    public function VerProducto_id($idProducto){
         $data_Source=new DataSource();
         $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :idUsuario",array(':idUsuario'=>$idUsuario));
         $usuario=null;
         if(count($data_Table)==1){
             $usuario=new usuario(
-                $data_Table[0]["id"],
-                $data_Table[0]["Nombre"],
-                $data_Table[0]["Apellido"],
-                $data_Table[0]["Email"],
-                $data_Table[0]["Usuario"],  
-                $data_Table[0]["Password"],
-                $data_Table[0]["Img_perfil"],
-                $data_Table[0]["Administrador"],
-                $data_Table[0]["Estado"]);
+            $data_Table[0]["id"],
+            $data_Table[0]["Nombre"],
+            $data_Table[0]["Apellido"],
+            $data_Table[0]["Email"],
+            $data_Table[0]["Usuario"],
+            $data_Table[0]["Password"],
+            $data_Table[0]["Administrador"]);
         }
         return $usuario;
     }
-    public function editarUsuario($usuario){
+    public function editarProducto($producto){
         $data_Source=new DataSource();
         $stmt1="UPDATE usuario SET Nombre=:Nombre,Apellido=:Apellido,Usuario=:Usuario,Email=:Email,Password=:Password,Administrador=:Administrador WHERE id=:idUsuario";
         $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
@@ -100,24 +94,6 @@ class UsuarioDAO{
         return $resultado;
 
     }
-    public function VerUsuario_Por_email($Email){
-        $data_Source=new DataSource();
-
-        $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE email=:Email",array(':Email'=>$Email));
-
-        if(count($data_Table)==1){
-            $usuario=new Usuario(
-                $data_Table[0]["id"],
-                $data_Table[0]["Nombre"],
-                $data_Table[0]["Apellido"],
-                $data_Table[0]["Email"],
-                $data_Table[0]["Usuario"],  
-                $data_Table[0]["Password"],
-                $data_Table[0]["Img_perfil"],
-                $data_Table[0]["Administrador"],
-                $data_Table[0]["Estado"]);
-            }
-        return $usuario;
-    }
+    
 }
 ?>
