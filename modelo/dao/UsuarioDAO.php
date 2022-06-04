@@ -38,6 +38,7 @@ class UsuarioDAO{
         ':Email'=>$usuario->getEmail(),
         ':Usuario'=>$usuario->getUsuario(),
         ':Password'=>$usuario->getPassword(),
+        ':Img_perfil'=>$usuario->getImg_perfil(),
         ':Administrador'=>$usuario->getAdministrador()));
         return $resultado;
     }
@@ -95,6 +96,7 @@ class UsuarioDAO{
         'Email'=>$usuario->getEmail(),
         'Usuario'=>$usuario->getUsuario(),
         'Password'=>$usuario->getPassword(),
+        'Img_perfil'=>$usuario->getImgPerfil(),
         'Administrador'=>$usuario->getAdministrador(),
         'idUsuario'=>$usuario->getId()));
         return $resultado;
@@ -106,7 +108,7 @@ class UsuarioDAO{
         $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE email=:Email",array(':Email'=>$Email));
 
         if(count($data_Table)==1){
-            $usuario=new Usuario(
+            $usuario=new usuario(
                 $data_Table[0]["id"],
                 $data_Table[0]["Nombre"],
                 $data_Table[0]["Apellido"],

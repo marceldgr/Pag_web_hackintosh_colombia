@@ -2,17 +2,18 @@
 
 session_start();
 require_once (__DIR__.'/../mdb/mdbProducto.php');
-$idProducto= $_SESSION['ID_Producto'];
+$idProducto= $_SESSION['idProducto'];
 $Marca= $_POST['Marca'];
 $Modelo= $_POST['Modelo'];
 $Fecha_Ingreso= $_POST['Fecha_Ingreso'];
 $Cantidad= $_POST['Cantidad'];
 $Precio= $_POST['Precio'];
 $Codigo=$_POST['Codigo'];
+$imagen= $_POST['imagen'];
 
 
 
-$Producto = new Productow ($idProducto,$Marca,$Modelo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo);
+$Producto = new Producto ($idProducto,$Marca,$Modelo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo,$idProducto);
 
 
 

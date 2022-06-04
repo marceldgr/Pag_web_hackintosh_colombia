@@ -9,8 +9,9 @@ $Fecha_Ingreso = filter_input(INPUT_POST,'Fecha_Ingreso');
 $Cantidad = filter_input(INPUT_POST,'Cantidad');
 $Precio = filter_input(INPUT_POST,'Precio');
 $Codigo = filter_input(INPUT_POST,'Codigo');
+$imagen = filter_input(INPUT_POST,'imagen');
 
-$Producto=new Producto(NULL,$Marca,$Modulo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo);
+$Producto=new Producto(NULL,$Marca,$Modulo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo,$imagen);
 $estado= Registrar_Producto($Producto);
 $msg="PRODUCTO INGREADO";
 
