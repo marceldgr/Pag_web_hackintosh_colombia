@@ -29,7 +29,7 @@ function ajax_Registrar_Producto(Marca,Modelo,Fecha_Ingreso,Cantidad,Precio,Codi
         dataType:"JSON",
         url:"../../controlador/ajax/ajax_Registrar_Producto.php",
         success:function(result){
-            $('#modal_Crear_PRODUCTO').modal('hide');  
+            $('#modal_Crear_Producto').modal('hide');  
             insertar_Producto_en_Tabla(Marca,Modelo,Fecha_Ingreso,Cantidad,Precio,Codigo); 
         }})
 }
@@ -46,54 +46,51 @@ function insertar_Producto_en_Tabla(result){
         +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+result[i].Codigo+'</td>'
         +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="../controlador/accion/ac_editar_Usuario.php" class="editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
 
-        +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
+        +'<a href="../controlador/accion/ac_Eliminar_Producto.php?idUsuario='+result[i].id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
         +'</tr>'
     }) 
-    $("#usuarioRegistrados tbody").append(usuario)
-    insertar_Datos_Usuario_Modal()
+    $("#Productos_Registrados tbody").append(producto)
+    insertar_Datos_Productos_Modal()
 }
-//Para agregar un usuario en la tabla despues de que se crea
-function insertar_Usuario_En_Tabla(Nombre,Apellido,Email,Usuario,Password,Administrador){
+//Para agregar un producto en la tabla despues de que se crea
+function insertar_Producto_En_Tabla(Marca,Modelo,Fecha_Ingreso,Cantidad,Precio,Codigo){
     let usuario=''
     let id='0'
     usuario +='<tr id='+id+'>'
-    +'<td width="100"  style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Nombre+'</td>'
-    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Apellido+'</td>'
-    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Email+'</td>'
-    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Usuario+'</td>'
-    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Password+'</td>'
-    +'<td width="10" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Administrador+'</td>'
+    +'<td width="100"  style=" border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Marca+'</td>'
+    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Modelo+'</td>'
+    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Fecha_Ingreso+'</td>'
+    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Cantidad+'</td>'
+    +'<td width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Precio+'</td>'
+    +'<td width="10" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">'+Codigo+'</td>'
     
     +'<td width="150" style="border: 1px solid #dddddd; text-align: left;padding: 8px;"><a href="#" class="Editar mr-3 btn btn-info btn-md" role="button" aria-pressed="true">Editar</a>'
 
-    +'<a href="../controlador/accion/ac_eliminar_Usuario.php?idUsuario='+id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
+    +'<a href="../controlador/accion/ac_Eliminar_Producto.php?idUsuario='+id+'" class="btn btn-danger btn-md" role="button" aria-pressed="true">Eliminar</a></td>'
     +'</tr>'
-    $("#usuarioRegistrados tbody").append(usuario);
-    insertar_Datos_Usuario_Modal();
+    $("#Productos_Registrados tbody").append(Producto);
+    insertar_Datos_Productos_Modal();
 }
-function insertar_Datos_Usuario_Modal() {
+function insertar_Datos_Productos_Modal() {
     $(".Editar").on("click", function(){
-        let idUsuario=$(this).closest("tr").attr("id");
+        let idProducto=$(this).closest("tr").attr("id");
         $.ajax({
             type:'POST',
-            data:{idUsuario:parseInt(idUsuario,10)},
-            url:"../../contralador/ajax/ajaxVerUsuario_id.php",
+            data:{idProducto:parseInt(idProducto,10)},
+            url:"../../contralador/ajax/ajax_Ver_Producto_id.php",
             success: function(data) {
-                let usuario=JSON.parse(data)
+                let producto=JSON.parse(data)
            
-                $("#modal_Editar_Usuario").modal('show');
+                $("#modal_Editar_Producto").modal('show');
 
-                $("#modal_Editar_Usuario input[name='idUsuario']").val(usuario.id)
-                $("#modal_Editar_Usuario input[name='Nombre']").val(usuario.Nombre)
-                $("#modal_Editar_Usuario input[name='Apellidos']").val(usuario.Apellido)
-                $("#modal_Editar_Usuario input[name='Email']").val(usuario.Email)
-                $("#modal_Editar_Usuario input[name='Usuario']").val(usuario.Usuario)
-                $("#modal_Editar_Usuario input[name='Password']").val(usuario.Password)
-                if(usuario.Administrador == 1){
-                    $("#modal_Editar_Usuario .rol option:eq(1)").prop('selected', true)
-                }else{
-                    $("#modal_Editar_Usuario .rol option:eq(0)").prop('selected', true)
-                }
+                $("##modal_Editar_Producto input[name='idProducto']").val(Producto.id)
+                $("#modal_Editar_Producto input[name='Marca']").val(producto.Marca)
+                $("#modal_Editar_Producto input[name='Modelo']").val(producto.Modelo)
+                $("#modal_Editar_Producto input[name='Fecha_Ingreso']").val(producto.Fecha_Ingreso)
+                $("#modal_Editar_Producto input[name='Cantidad']").val(producto.Cantidad)
+                $("#modal_Editar_Producto input[name='Precio']").val(producto.Precio)
+                $("#modal_Editar_Producto input[name='Codigo']").val(producto.Codigo)
+                
             }
         })
     })

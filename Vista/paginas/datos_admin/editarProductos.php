@@ -95,16 +95,16 @@ if(!isset($_SESSION['ID_USUARIO'])){
     </div>
 
                     <!-- Modal1 crear productos-->
-    <div class="modal fade" id="modal_Crear_PRODUCTOS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal_Crear_Productos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal_Crear_PRODUCTOS">Registrar Producto</h5>
+                    <h5 class="modal-title" id="modal_Crear_Producto">Registrar Producto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <form action="../../controlador/accion/ac_registroProductos.php" method="post">
+                    <form action="../../controlador/accion/ac_Registro_Productos.php" method="post">
                         <div class="modal-body">
                             <div class="container-fluid">
                                 <div style="padding:7px 0;" class="justify-content-center row">
@@ -179,7 +179,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                             
                             <br>
                         </div>
-                        <input hidden type="number" class="form-control" name="idUsuario">
+                        <input hidden type="number" class="form-control" name="idProducto">
                             <div class="justify-content-center row">
                                 <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -195,7 +195,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
 
     </div>
     <script src="../../js/librerias/jquery-3.3.1.min.js"></script>
-    <script src="../../js/logica/admin_Usuario.js"></script>
+    <script src="../../js/logica/admin_Productos.js"></script>
     <script src="../../js/librerias/sweetalert2.js"></script>
     <script src="../../js/librerias/bootstrap.bundle.min.js"></script>
 </body>

@@ -1,26 +1,26 @@
 <?php
 require_once(__DIR__ ."/../../modelo/dao/ProductoDAO.php");
 
-function registrarProducto(Producto $producto){
+function Registrar_Producto(Producto $producto){
     $dao =new ProductoDAO();
-    $producto=$dao->registrarProducto($producto);
+    $producto=$dao->Registrar_Producto($producto);
     return $producto;
 }
-function VerProductos(){
+function Ver_Productos(){
     $dao=new ProductoDAO();
-    $producto=$dao->VerProductos();
+    $producto=$dao->Ver_Productos();
     return $producto;
 }
-function eliminarProducto($idProducto){
-    $dao=new UsuarioDAO();
-    $dao->eliminarProducto($idProducto);
+function Eliminar_Producto($idProducto){
+    $dao=new ProductoDAO();
+    $dao->Eliminar_Producto($idProducto);
 }
-function VerProducto_id($idProducto){
-    $dao=new UsuarioDAO();
-    $producto=$dao->VerProducto_id($idProducto);
+function Ver_Producto_id($idProducto){
+    $dao=new ProductoDAO();
+    $producto=$dao->Ver_Producto_id($idProducto);
     return $producto;
 }
-function editarProducto($producto){
-    $dao=new UsuarioDAO();
-    $dao->editarProducto($producto);
+function Editar_Producto($producto){
+    $dao=new ProductoDAO();
+    $dao->Editar_Producto($producto);
 }
