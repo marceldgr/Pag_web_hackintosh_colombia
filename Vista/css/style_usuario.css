@@ -206,9 +206,9 @@ font-family: sans-serif;
 }
 
 .foto_perfil img {
-    background: rgb(172, 173, 175);
+  
     border-radius: 50%;
-    filter: opacity(40%);
+
 }
 /*---------------------------------------------------------*/
 /*datos de usuario*/
@@ -269,36 +269,6 @@ font-family: sans-serif;
 }
 
 /*imgen de la tarjeta*/
-.img_tarjeta img {
-    width: 250px;
-    margin-top: 20px;
-    margin-left: 25px;
-    align-items: center;
-    height: auto;
-}
-.tarjeta .ediatr {
-    padding: 5px 40px;
-    margin-top: 40px;
-    border-radius: 50px;
-    border: none;
-    font-size: 14px;
-    background: rgb(94, 124, 163);
-    color: white;
-    cursor: pointer;
-    outline: none;
-}
-.tarjeta .quitar {
-    padding: 5px 40px;
-    margin-top: 40px;
-    margin-left: 10px;
-    border-radius: 50px;
-    border: none;
-    font-size: 14px;
-    background: rgb(170, 60, 60);
-    color: white;
-    cursor: pointer;
-    outline: none;
-}
 
 
 /*responsid*/

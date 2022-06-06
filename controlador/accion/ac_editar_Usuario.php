@@ -8,11 +8,13 @@ $Apellido= $_POST['APELLIDO'];
 $Email= $_POST['EMAIL'];
 $Usuario= $_POST['USUARIO'];
 $Password= $_POST['PASSWORD'];
+$Img_perfil=$_POST['IMG_PERFIL'];
 $Administrador=0;
+$Estado=$_POST['Estado'];
 
 
 
-$usuario = new Usuario($idUsuario,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador);
+$usuario = new usuario($idUsuario,$Nombre,$Apellido,$Email,$Usuario,$Password,$Img_perfil,$Administrador,$Estado);
 
 
 

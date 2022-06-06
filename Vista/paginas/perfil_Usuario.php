@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@ session_start();
                         <li><a href="https://dortania.github.io/OpenCore-Install-Guide/">GUIA DORTANIA</a></li>
                         <li><a href="mac_os.html">Mac Os</a></li>
                         <li><a href="Descargas.html">DESCARGAS</a></li>
-                        <li><a href="productos.php">PRODUCTOS</a></li>
+                   
                         <li><a href="shop.html">SHOP</a></li>
                         <li><a href="Contactos.html">CONTACTOS</a></li>
                         <li><a href="/pica_fija/index_pica_fija.html">GAME</a></li>
@@ -92,13 +92,7 @@ session_start();
         </div>
             <!--**************************************************************-->
             
-            <hr>
             
-                <a href="../../Vista/paginas/datos_admin/tarjeta.html">
-                    <div class="btn_logins">
-                        <input type="button" class="btn_card" value="add card">
-                    </div>
-                </a>
 
         
     </div>

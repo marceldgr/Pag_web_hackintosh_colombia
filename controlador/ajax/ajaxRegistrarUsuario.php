@@ -8,7 +8,9 @@ $Apellido = filter_input(INPUT_POST,'Apellido');
 $Email = filter_input(INPUT_POST,'Email');
 $Usuario = filter_input(INPUT_POST,'Usuario');
 $Password = filter_input(INPUT_POST,'Password');
+$Img_perfil= filter_input(INPUT_POST,'Img_perfil');
 $Administrador = filter_input(INPUT_POST,'Administrador');
+$Estado = filter_input(INPUT_POST,'Estado');
 
 $user = VerUsuario_Por_email($Email,$Usuario);
 if($user==null){

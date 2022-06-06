@@ -3,95 +3,77 @@ require_once("dataSource.php");
 require_once(__DIR__."/../entidad/Producto.php");
 
 class ProductoDAO{
-   /* public function autenticarUsuario($Email,$Password){
-        //echo '  <script> alert("entro en dao"); </script>';
-        $data_Source = new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Password=:Password and (Email=:Email or Usuario=:Email )",array(':Email'=>$Email,':Password'=>$Password));     
-        $usuario=null;
-        
-        if(count($data_Table)==1){
-            foreach($data_Table as $indice=>$valor){
-
-            $usuario= new usuario(
-                $data_Table[$indice]["id"],
-                $data_Table[$indice]["Nombre"],
-                $data_Table[$indice]["Apellido"],
-                $data_Table[$indice]["Email"],
-                $data_Table[$indice]["Usuario"],  
-                $data_Table[$indice]["Password"],
-                $data_Table[$indice]["Administrador"]);
-            }
-        }else{
-                      
-        }
-        return $usuario;
-    }*/
-    public function registrarProducto(Producto $producto){
+   
+    public function Registrar_Producto(Producto $producto){
         $data_Source= new DataSource();
-        $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,:Apellido,:Email,:Usuario,:Password,:Administrador)";
+        $stmt1="INSERT INTO Producto VALUES (NULL,:Marca,:Modelo,:Fecha_Ingreso,:Cantidad,:Precio,:Codigo,:imagen)";
 
-        $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
-        ':Nombre'=>$usuario->getNombre(),
-        ':Apellido'=>$usuario->getApellido(),
-        ':Email'=>$usuario->getEmail(),
-        ':Usuario'=>$usuario->getUsuario(),
-        ':Password'=>$usuario->getPassword(),
-        ':Administrador'=>$usuario->getAdministrador()));
-        return $resultado;
+        $Resultado=$data_Source->ejecutarActulizacion($stmt1, array(
+        ':Marca'=>$producto->getMarca(),  
+        ':Modelo'=>$producto->getModelo(), 
+        ':Fecha_Ingreso'=>$producto->getFecha_Ingreso(),
+        ':Cantidad'=>$producto->getCantidad(),
+        ':Precio'=>$producto->getPrecio(),
+        ':Codigo'=>$producto->getCodigo(),
+        ':imagen'=>$producto->getimagen()));
+        return $Resultado;
     }
-    public function VerProductos(){
+    public function Ver_Productos(){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario",NULL);
-        $usuario=null;
-        $usuarios=array();
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM Productos",NULL);
+        $producto=null;
+        $productos=array();
 
         foreach($data_Table as $indice => $valor){
-            $usuario=new usuario(
+            $producto=new Producto(
                 $data_Table[$indice]["id"],
-                $data_Table[$indice]["Nombre"],
-                $data_Table[$indice]["Apellido"],
-                $data_Table[$indice]["Email"],
-                $data_Table[$indice]["Usuario"],  
-                $data_Table[$indice]["Password"],
-                $data_Table[$indice]["Administrador"]);
-                array_push($usuarios,$usuario);            
+                $data_Table[$indice]["Marca"],
+                $data_Table[$indice]["Modelo"],
+                $data_Table[$indice]["Fecha_Ingreso"],
+                $data_Table[$indice]["Cantidad"],  
+                $data_Table[$indice]["Precio"],
+                $data_Table[$indice]["Codigo"],
+                $data_Table[$indice]["imagen"]);
+                array_push($productos,$producto);            
         }
-        return $usuarios;
+        return $producto;
     }
-    public function eliminarProducto($idProducto){
+    public function eliminar_Producto($idProducto){
         $data_Source=new DataSource();
-        $stmt1 = "DELETE FROM usuario WHERE id = :idUsuario";
-        $resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idUsuario'=>$idUsuario));
-        return $resultado;
+        $stmt1 = "DELETE FROM Productos WHERE idProducto = :idProducto";
+        $Resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idProducto'=>$idProducto));
+        return $Resultado;
     }
-    public function VerProducto_id($idProducto){
+    public function Ver_Producto_id($idProducto){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :idUsuario",array(':idUsuario'=>$idUsuario));
-        $usuario=null;
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM Productos WHERE idProducto = :idProducto",array(':idProducto'=>$idProducto));
+        $Producto=null;
         if(count($data_Table)==1){
-            $usuario=new usuario(
-            $data_Table[0]["id"],
-            $data_Table[0]["Nombre"],
-            $data_Table[0]["Apellido"],
-            $data_Table[0]["Email"],
-            $data_Table[0]["Usuario"],
-            $data_Table[0]["Password"],
-            $data_Table[0]["Administrador"]);
+            $Producto=new Producto(
+                $data_Table[0]["idProducto"],
+                $data_Table[0]["Marca"],
+                $data_Table[0]["Modelo"],
+                $data_Table[0]["Fecha_Ingreso"],
+                $data_Table[0]["Cantidad"],  
+                $data_Table[0]["Precio"],
+                $data_Table[0]["Codigo"],
+                $data_Table[0]["imagen"]);
         }
-        return $usuario;
+        return $Producto;
     }
-    public function editarProducto($producto){
+    public function Editar_Producto($producto){
         $data_Source=new DataSource();
-        $stmt1="UPDATE usuario SET Nombre=:Nombre,Apellido=:Apellido,Usuario=:Usuario,Email=:Email,Password=:Password,Administrador=:Administrador WHERE id=:idUsuario";
-        $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
-        'Nombre'=>$usuario->getNombre(),
-        'Apellido'=>$usuario->getApellido(),
-        'Email'=>$usuario->getEmail(),
-        'Usuario'=>$usuario->getUsuario(),
-        'Password'=>$usuario->getPassword(),
-        'Administrador'=>$usuario->getAdministrador(),
-        'idUsuario'=>$usuario->getId()));
-        return $resultado;
+        $stmt1="UPDATE Productos SET Marca=:Marca,Modelo=:Modelo,Fecha_Ingreso=:Fecha_Ingreso,Cantidad=:Cantidad,Precio=:Precio,Codigo=:Codigo,imagen=:imagen
+        WHERE id=:idProducto";
+        $Resultado=$data_Source->ejecutarActulizacion($stmt1, array(
+            ':Marca'=>$producto->getMarca(),  
+            ':Modelo'=>$producto->getModelo(), 
+            ':Fecha_Ingreso'=>$producto->getFecha_Ingreso(),
+            ':Cantidad'=>$producto->getCantidad(),
+            ':Precio'=>$producto->getPrecio(),
+            ':Codigo'=>$producto->getCodigo(),
+            'imagen'=>$producto->getimagen()));
+        return $Resultado;
 
     }
     

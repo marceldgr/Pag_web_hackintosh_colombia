@@ -17,7 +17,7 @@
       <ul class="nav-items">
         <li class="nav-item"><a href="../paginas/mac_os.html" class="nav-link">Mac os</a></li>
         <li class="nav-item"><a href="../paginas/Descargas.html" class="nav-link">DESCARGAS</a></li>
-        <li class="nav-item"><a href="../paginas/productos.php" class="nav-link">PRODUCTOS</a></li>
+       
         <li class="nav-item"><a href="../paginas/SHOP.php" class="nav-link">SHOP</a></li>
         <li class="nav-item"><a href="../paginas/Contactos.html" class="nav-link">CONTACTOS</a></li>
         <li class="nav-item"><a href="../../pica_fija/index_pica_fija.html" class="nav-link">JUEGO</a></li>

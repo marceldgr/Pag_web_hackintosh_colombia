@@ -1,70 +1,79 @@
 <?php
-class Usuario{
-    public $id;
-    public $Nombre;
-    public $Apellido;
-    public $Email;
-    public $Usuario;
-    public $Password;
-    public $Administrador;
+class Producto{
+    public $idProducto;
+    public $Marca;
+    public $Modelo;
+    public $Fecha_Ingreso;
+    public $Cantidad;
+    public $Precio;
+    public $Codigo;
+    public $imagen;
 	/**
 	 */
-	public function __construct($id,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador) {
-        $this->idproducto=$id;
-        $this->Nombre=$Nombre;
-        $this->Descripcion=$Descripcion;
-        $this->Email=$Email;
-        $this->Imagen=$Imagen;
-        $this->Password=$Password;
-        $this->Administrador=$Administrador;
+	public function __construct($idProducto,$Marca,$Modelo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo,$imagen) {
+        $this->idproducto=$idProducto;
+        $this->Marca=$Marca;
+        $this->Modelo=$Modelo;
+        $this->Fecha_Ingreso=$Fecha_Ingreso;
+        $this->Cantidad=$Cantidad;
+        $this->Precio=$Precio;
+        $this->Codigo=$Codigo;
+        $this->imagen=$imagen;
+        
 	}
-    public function getId(){
-        return $this->id;
+    public function getIdProducto(){
+        return $this->IdProducto;
     }
-    public function getNombre(){
-        return $this->Nombre;
+    public function getMarca(){
+        return $this->Marca;
     }
-    public function getApellido(){
-        return $this->Apellido;
+    public function getModelo(){
+        return $this->Modelo;
     }
-    public function getEmail(){
-        return $this->Email;
+    public function getFecha_Ingreso(){
+        return $this->Fecha_Ingreso;
     }
-    public function getUsuario(){
-        return $this->Usuario;
+    public function getCantidad(){
+        return $this->Cantidad;
     }
     
-    public function getPassword(){
-        return $this->Password;
+    public function getPrecio(){
+        return $this->Precio;
     }
-    public function getAdministrador(){
-        return $this->Administrador;
+    public function getCodigo(){
+        return $this->Codigo;
     }
-    public function setId($id){
-        $this->id = $id;
+    public function getimagen(){
+        return $this->imagen;
+    }
+    public function setId($idProducto){
+        $this->idProducto = $idProducto;
         return $this;
     }
-    public function setNombre($Nombre){
-        $this->nombre = $Nombre;
+    public function setMarca($Marca){
+        $this->Marca = $Marca;
         return $this;
     }
-    public function setApellidos($Apellidos){
-        $this->Apellidos = $Apellidos;
+    public function setModelo($Modelo){
+        $this->Modelo = $Modelo;
     }
-    public function setUsuario($Usuario){
-        $this->Usuario=$Usuario;
+    public function setFecha_Ingreso($Fecha_Ingreso){
+        $this->Fecha_Ingreso=$Fecha_Ingreso;
         return $this;
     }
-    public function setEmail($Email){
-        $this->Email=$Email;
+    public function setCantidad($Cantidad){
+        $this->Cantidad=$Cantidad;
         return $this;
     }
-    public function setPassword($Password){
-        $this->Password=$Password;
+    public function setPrecio($Precio){
+        $this->Precio=$Precio;
         return $this;
     }
-    public function setAdministrador($Administrador){
-        $this->Administrador=$Administrador;
+    public function setCodigo($Codigo){
+        $this->Codigo=$Codigo;
         return $this;
+    }
+    public function setimagen($imagen){
+        $this->imagen=$imagen;
     }
 }

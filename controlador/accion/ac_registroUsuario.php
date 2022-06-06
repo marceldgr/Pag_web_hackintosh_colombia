@@ -8,15 +8,18 @@ $Apellido=$_POST['Apellido'];
 $Email=$_POST['Email'];
 $Usuario=$_POST['Usuario'];
 $Password=$_POST['Password'];
+$Img_perfil=$_POST['Img_perfil'];
 $Administrador=$_POST['Administrador'];
+$Estado=$_POST['Estado'];
+
 
 if(isset($_POST['Administrador'])){
-    $Usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,1);
+    $Usuario= new usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,$Img_perfil,1,$Estado);
     registrarUsuario($Usuario);
     header("location:../../Vista/paginas/perfil_admin.php"); 
 
 } else{
-    $Usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,0);
+    $Usuario= new usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,$Img_perfil,0,$Estado);
     $registro=registrarUsuario($Usuario);
    
    
