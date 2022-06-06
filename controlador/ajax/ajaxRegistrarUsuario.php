@@ -10,9 +10,12 @@ $Usuario = filter_input(INPUT_POST,'Usuario');
 $Password = filter_input(INPUT_POST,'Password');
 $Administrador = filter_input(INPUT_POST,'Administrador');
 
-$usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador);
-$estado= registrarUsuario($usuario);
-$msg="RESGISTRADO EL USUARIO";
+$user = VerUsuario_Por_email($Email,$Usuario);
+if($user==null){
+    $usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador);
+    $estado= registrarUsuario($usuario);
+    $msg="RESGISTRADO EL USUARIO";
+}
 
 $result=[
     'estado'=>$estado,

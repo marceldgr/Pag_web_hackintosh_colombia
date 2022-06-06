@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    
+    var dimg=document.getElementById("img_perfil");
+            console.log(dimg.src);
   
 });
 $(document).on("click","#img_perfil",function(){
@@ -28,7 +29,8 @@ function subir_fichero(){
             console.log(response);
             var dimg=document.getElementById("img_perfil");
             console.log(dimg.src);
-            dimg.src="../img/img_perfil_usuarios/"+response;
+            //dimg.src="../img/img_perfil_usuarios/"+response;
+            dimg.src=response;
             console.log(dimg.src);
             Swal.fire({
                 text: "perfil actualizado",

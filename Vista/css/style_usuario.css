@@ -530,3 +530,6 @@ font-family: sans-serif;
     background: rgb(5, 37, 96);
     color: white;
   }
+  #nueva_imagen{
+    visibility: hidden;
+  }

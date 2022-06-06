@@ -69,7 +69,7 @@ session_start();
         <div class="foto_perfil">
             <h2><?php echo  $_SESSION['NOMBRE']?></h2>
             <div class="box_img_user" >
-                <img src="../img/persona/usurio.png" id="img_perfil">
+                <img src=<?php echo "../img/img_perfil_usuarios/".$_SESSION['FOTO']?> id="img_perfil">
                 <form id="frm_foto" action="post" enctype="multipart/form-data" action="#">
                     <input type="file" id="nueva_foto" name="nueva_foto">
                 </form>

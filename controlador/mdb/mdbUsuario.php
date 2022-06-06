@@ -34,3 +34,13 @@ function VerUsuario_Por_email($Email){
     return $usuario;
 
 }
+function Validar_usuario($Email,$user){
+    $dao=new UsuarioDAO();
+    $usuario=$dao->Validar_usuario($Email,$user);
+    return $usuario;
+
+}
+function Actualizar_foto($id_usuario,$img){
+    $dao=new UsuarioDAO();
+    $dao->Actualizar_foto($id_usuario,$img);
+}

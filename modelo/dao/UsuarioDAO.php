@@ -119,5 +119,35 @@ class UsuarioDAO{
             }
         return $usuario;
     }
+    public function Actualizar_foto($id_usuario,$img){
+        $data_Source=new DataSource();
+        $stmt1="UPDATE usuario SET Img_perfil=:imgperfil WHERE id=:idUsuario";
+        $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
+        'imgperfil'=>$img,
+        'idUsuario'=>$id_usuario));
+        return $resultado;
+
+    }
+
+    
+    public function Validar_usuario($Email,$user){
+        $data_Source=new DataSource();
+        $usuario=null;
+        $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Email=:Email or Usuario=:user ",array(':Email'=>$Email,':user'=>$user));
+
+        if(count($data_Table)==1){
+            $usuario=new Usuario(
+                $data_Table[0]["id"],
+                $data_Table[0]["Nombre"],
+                $data_Table[0]["Apellido"],
+                $data_Table[0]["Email"],
+                $data_Table[0]["Usuario"],  
+                $data_Table[0]["Password"],
+                $data_Table[0]["Img_perfil"],
+                $data_Table[0]["Administrador"],
+                $data_Table[0]["Estado"]);
+            }
+        return $usuario;
+    }
 }
 ?>
