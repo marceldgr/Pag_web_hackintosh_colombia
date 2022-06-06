@@ -36,7 +36,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <h1>
                         <a href="perfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1>
                 <div class="fotoPefil">
-                    <a class="mostrarU" href="Vista/Login.php">
+                    <a class="mostrarU" href="">
                         <img src="../../img/logo_hack/logo2.png" alt="fotoPefil">
                     </a>
                 </div>
@@ -68,7 +68,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
         <div class="table">
         <div class="container-fluid">
         <div class="justify-content-center row">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_PRODUCTOS">CREAR PRODUCTO</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Producto">CREAR PRODUCTO</button>
         </div>                 
             <br>               
      </div>                   
@@ -95,7 +95,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
     </div>
 
                     <!-- Modal1 crear productos-->
-    <div class="modal fade" id="modal_Crear_Productos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal_Crear_Producto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,7 +104,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <form action="../../controlador/accion/ac_Registro_Productos.php" method="post">
+                    <form action="../../../controlador/accion/ac_Registro_Productos.php" method="post">
                         <div class="modal-body">
                             <div class="container-fluid">
                                 <div style="padding:7px 0;" class="justify-content-center row">

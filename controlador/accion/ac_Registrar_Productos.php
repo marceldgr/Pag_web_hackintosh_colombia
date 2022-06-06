@@ -9,14 +9,15 @@ $Fecha_Ingreso=$_POST['Fecha_Ingreso'];
 $Cantidad=$_POST['Cantidad'];
 $Precio=$_POST['Precio'];
 $Codigo=$_POST['Codigo'];
+$imagen=$_POST['imagen'];
 
 if(isset($_POST['codigo'])){
-    $Productos=new Producto(NULL,$Marca,$Modelo,$Fecha_Codigo,$Cantidad,$Precio,$Codigo,1);
+    $Productos=new Producto(NULL,$Marca,$Modelo,$Fecha_Codigo,$Cantidad,$Precio,$Codigo,$imagen);
     Registrar_Producto($Productos);
     header("location:../../Vista/paginas/datos_admin/editarProductos.php"); 
 
 } else{
-    $Productos=new Producto(NULL,$Marca,$Modelo,$Fecha_Codigo,$Cantidad,$Precio,$Codigo,0);
+    $Productos=new Producto(NULL,$Marca,$Modelo,$Fecha_Codigo,$Cantidad,$Precio,$Codigo,$imagen);
     $Registro=Registrar_Producto($Productos);
    
    

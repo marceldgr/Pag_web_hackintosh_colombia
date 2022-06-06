@@ -51,7 +51,7 @@ padding: 2px;
 
 .table th{
 background-color: rgb(139, 154, 181);
-color: rgb(28, 44, 52);
+color: rgb(51, 53, 54);
 }
 .table form input{
     width: 100%;
@@ -65,11 +65,11 @@ color: rgb(28, 44, 52);
 /*lo que se copiar para el resto*/
 
 :root {
-    --primary-color: hsl(195, 4%, 20%);
-    --primary-color-alt: hsl(212, 61%, 61%);
+    --primary-color: hsl(193, 7%, 74%);
+    --primary-color-alt: hsl(212, 74%, 30%);
     --second-color: #848689;
     --second-color-alt: rgba(7, 7, 7, 0.65);
-    --third-color: hsl(220, 36%, 28%);
+    --third-color: hsl(222, 11%, 70%);
     --white-color: #fbfbfb;
     --white-color-alt: hsl(9, 10%, 87%);
     --fondo-color: #f5f5f5;

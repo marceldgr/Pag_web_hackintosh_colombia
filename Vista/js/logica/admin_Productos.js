@@ -4,7 +4,7 @@ $(document).ready(function(){
 function ajax_Ver_Producto(){
     $.ajax({
         cache: false,
-        url:"../../controlador/ajax/ajax_Ver_Producto.php",
+        url:"./../../../controlador/ajax/ajax_Ver_Producto.php",
         success:function(result){
             console.log(result);
             insertar_Producto_en_Tabla(JSON.parse(result))
