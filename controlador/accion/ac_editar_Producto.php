@@ -13,7 +13,7 @@ $imagen= $_POST['imagen'];
 
 
 
-$Producto = new Producto ($idProducto,$Marca,$Modelo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo,$idProducto);
+$Producto = new Producto ($idProducto,$Marca,$Modelo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo,$imagen);
 
 
 

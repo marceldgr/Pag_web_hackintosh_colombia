@@ -36,7 +36,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     </nav>
             </div>
                 <div class="fotoPefil">
-                    <a class="mostrarU" href="Vista/Login.php">
+                    <a class="mostrarU" href="">
                         <img src="../img/logo_hack/logo2.png" alt="fotoPefil">
                     </a>
                 </div>

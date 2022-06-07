@@ -14,7 +14,7 @@ $Estado = filter_input(INPUT_POST,'Estado');
 
 $user = VerUsuario_Por_email($Email,$Usuario);
 if($user==null){
-    $usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,$Administrador);
+    $usuario=new Usuario(NULL,$Nombre,$Apellido,$Email,$Usuario,$Password,$Img_perfil,$Administrador,$Estado);
     $estado= registrarUsuario($usuario);
     $msg="RESGISTRADO EL USUARIO";
 }

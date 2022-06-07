@@ -23,126 +23,114 @@ if(!isset($_SESSION['ID_USUARIO'])){
 
 <body>
     <header>
-       
             <div class="company-logo"><a class="logo" href="../pefil_admin.php">
-                <img src="../../img/logo_hack/logo3.png" alt="">
-                 </a>
-                </div>
-            <nav class="navbar">
+                <img src="../../img/logo_hack/logo3.png" alt=""></a>
+            </div>
+            <div class="menu">
+                <nav class="navbar">
                     <ul class="nav-items">
                         <li class="nav-item"><a href="editarProductos.php"class="nav-link">Editar Productos</a></li>
                         <li class="nav-item"><a href="../perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
                     </ul>
-                    <h1>
-                        <a href="perfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1>
-                <div class="fotoPefil">
+                    <h1><a href="perfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1> 
+                    <div class="fotoPefil">
                     <a class="mostrarU" href="">
                         <img src="../../img/logo_hack/logo2.png" alt="fotoPefil">
                     </a>
-                </div>
-                
-                        <div>
-                
-                    
+                    </div>
                     <div class="header_registro">
                         <a href="../../login.php">
                             <div class="btn_cerrar">
                                 <input type="button" class="btn_close_login" value="Salir">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                </nav>
-               
-                <div class="menu-toggle">
-                     <i class="bx bx-menu"></i>
-                     <i class="bx bx-x"></i>
-               
-            
+                            </div></a>
+                    </div> 
                     
-    </header>
-   
+                </nav>    
+            </div>
+    </header>        
+    
     <hr>
-    <div class="lista">
-        <h1>Datos de Productos</h1>
-        <div class="table">
+    <div class="lista"> <h1>Datos de Productos</h1></div>
+      
+       <!--crear el boton productos-->
         <div class="container-fluid">
-        <div class="justify-content-center row">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Producto">CREAR PRODUCTO</button>
-        </div>                 
+            <div class="justify-content-center row">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Producto">CREAR PRODUCTO</button>
+            </div>                 
             <br>               
-     </div>                   
+        </div>                   
                    
-    <div class="container-fluid">
-        <div class="justify-content-center row">
-            <table class="table" id="Producto_Registrado">
-                <thead>
-                    <tr>
-                    <th scope="col">MARCA</th>
-                    <th scope="col">MODELO</th>
-                    <th scope="col">FECHA DE INGRESO</th>
-                    <th scope="col">CANTIDAD DISPONIBLE</th>
-                    <th scope="col">PRECIO</th>
-                    <th scope="col">CODIGO</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="container-fluid">
+            <div class="justify-content-center row">
+                 <table class="table" id="Producto_Registrado">
+                    <thead>
+                        <tr>
+                        <th scope="col">MARCA</th>
+                        <th scope="col">MODELO</th>
+                        <th scope="col">FECHA DE INGRESO</th>
+                        <th scope="col">CANTIDAD DISPONIBLE</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">CODIGO</th>
+                        <th scope="col">Imagen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
             
-        </div>   
-    </div>
+            </div>   
+        </div>
 
                     <!-- Modal1 crear productos-->
-    <div class="modal fade" id="modal_Crear_Producto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal_Crear_Producto">Registrar Producto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                    <form action="../../../controlador/accion/ac_Registro_Productos.php" method="post">
-                        <div class="modal-body">
-                            <div class="container-fluid">
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Marca" placeholder="Marca" type="text" class="form-control" name="Marca"></div>
-                                </div>
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Modelo" placeholder="Modelo" type="text" class="form-control" name="Modelo"></div>
-                                </div>
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Fecha_Ingreso" placeholder="Fecha_Ingreso" type="datetime" class="form-control" name="Fecha_Ingreso"></div>
-                                </div>
-                                
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Cantidad" placeholder="Cantidad" type="text" class="form-control" name="Cantidad"></div>
-                                </div>
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Precio" placeholder="Precio" type="integer" class="form-control" name="Precio"></div>
-                                </div>
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="codigo" placeholder="Codigo" type="integer" class="form-control" name="Codigo"></div>
-                                </div>
-                                
-                                <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8">
-                                        
+        <div class="modal fade" id="modal_Crear_Producto" tabindex="-1" role="dialog"       aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal_Crear_Producto">Registrar Producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                        <form action="../../../controlador/accion/ac_Registro_Productos.php" method="post">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8"><input id="Marca" placeholder="Marca" type="text" class="form-control" name="Marca"></div>
+                                    </div>
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8"><input id="Modelo" placeholder="Modelo" type="text" class="form-control" name="Modelo"></div>
+                                    </div>
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8"><input id="Fecha_Ingreso" placeholder="Fecha_Ingreso" type="datetime" class="form-control" name="Fecha_Ingreso"></div>
+                                    </div>
+                                    
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8"><input id="Cantidad" placeholder="Cantidad" type="text" class="form-control" name="Cantidad"></div>
+                                    </div>
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8"><input id="Precio" placeholder="Precio" type="integer" class="form-control" name="Precio"></div>
+                                    </div>
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8"><input id="codigo" placeholder="Codigo" type="integer" class="form-control" name="Codigo"></div>
+                                    </div>
+                                    
+                                    <div style="padding:7px 0;" class="justify-content-center row">
+                                    <div class="col-md-8">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="justify-content-center row">
+                                        <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary" id="crear">Ingresar</button>
                                     </div>
                                 </div>
-
-                                <div class="justify-content-center row">
-                                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" id="crear">Ingresar</button>
-                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                </form>
-                </div>
-        </div>
-    </div>
+         </div>
                             <!-- end modal -->
 
                             <!-- Modal2 editar productos -->
