@@ -38,7 +38,7 @@ class UsuarioDAO{
         ':Email'=>$usuario->getEmail(),
         ':Usuario'=>$usuario->getUsuario(),
         ':Password'=>$usuario->getPassword(),
-        ':Img_perfil'=>$usuario->getImg_perfil(),
+       
         ':Administrador'=>$usuario->getAdministrador()));
         return $resultado;
     }
@@ -96,7 +96,6 @@ class UsuarioDAO{
         'Email'=>$usuario->getEmail(),
         'Usuario'=>$usuario->getUsuario(),
         'Password'=>$usuario->getPassword(),
-        'Img_perfil'=>$usuario->getImgPerfil(),
         'Administrador'=>$usuario->getAdministrador(),
         'idUsuario'=>$usuario->getId()));
         return $resultado;
