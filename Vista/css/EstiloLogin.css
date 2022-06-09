@@ -31,13 +31,13 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-signin input[type="Email"] {
   margin-top: 10px;
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+.form-signin input[type="Password"] {
 	margin-top: 10px;
 	margin-bottom: 10px;
   border-top-left-radius: 0;

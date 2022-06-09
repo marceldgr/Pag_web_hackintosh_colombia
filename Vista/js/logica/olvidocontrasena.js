@@ -2,7 +2,7 @@
 //Aqui es donde usará jQuery
 $(document).ready(function(){
     id=null;
-    $(document).on('click', '#btnEnviar', function(){
+    $(document).on('click', '#btn_Enviar', function(){
 
         Email=$("#Email").val();
      
@@ -19,7 +19,7 @@ $(document).ready(function(){
         }
 
     });
-    $(document).on('click', '#btnCancelar', function(){
+    $(document).on('click', '#btn_Cancelar', function(){
         $(location).attr('href',"Login.php");
     });
   });
