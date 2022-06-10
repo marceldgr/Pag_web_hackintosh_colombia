@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
     <div class="company-logo"><a class="logo" href="../../index.html">
         <img src="../img/logo_hack/logo3.png" alt="">
     </a>
+  
   </div>
     <nav class="navbar">
       <ul class="nav-items">
@@ -29,6 +31,7 @@
       <i class="bx bx-x"></i>
     </div>
   </header>
+<hr>
   <main>
     <!-- HOME SECTION -->
     <section class="container section-1">

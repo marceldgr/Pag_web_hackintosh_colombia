@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>perfil de usuario</title>
-    <link rel="stylesheet" href="../../css/style_pefil_admin.css">
+    <link rel="stylesheet" href="../../css/style_perfil_admin.css">
 </head>
 
 <body>
