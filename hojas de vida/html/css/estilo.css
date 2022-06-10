@@ -23,6 +23,9 @@ body {
   grid-template-columns: 1fr 2fr;
   box-shadow: 0 35px 55px rgba(0, 0, 0, 2);
 }
+.container img{
+  width: 300px;
+}
 .container .left_Side {
   position: relative;
   background: #cbcdcf;

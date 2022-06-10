@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olvidado_Password</title>
-    <link rel="stylesheet" href="../../Vista/css/bootstrap.css">
-    <link rel="stylesheet" href="../../Vista/css/booststrap-grid.min.css">
-    <link rel="stylesheet" href="../../Vista/css/booststrap-reboot.min.css">
-    <link rel="stylesheet" href="../../Vista/css/EstiloLogin.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/EstiloLogin.css">
 </head>
 
 <body class ="text center">

@@ -22,8 +22,9 @@ header {
 }
 
 .container_header {
-    max-width: 1500px;
+    max-width: 1200px;
     height: 100%;
+    padding-bottom: 40px;
     margin: auto;
     padding: 30px;
     padding-top: 70px;
@@ -42,7 +43,7 @@ header {
 }
 
 .menu nav ul li a {
-    font-size: 16px;
+    font-size: 30px;
     text-decoration: none;
     color: #000;
     transition: opacity 320ms;
@@ -55,6 +56,9 @@ header {
 /*imagenes  del logo */
 .logo img {
     width: 250px;
+
+    padding: 1px 15px;
+    
 }
 .mostrarU img {
   width: 60px;  
@@ -83,11 +87,36 @@ header {
 /*-----------------------------------------------*/
 /*baner de editar*/
 .cuerpo1{
-margin: 10px;
-padding: 10px;
+ margin-top: 40px;
+margin: 0;
+padding: 0;
 box-sizing: border-box;
 font-family: sans-serif;
+padding: 50px;
+position: relative;
 
+}
+.CUERPOS{
+  grid-template-columns: 1fr 2fr;
+  display: grid;
+  max-width: 1100px;
+   height: 100%;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+    align-items: center;
+
+  
+}
+.container_admin_img img{
+  width: 80%;
+  position: relative;
+  margin-left: 40%;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+  align-items: center;
+ 
+  justify-content: space-between;
+ 
 }
 .containerEditar {
     float: left;
@@ -190,7 +219,9 @@ font-family: sans-serif;
 /*------------------------------------------------------*/
 /*imagende de foto de perfil*/
 
-
+.foto_perfil{
+  width: 450%;
+}
 .foto_perfil h2 {
     margin-top: 20px;
     font-size: 40px;
@@ -203,12 +234,10 @@ font-family: sans-serif;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    margin-top: 20px;
 }
 
 .foto_perfil img {
-  
-    border-radius: 50%;
+      border-radius: 50%;
 
 }
 /*---------------------------------------------------------*/

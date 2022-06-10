@@ -42,12 +42,13 @@ session_start();
             </div>
         </div>
     </header>
-    <hr>
+   <br>
     <br>
+     <hr>
     <div class="cuerpo1">
         <input type="checkbox" class="toggle-check" id="toggle" hidden>
         <label class="toggle" for="toggle">Editar perfil</label>
-        <div class="containerEditar">
+            <div class="containerEditar">
             <div class="editar">
                 <form action="../../controlador/accion/ac_editar_Usuario.php" class="EDITAR" method="POST">
                     <h1>Editar</h1>
@@ -69,6 +70,7 @@ session_start();
         <div class="foto_perfil">
             <h2><?php echo  $_SESSION['NOMBRE']?></h2>
             <div class="box_img_user" >
+                
                 <img src=<?php echo "../img/img_perfil_usuarios/".$_SESSION['FOTO']?> id="img_perfil">
                 <form id="frm_foto" action="post" enctype="multipart/form-data" action="#">
                     <input type="file" id="nueva_foto" name="nueva_foto">

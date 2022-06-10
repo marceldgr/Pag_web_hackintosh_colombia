@@ -23,45 +23,32 @@ if(!isset($_SESSION['ID_USUARIO'])){
 
 <body>
     <header>
-       
             <div class="company-logo"><a class="logo" href="../pefil_admin.php">
-                <img src="../../img/logo_hack/logo3.png" alt="">
-                 </a>
-                </div>
-            <nav class="navbar">
+                <img src="../../img/logo_hack/logo3.png" alt=""></a>
+            </div>
+            <div class="menu">
+                <nav class="navbar">
                     <ul class="nav-items">
                         <li class="nav-item"><a href="editarProductos.php"class="nav-link">Editar Productos</a></li>
                         <li class="nav-item"><a href="../perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
                     </ul>
-                    <h1>
-                        <a href="perfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1>
-                <div class="fotoPefil">
+                    <h1><a href="perfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1> 
+                    <div class="fotoPefil">
                     <a class="mostrarU" href="">
                         <img src="../../img/logo_hack/logo2.png" alt="fotoPefil">
                     </a>
-                </div>
-                
-                        <div>
-                
-                    
+                    </div>
                     <div class="header_registro">
                         <a href="../../login.php">
                             <div class="btn_cerrar">
                                 <input type="button" class="btn_close_login" value="Salir">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                </nav>
-               
-                <div class="menu-toggle">
-                     <i class="bx bx-menu"></i>
-                     <i class="bx bx-x"></i>
-               
-            
+                            </div></a>
+                    </div> 
                     
-    </header>
-   
+                </nav>    
+            </div>
+    </header>        
+    
     <hr>
     <div class="lista">
         <h1>Datos de Productos</h1>
@@ -70,7 +57,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Producto">CREAR PRODUCTO</button>
         </div>                 
             <br>               
-     </div>                   
+        </div>                   
                    
     <div class="container-fluid">
         <div class="justify-content-center row">
@@ -87,11 +74,11 @@ if(!isset($_SESSION['ID_USUARIO'])){
                 </thead>
                 <tbody>
                         
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
             
-        </div>   
-    </div>
+            </div>   
+        </div>
 
                     <!-- Modal1 crear productos-->
     <div class="modal fade" id="modal_Crear_Producto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -131,17 +118,11 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                         
                                     </div>
                                 </div>
-
-                                <div class="justify-content-center row">
-                                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" id="crear">Ingresar</button>
-                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                </form>
-                </div>
-        </div>
-    </div>
+         </div>
                             <!-- end modal -->
 
                             <!-- Modal2 editar productos -->

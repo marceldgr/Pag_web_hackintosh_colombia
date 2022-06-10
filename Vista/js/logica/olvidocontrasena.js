@@ -2,13 +2,13 @@
 //Aqui es donde usará jQuery
 $(document).ready(function(){
     id=null;
-    $(document).on('click', '#btnEnviar', function(){
+    $(document).on('click', '#btn_Enviar', function(){
 
-        correo=$("#Email").val();
+        Email=$("#Email").val();
      
         //Incluir todas las validaciones..
         if(correo!=""){
-            ajaxOlvidoPass(email);
+            ajaxOlvidoPass(Email);
         }
         else{
             Swal.fire({
@@ -19,16 +19,16 @@ $(document).ready(function(){
         }
 
     });
-    $(document).on('click', '#btnCancelar', function(){
-        $(location).attr('href',"login.php");
+    $(document).on('click', '#btn_Cancelar', function(){
+        $(location).attr('href',"Login.php");
     });
   });
 
 // Aqui viene el uso de AJAX con jQuery
-function ajaxOlvidoPass(email){
+function ajaxOlvidoPass(Email){
         $.ajax({ // sin utilizar XML,... usar json
             data: { //Datos a enviar
-                   "Email" : email
+                   "Email" : Email
             },
             type: "POST",
             dataType: "json",

@@ -4,7 +4,7 @@ require_once(__DIR__."/../entidad/Producto.php");
 
 class ProductoDAO{
    
-    public function Registrar_Producto(Producto $producto){
+    public function Registrar_Producto(Producto $Producto){
         $data_Source= new DataSource();
         $stmt1="INSERT INTO Productos VALUES (NULL,:Nombre,:Descripcion,:imagen,:Stock,:Vendidos,:Valor)";
 
@@ -19,8 +19,8 @@ class ProductoDAO{
     }
     public function Ver_Productos(){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM Productos",NULL);
-        $producto=null;
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM productos",NULL);
+        $Producto=null;
         $productos=array();
 
         foreach($data_Table as $indice => $valor){
@@ -44,7 +44,7 @@ class ProductoDAO{
     }
     public function Ver_Producto_id($idProducto){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM Productos WHERE idProducto = :idProducto",array(':idProducto'=>$idProducto));
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM productos WHERE idProducto = :idProducto",array(':idProducto'=>$idProducto));
         $Producto=null;
         if(count($data_Table)==1){
             $Producto=new Producto(
@@ -58,7 +58,7 @@ class ProductoDAO{
         }
         return $Producto;
     }
-    public function Editar_Producto($producto){
+    public function Editar_Producto($Producto){
         $data_Source=new DataSource();
         $stmt1="UPDATE Productos SET Nombre=:Nombre,Descripcion=:Descripcion,imagen=:imagen,Stock=:Stock,Vendidos=:Vendidos,Valor=:Valor
         WHERE idProducto=:idProducto";
