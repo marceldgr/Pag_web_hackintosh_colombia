@@ -54,13 +54,13 @@
             
                 <!--formulario_register-->
 
-                <form action="../controlador/accion/ac_registroUsuario.php"  method="POST" class="formulario_register">
+                <form action=""  method="POST" class="formulario_register" id="formrg">
                     <h2>Registrarse</h2>
                     <input name="Nombre" type="text" id="Nombre" class="form-control" placeholder="Nombre" >
                     <input name="Apellido" type="text" id="Apellido" class="form-control" placeholder="Apellido">
-                    <input name="Email" type="text" id="Email" class="form-control" placeholder="Email" >
+                    <input name="Email" type="Email" id="Email" class="form-control" placeholder="Email" >
                     <input name="Usuario" type="text" id="Usuario" class="form-control" placeholder="Usuario" >
-                    <input name="Password" type="password" id="password" class="form-control" placeholder="Password" >
+                    <input name="Password" type="password" id="Password" class="form-control" placeholder="Password" >
                     <button>Registrarse</button>
                   
                 </form>

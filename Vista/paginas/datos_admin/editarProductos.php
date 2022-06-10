@@ -65,8 +65,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <hr>
     <div class="lista">
         <h1>Datos de Productos</h1>
-        <div class="table">
-        <div class="container-fluid">
+
         <div class="justify-content-center row">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Producto">CREAR PRODUCTO</button>
         </div>                 
@@ -78,12 +77,12 @@ if(!isset($_SESSION['ID_USUARIO'])){
             <table class="table" id="Producto_Registrado">
                 <thead>
                     <tr>
-                    <th scope="col">MARCA</th>
-                    <th scope="col">MODELO</th>
-                    <th scope="col">FECHA DE INGRESO</th>
-                    <th scope="col">CANTIDAD DISPONIBLE</th>
-                    <th scope="col">PRECIO</th>
-                    <th scope="col">CODIGO</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">DESCRIPCION</th>
+                    <th scope="col">IMAGEN</th>
+                    <th scope="col">STOCK</th>
+                    <th scope="col">VENDIDOS</th>
+                    <th scope="col">VALOR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,27 +103,27 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <form action="../../../controlador/accion/ac_Registro_Productos.php" method="post">
+                    <form action="" method="post" id="modalr">
                         <div class="modal-body">
                             <div class="container-fluid">
                                 <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Marca" placeholder="Marca" type="text" class="form-control" name="Marca"></div>
+                                <div class="col-md-8"><input id="Nombre" placeholder="Nombre" type="text" class="form-control" name="Marca"></div>
                                 </div>
                                 <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Modelo" placeholder="Modelo" type="text" class="form-control" name="Modelo"></div>
+                                <div class="col-md-8"><input id="Descripcion" placeholder="Descripcion" type="text" class="form-control" name="Modelo"></div>
                                 </div>
                                 <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Fecha_Ingreso" placeholder="Fecha_Ingreso" type="datetime" class="form-control" name="Fecha_Ingreso"></div>
+                                <div class="col-md-8"><input id="imagen" placeholder="imagen" type="datetime" class="form-control" name="Fecha_Ingreso"></div>
                                 </div>
                                 
                                 <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Cantidad" placeholder="Cantidad" type="text" class="form-control" name="Cantidad"></div>
+                                <div class="col-md-8"><input id="Stock" placeholder="Stock" type="text" class="form-control" name="Cantidad"></div>
                                 </div>
                                 <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="Precio" placeholder="Precio" type="integer" class="form-control" name="Precio"></div>
+                                <div class="col-md-8"><input id="Vendidos" placeholder="Vendidos" type="integer" class="form-control" name="Precio"></div>
                                 </div>
                                 <div style="padding:7px 0;" class="justify-content-center row">
-                                <div class="col-md-8"><input id="codigo" placeholder="Codigo" type="integer" class="form-control" name="Codigo"></div>
+                                <div class="col-md-8"><input id="Valor" placeholder="Valor" type="integer" class="form-control" name="Codigo"></div>
                                 </div>
                                 
                                 <div style="padding:7px 0;" class="justify-content-center row">
@@ -155,34 +154,35 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="../../controlador/accion/ac_editar_Productos.php" method="POST">
+                <form action="" method="POST" id="modal_e">
                     <div class="modal-body">
                         <div class="container-fluid">
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Marca" type="text" class="form-control" name="Marca"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Modelo" type="text" class="form-control" name="Modelo"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Fecha_Ingreso" type="datetime" class="form-control" name="Fecha_Ingreso"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Cantidad" type="text" class="form-control" name="Cantidad"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Precio" type="integer" class="form-control" name="Precio"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Codigo" type="text" class="form-control" name="Codigo"></div>
-                            </div>
+                        <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Nombre_e" placeholder="Nombre" type="text" class="form-control" name="Marca"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Descripcion_e" placeholder="Descripcion" type="text" class="form-control" name="Modelo"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="imagen_e" placeholder="imagen" type="datetime" class="form-control" name="Fecha_Ingreso"></div>
+                                </div>
+                                
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Stock_e" placeholder="Stock" type="text" class="form-control" name="Cantidad"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Vendidos_e" placeholder="Vendidos" type="integer" class="form-control" name="Precio"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Valor_e" placeholder="Valor" type="integer" class="form-control" name="Codigo"></div>
+                                </div>
                             
                             <br>
                         </div>
                         <input hidden type="number" class="form-control" name="idProducto">
                             <div class="justify-content-center row">
                                 <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="submit" class="btn btn-primary">Editar</button>
                             </div>
                             </div>
             

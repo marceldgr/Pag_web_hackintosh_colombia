@@ -18,7 +18,8 @@ if(!isset($_SESSION['ID_USUARIO'])){
 	<link rel="stylesheet" href="../css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="../css/style_admin.css">
-   
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/b-2.2.3/datatables.min.css"/>
+    
  </head>
 
 <body>
@@ -65,6 +66,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
             <br>               
      </div>                   
                    
+     <!-- Tabla de usuarios -->
     <div class="container-fluid">
         <div class="justify-content-center row">
             <table class="table" id="usuarioRegistrados">
@@ -96,7 +98,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <form action="../../controlador/accion/ac_registroUsuario.php" method="post">
+                    <form action="" method="post" id="modalr">
                         <div class="modal-body">
                             <div class="container-fluid">
                                 <div style="padding:7px 0;" class="justify-content-center row">
@@ -125,7 +127,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                 </div>
 
                                 <div class="justify-content-center row">
-                                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button onclick="limpiar_modal()" type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                     <button type="submit" class="btn btn-primary" id="crear">Crear</button>
                                 </div>
                     </div>
@@ -146,38 +148,39 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="../../controlador/accion/ac_editar_Usuario.php" method="POST">
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="Nombre"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Apellido" type="text" class="form-control" name="Apellido"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Email" type="email" class="form-control" name="Email"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Usuario" type="text" class="form-control" name="Usuario"></div>
-                            </div>
-                            <div style="padding:7px 0;" class="justify-content-center row">
-                            <div class="col-md-8"><input placeholder="Pasword" type="password" class="form-control" name="Password"></div>
-                            </div>
-                            <div class="rol col-md-8">
-                                <select class=" form-control" name="Administrador">
-                                    <option>Elegir rol</option>
-                                    <option value="1">Administrador</option>
-                                    <option value="0">Usuario</option>
-                                </select>
-                            </div>
-                            <br>
-                        </div>
-                        <input hidden type="number" class="form-control" name="idUsuario">
-                            <div class="justify-content-center row">
-                                <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
+                <form action="" method="POST" id="modal_e">
+                <div class="modal-body">
+                            <div class="container-fluid">
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Nombre_e" placeholder="Nombre" type="text" class="form-control" name="Nombre"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Apellido_e" placeholder="Apellido " type="text" class="form-control" name="Apellido"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Email_e" placeholder="Email" type="email" class="form-control" name="Email"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Usuario_e" placeholder="Usuario " type="text" class="form-control" name="Usuario"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8"><input id="Password_e" placeholder="Password" type="password" class="form-control" name="Password"></div>
+                                </div>
+                                <div style="padding:7px 0;" class="justify-content-center row">
+                                <div class="col-md-8">
+                                        <select id="Administrador_e" class="form-control"  name="Administrador">
+                                            <option>Elegir rol</option>
+                                            <option value="1">Administrador</option>
+                                            <option value="0">Usuario</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="justify-content-center row">
+                                    <button onclick="limpiar_modal()" type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" id="Editar">Editar</button>
+                                </div>
+                    </div>
                 </div>
             
             </form>
@@ -192,6 +195,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <script src="../js/logica/admin_Usuario.js"></script>
     <script src="../js/librerias/sweetalert2.js"></script>
     <script src="../js/librerias/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/b-2.2.3/datatables.min.js"></script>
 </body>
 
 </html>

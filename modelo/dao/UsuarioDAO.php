@@ -30,7 +30,7 @@ class UsuarioDAO{
     }
     public function registrarUsuario(Usuario $usuario){
         $data_Source= new DataSource();
-        $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,:Apellido,:Email,:Usuario,:Password,:Administrador)";
+        $stmt1="INSERT INTO usuario VALUES (NULL,:Nombre,:Apellido,:Usuario,:Email,:Password,:Img_perfil,:Administrador,:Estado)";
 
         $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
         ':Nombre'=>$usuario->getNombre(),
@@ -39,12 +39,15 @@ class UsuarioDAO{
         ':Usuario'=>$usuario->getUsuario(),
         ':Password'=>$usuario->getPassword(),
         ':Img_perfil'=>$usuario->getImg_perfil(),
-        ':Administrador'=>$usuario->getAdministrador()));
+        ':Administrador'=>$usuario->getAdministrador(),
+        ':Estado'=>$usuario->getEstado()));
+        
         return $resultado;
     }
     public function VerUsuario(){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario",NULL);
+        $Estado=1;
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Estado=:Estado",array(':Estado'=>$Estado));
         $usuario=null;
         $usuarios=array();
 
@@ -65,15 +68,16 @@ class UsuarioDAO{
     }
     public function eliminarUsuario($idUsuario){
         $data_Source=new DataSource();
-        $stmt1 = "DELETE FROM usuario WHERE id = :idUsuario";
-        $resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idUsuario'=>$idUsuario));
+        $Estado=0;
+        $stmt1 = "UPDATE usuario SET Estado=:Estado WHERE id=:idUsuario";
+        $resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idUsuario'=>$idUsuario,':Estado'=>$Estado));
         return $resultado;
     }
     public function VerUsuarios_id($idUsuario){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :idUsuario",array(':idUsuario'=>$idUsuario));
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE id = :idUsuario",array(':idUsuario'=>$idUsuario));
         $usuario=null;
-        if(count($data_Table)==1){
+        if(count($data_Table)>0){
             $usuario=new usuario(
                 $data_Table[0]["id"],
                 $data_Table[0]["Nombre"],
@@ -89,14 +93,15 @@ class UsuarioDAO{
     }
     public function editarUsuario($usuario){
         $data_Source=new DataSource();
-        $stmt1="UPDATE usuario SET Nombre=:Nombre,Apellido=:Apellido,Usuario=:Usuario,Email=:Email,Password=:Password,Administrador=:Administrador WHERE id=:idUsuario";
+        $stmt1="UPDATE usuario SET Nombre=:Nombre,Apellido=:Apellido,Usuario=:Usuario,Email=:Email,Password=:Password,Administrador=:Administrador,
+        Img_perfil=:Img_perfil WHERE id=:idUsuario";
         $resultado=$data_Source->ejecutarActulizacion($stmt1, array(
         'Nombre'=>$usuario->getNombre(),
         'Apellido'=>$usuario->getApellido(),
         'Email'=>$usuario->getEmail(),
         'Usuario'=>$usuario->getUsuario(),
         'Password'=>$usuario->getPassword(),
-        'Img_perfil'=>$usuario->getImgPerfil(),
+        'Img_perfil'=>$usuario->getImg_perfil(),
         'Administrador'=>$usuario->getAdministrador(),
         'idUsuario'=>$usuario->getId()));
         return $resultado;
@@ -104,7 +109,7 @@ class UsuarioDAO{
     }
     public function VerUsuario_Por_email($Email){
         $data_Source=new DataSource();
-
+        $usuario=null;
         $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE email=:Email",array(':Email'=>$Email));
 
         if(count($data_Table)==1){
@@ -132,10 +137,10 @@ class UsuarioDAO{
     }
 
     
-    public function Validar_usuario($Email,$user){
+    public function Validar_usuario($user){
         $data_Source=new DataSource();
         $usuario=null;
-        $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Email=:Email or Usuario=:user ",array(':Email'=>$Email,':user'=>$user));
+        $data_Table= $data_Source->ejecutarConsulta("SELECT * FROM usuario WHERE Usuario=:user ",array(':user'=>$user));
 
         if(count($data_Table)==1){
             $usuario=new Usuario(

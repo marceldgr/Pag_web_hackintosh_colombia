@@ -5,9 +5,9 @@ function autenticarUsuario($Email,$Password){
     $usuario=$dao->autenticarUsuario($Email,$Password);
     return $usuario;
 }
-function registrarUsuario(Usuario $usuario){
+function registrarUsuario(Usuario $Usuario){
     $dao =new UsuarioDAO();
-    $usuario=$dao->registrarUsuario($usuario);
+    $usuario=$dao->registrarUsuario($Usuario);
     return $usuario;
 }
 function VerUsuario(){
@@ -24,7 +24,7 @@ function VerUsuarios_id($idUsuario){
     $usuario=$dao->VerUsuarios_id($idUsuario);
     return $usuario;
 }
-function editarUsuario($usuario){
+function editarUsuario(Usuario $usuario){
     $dao=new UsuarioDAO();
     $dao->editarUsuario($usuario);
 }
@@ -34,9 +34,9 @@ function VerUsuario_Por_email($Email){
     return $usuario;
 
 }
-function Validar_usuario($Email,$user){
+function Validar_usuario($user){
     $dao=new UsuarioDAO();
-    $usuario=$dao->Validar_usuario($Email,$user);
+    $usuario=$dao->Validar_usuario($user);
     return $usuario;
 
 }

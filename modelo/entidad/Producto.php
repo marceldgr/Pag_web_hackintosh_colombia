@@ -1,79 +1,71 @@
 <?php
 class Producto{
     public $idProducto;
-    public $Marca;
-    public $Modelo;
-    public $Fecha_Ingreso;
-    public $Cantidad;
-    public $Precio;
-    public $Codigo;
+    public $Nombre;
+    public $Descripcion;
     public $imagen;
-	/**
-	 */
-	public function __construct($idProducto,$Marca,$Modelo,$Fecha_Ingreso,$Cantidad,$Precio,$Codigo,$imagen) {
-        $this->idproducto=$idProducto;
-        $this->Marca=$Marca;
-        $this->Modelo=$Modelo;
-        $this->Fecha_Ingreso=$Fecha_Ingreso;
-        $this->Cantidad=$Cantidad;
-        $this->Precio=$Precio;
-        $this->Codigo=$Codigo;
+    public $Stock;
+    public $Vendidos;
+    public $Valor;
+       
+	public function __construct($idProducto,$Nombre,$Descripcion,$imagen,$Stock,$Vendidos,$Valor) {
+        $this->idProducto=$idProducto;
+        $this->Nombre=$Nombre;
+        $this->Descripcion=$Descripcion;
         $this->imagen=$imagen;
+        $this->Stock=$Stock;
+        $this->Vendidos=$Vendidos;
+        $this->Valor=$Valor;
         
 	}
     public function getIdProducto(){
-        return $this->IdProducto;
+        return $this->idProducto;
     }
-    public function getMarca(){
-        return $this->Marca;
+    public function getNombre(){
+        return $this->Nombre;
     }
-    public function getModelo(){
-        return $this->Modelo;
-    }
-    public function getFecha_Ingreso(){
-        return $this->Fecha_Ingreso;
-    }
-    public function getCantidad(){
-        return $this->Cantidad;
-    }
-    
-    public function getPrecio(){
-        return $this->Precio;
-    }
-    public function getCodigo(){
-        return $this->Codigo;
+    public function getDescripcion(){
+        return $this->Descripcion;
     }
     public function getimagen(){
         return $this->imagen;
     }
+    public function getStock(){
+        return $this->Stock;
+    }
+    
+    public function getVendidos(){
+        return $this->Vendidos;
+    }
+    public function getValor(){
+        return $this->Valor;
+    }
+
     public function setId($idProducto){
         $this->idProducto = $idProducto;
         return $this;
     }
-    public function setMarca($Marca){
-        $this->Marca = $Marca;
+    public function setNombre($Nombre){
+        $this->Nombre = $Nombre;
         return $this;
     }
-    public function setModelo($Modelo){
-        $this->Modelo = $Modelo;
-    }
-    public function setFecha_Ingreso($Fecha_Ingreso){
-        $this->Fecha_Ingreso=$Fecha_Ingreso;
-        return $this;
-    }
-    public function setCantidad($Cantidad){
-        $this->Cantidad=$Cantidad;
-        return $this;
-    }
-    public function setPrecio($Precio){
-        $this->Precio=$Precio;
-        return $this;
-    }
-    public function setCodigo($Codigo){
-        $this->Codigo=$Codigo;
-        return $this;
+    public function setDescripcion($Descripcion){
+        $this->Descripcion = $Descripcion;
     }
     public function setimagen($imagen){
         $this->imagen=$imagen;
+        return $this;
+    }
+    public function setStock($Stock){
+        $this->Stock=$Stock;
+        return $this;
+    }
+    public function setVendidos($Vendidos){
+        $this->Vendidos=$Vendidos;
+        return $this;
+    }
+    public function setValor($Valor){
+        $this->Valor=$Valor;
+        return $this;
     }
 }

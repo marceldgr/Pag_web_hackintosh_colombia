@@ -6,16 +6,15 @@ class ProductoDAO{
    
     public function Registrar_Producto(Producto $producto){
         $data_Source= new DataSource();
-        $stmt1="INSERT INTO Producto VALUES (NULL,:Marca,:Modelo,:Fecha_Ingreso,:Cantidad,:Precio,:Codigo,:imagen)";
+        $stmt1="INSERT INTO Productos VALUES (NULL,:Nombre,:Descripcion,:imagen,:Stock,:Vendidos,:Valor)";
 
         $Resultado=$data_Source->ejecutarActulizacion($stmt1, array(
-        ':Marca'=>$producto->getMarca(),  
-        ':Modelo'=>$producto->getModelo(), 
-        ':Fecha_Ingreso'=>$producto->getFecha_Ingreso(),
-        ':Cantidad'=>$producto->getCantidad(),
-        ':Precio'=>$producto->getPrecio(),
-        ':Codigo'=>$producto->getCodigo(),
-        ':imagen'=>$producto->getimagen()));
+        ':Nombre'=>$producto->getNombre(),  
+        ':Descripcion'=>$producto->getDescripcion(), 
+        ':imagen'=>$producto->getimagen(),
+        ':Stock'=>$producto->getStock(),
+        ':Vendidos'=>$producto->getVendidos(),
+        ':Valor'=>$producto->getValor()));
         return $Resultado;
     }
     public function Ver_Productos(){
@@ -26,19 +25,18 @@ class ProductoDAO{
 
         foreach($data_Table as $indice => $valor){
             $producto=new Producto(
-                $data_Table[$indice]["id"],
-                $data_Table[$indice]["Marca"],
-                $data_Table[$indice]["Modelo"],
-                $data_Table[$indice]["Fecha_Ingreso"],
-                $data_Table[$indice]["Cantidad"],  
-                $data_Table[$indice]["Precio"],
-                $data_Table[$indice]["Codigo"],
-                $data_Table[$indice]["imagen"]);
+                $data_Table[$indice]["idproducto"],
+                $data_Table[$indice]["Nombre"],
+                $data_Table[$indice]["Descripcion"],
+                $data_Table[$indice]["Imagen"],
+                $data_Table[$indice]["Stock"],  
+                $data_Table[$indice]["Vendidos"],
+                $data_Table[$indice]["Valor"]);
                 array_push($productos,$producto);            
         }
-        return $producto;
+        return $productos;
     }
-    public function eliminar_Producto($idProducto){
+    public function Eliminar_Producto($idProducto){
         $data_Source=new DataSource();
         $stmt1 = "DELETE FROM Productos WHERE idProducto = :idProducto";
         $Resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idProducto'=>$idProducto));
@@ -50,29 +48,28 @@ class ProductoDAO{
         $Producto=null;
         if(count($data_Table)==1){
             $Producto=new Producto(
-                $data_Table[0]["idProducto"],
-                $data_Table[0]["Marca"],
-                $data_Table[0]["Modelo"],
-                $data_Table[0]["Fecha_Ingreso"],
-                $data_Table[0]["Cantidad"],  
-                $data_Table[0]["Precio"],
-                $data_Table[0]["Codigo"],
-                $data_Table[0]["imagen"]);
+                $data_Table[0]["idproducto"],
+                $data_Table[0]["Nombre"],
+                $data_Table[0]["Descripcion"],
+                $data_Table[0]["Imagen"],
+                $data_Table[0]["Stock"],  
+                $data_Table[0]["Vendidos"],
+                $data_Table[0]["Valor"]);
         }
         return $Producto;
     }
     public function Editar_Producto($producto){
         $data_Source=new DataSource();
-        $stmt1="UPDATE Productos SET Marca=:Marca,Modelo=:Modelo,Fecha_Ingreso=:Fecha_Ingreso,Cantidad=:Cantidad,Precio=:Precio,Codigo=:Codigo,imagen=:imagen
-        WHERE id=:idProducto";
+        $stmt1="UPDATE Productos SET Nombre=:Nombre,Descripcion=:Descripcion,imagen=:imagen,Stock=:Stock,Vendidos=:Vendidos,Valor=:Valor
+        WHERE idProducto=:idProducto";
         $Resultado=$data_Source->ejecutarActulizacion($stmt1, array(
-            ':Marca'=>$producto->getMarca(),  
-            ':Modelo'=>$producto->getModelo(), 
-            ':Fecha_Ingreso'=>$producto->getFecha_Ingreso(),
-            ':Cantidad'=>$producto->getCantidad(),
-            ':Precio'=>$producto->getPrecio(),
-            ':Codigo'=>$producto->getCodigo(),
-            'imagen'=>$producto->getimagen()));
+            ':idProducto'=>$producto->getIdProducto(),
+            ':Nombre'=>$producto->getNombre(),  
+            ':Descripcion'=>$producto->getDescripcion(), 
+            ':imagen'=>$producto->getimagen(),
+            ':Stock'=>$producto->getStock(),
+            ':Vendidos'=>$producto->getVendidos(),
+            ':Valor'=>$producto->getValor()));
         return $Resultado;
 
     }
