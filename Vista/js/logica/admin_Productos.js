@@ -6,7 +6,7 @@ $(document).ready(function(){
 var id_producto_a=0;
 
 function ajax_Ver_Producto(){
-    $.ajax({
+    /*$.ajax({
         cache: false,
         url:"./../../../controlador/ajax/ajax_Ver_Producto.php",
         success:function(result){
@@ -16,7 +16,34 @@ function ajax_Ver_Producto(){
             error:function(xhr){
                 alert("Ocurrio un error: " + xhr.status+" "+xhr.statusText);
             
-        }});
+        }});*/
+    var table=$("#Producto_Registrado").DataTable({
+        "destroy":true,
+        "ajax":{
+            "url":"./../../../controlador/ajax/ajax_Ver_Producto.php",
+            dataSrc:""
+        
+        },
+        "columns":[
+            {"data":"Nombre"},
+            {"data":"Descripcion"},
+            {"data":"imagen"},
+            {"data":"Stock"},
+            {"data":"Vendidos"},
+            {"data":"Valor"},
+            {
+                "data": null,
+                "bSortable": false,
+                "mRender": function(data, type, value) {
+                    var btns='<button type="button" onclick="insertar_Datos_Producto_Modal('+value["idProducto"]+')" class="editar btn btn-primary"><i class="fa fa-pencil-square-o"></i></button>'
+                        btns+='<button type="button" onclick="Eliminar_producto('+value["idProducto"]+')" class="eliminar btn btn-danger"  ><i class="fa fa-trash-o"></i></button>'
+                    return btns;
+                }
+            }
+            // {"defaultContent":'<button id="'+.Nombre+'">Editar</button>'}
+        ]
+    });
+
 }
 
 $(document).on('submit','#modalr',function(e){

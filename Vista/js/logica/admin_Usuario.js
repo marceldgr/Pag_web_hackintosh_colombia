@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //$("#usuarioRegistrados").DataTable();
+    
     ajax_Ver_Usuario();
     
 })
@@ -7,7 +7,8 @@ var id_usuario_a=0;
 var foto_perfil_a="";
 // Ver usuarios
 function ajax_Ver_Usuario(){
-    $.ajax({
+    
+   /* $.ajax({
         cache: false,
         url:"../../controlador/ajax/ajaxVerUsuario.php",
         success:function(result){
@@ -16,9 +17,36 @@ function ajax_Ver_Usuario(){
             //limpiar_tabla()
         },
             error:function(xhr){
-                alert("Ocurrio un error: " + xhr.status+" "+xhr.statusText);
+            alert("Ocurrio un error: " + xhr.status+" "+xhr.statusText);
             
-        }});
+        }});*/
+
+    var table=$("#usuarioRegistrados").DataTable({
+        "destroy":true,
+        "ajax":{
+            "url":"../../controlador/ajax/ajaxVerUsuario.php",
+            dataSrc:""
+        
+        },
+        "columns":[
+            {"data":"Nombre"},
+            {"data":"Apellido"},
+            {"data":"Email"},
+            {"data":"Usuario"},
+            {"data":"Password"},
+            {"data":"Administrador"},
+            {
+                "data": null,
+                "bSortable": false,
+                "mRender": function(data, type, value) {
+                    var btns='<button type="button" onclick="insertar_Datos_Usuario_Modal('+value["id"]+')" class="editar btn btn-primary"><i class="fa fa-pencil-square-o"></i></button>'
+                        btns+='<button type="button" onclick="Eliminar_usuario('+value["id"]+')" class="eliminar btn btn-danger"  ><i class="fa fa-trash-o"></i></button>'
+                    return btns;
+                }
+            }
+           // {"defaultContent":'<button id="'+.Nombre+'">Editar</button>'}
+        ]
+    });
         
 }
 
@@ -49,12 +77,12 @@ $(document).on('submit','#modal_e',function(e){
 });
 
 function limpiar_tabla(){
-    var r=$("#usuarioRegistrados tr").length;
+    /*var r=$("#usuarioRegistrados tr").length;
     var tabla=$("#usuarioRegistrados");
     console.log(r);
     for(i=1;i<r;i++){
         document.getElementById("usuarioRegistrados").deleteRow(1);
-    }
+    }*/
     ajax_Ver_Usuario();
 }
 function ajax_Registrar_Usuario(Nombre,Apellido,Email,Usuario,Password,Administrador){

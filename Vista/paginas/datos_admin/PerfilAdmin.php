@@ -48,13 +48,16 @@ session_start();
             <label class="toggle" for="toggle">Editar perfil</label>
             <div class="containerEditar">
                 <div class="editar">
-                    <form action="../../controlador/accion/ac_editar_Usuario.php" class="EDITAR" method="POST">
+                    <form action="" class="EDITAR" method="POST" id="datos">
                         <h1>Editar</h1>
-                        <input type="text" placeholder="Nombre" name="Nombre" value=<?php echo  $_SESSION['NOMBRE']?> >
-                        <input type="text" placeholder="Apellido" name="Apellido" value=<?php echo  $_SESSION['APELLIDO']?> >
-                        <input type="text" placeholder="Correo Electronico" name="Email" value=<?php echo  $_SESSION['EMAIL']?> >
-                        <input type="text" placeholder="Usuario" name="Usuario" value=<?php echo  $_SESSION['USUARIO']?>>
-                        <input type="password" placeholder="contraseña" name="password">
+                        <input type="text" id="Nombre" placeholder="Nombre" name="Nombre" value=<?php echo  $_SESSION['NOMBRE']?> >
+                        <input type="text" id="Apellido" placeholder="Apellido" name="Apellido" value=<?php echo  $_SESSION['APELLIDO']?> >
+                        <input type="text" id="Email" readOnly = true placeholder="Correo Electronico" name="Email" value=<?php echo  $_SESSION['EMAIL']?> >
+                        <input type="text" id="Usuario" placeholder="Usuario" name="Usuario" value=<?php echo  $_SESSION['USUARIO']?>>
+                        <input type="password" id="Password" placeholder="contraseña" name="password">
+                        <input id="id_usuario" name="prodId" type="hidden" value=<?php echo  $_SESSION['ID_USUARIO']?>>
+                        <input id="Adm" name="prodId" type="hidden" value=<?php echo  $_SESSION['ADMIN']?>>
+                        <input id="foto_perfil" name="prodId" type="hidden" value=<?php echo  $_SESSION['FOTO']?>>
                         <button class="Guardar"> Guardar</button>
                         <button class="Deshacer"> Deshacer</button>
                     </form>
@@ -69,7 +72,10 @@ session_start();
                         <div class="foto_perfil">
                             <h2><?php echo  $_SESSION['NOMBRE']?></h2>
                             <div class="box_img_user">
-                                <img src="../../img/persona/usurio.png">
+                                <img src=<?php echo "../../img/img_perfil_usuarios/".$_SESSION['FOTO']?> id="img_perfil">
+                                <form id="frm_foto" action="post" enctype="multipart/form-data" action="#">
+                                    <input type="file" id="nueva_foto" name="nueva_foto">
+                                </form>
                             </div>
                             
                             <div class="infromacion_perfil">
@@ -100,6 +106,9 @@ session_start();
             
 
         
-    
+    <script src="../../js/librerias/jquery-3.3.1.min.js"></script>
+    <script src="../../js/perfil_admin.js"></script>
+    <script src="../../js/librerias/sweetalert2.js"></script>
+    <script src="../../js/librerias/sweetalert.min.js"></script>   
 </body>
 </html>

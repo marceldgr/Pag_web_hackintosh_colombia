@@ -26,6 +26,9 @@ if($user != null){
     $_SESSION['ADMIN'] = $user->getAdministrador();
     $_SESSION['FOTO'] = $user->getImg_perfil();
     $Administrador=$user->getAdministrador();
+    if($_SESSION['FOTO']==" "){
+        $_SESSION['FOTO']="usuario.png";
+    }
     if($user->getAdministrador() == 1){
         $ruta ="../Vista/paginas/perfil_admin.php";                
     }else{

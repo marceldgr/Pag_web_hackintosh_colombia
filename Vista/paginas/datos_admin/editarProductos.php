@@ -18,37 +18,51 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="../../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/b-2.2.3/datatables.min.css"/>
 
 </head>
 
 <body>
     <header>
-            <div class="company-logo"><a class="logo" href="../pefil_admin.php">
-                <img src="../../img/logo_hack/logo3.png" alt=""></a>
-            </div>
-            <div class="menu">
-                <nav class="navbar">
+       
+            <div class="company-logo"><a class="logo" href="../perfil_admin.php">
+                <img src="../../img/logo_hack/logo3.png" alt="">
+                 </a>
+                </div>
+            <nav class="navbar">
                     <ul class="nav-items">
                         <li class="nav-item"><a href="editarProductos.php"class="nav-link">Editar Productos</a></li>
                         <li class="nav-item"><a href="../perfil_admin.php"class="nav-link">Administrad Usuario</a></li>
                     </ul>
-                    <h1><a href="perfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1> 
-                    <div class="fotoPefil">
+                    <h1>
+                        <a href="PerfilAdmin.php" class="nav-link"><?php echo $_SESSION['NOMBRE']?></a></h1>
+                <div class="fotoPefil">
                     <a class="mostrarU" href="">
                         <img src="../../img/logo_hack/logo2.png" alt="fotoPefil">
                     </a>
-                    </div>
+                </div>
+                
+                        <div>
+                
+                    
                     <div class="header_registro">
-                        <a href="../../login.php">
+                        <a href="../../Login.php">
                             <div class="btn_cerrar">
                                 <input type="button" class="btn_close_login" value="Salir">
-                            </div></a>
-                    </div> 
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </nav>
+               
+                <div class="menu-toggle">
+                     <i class="bx bx-menu"></i>
+                     <i class="bx bx-x"></i>
+               
+            
                     
-                </nav>    
-            </div>
-    </header>        
-    
+    </header>
+   
     <hr>
     <div class="lista">
         <h1>Datos de Productos</h1>
@@ -57,7 +71,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_Crear_Producto">CREAR PRODUCTO</button>
         </div>                 
             <br>               
-        </div>                   
+     </div>                   
                    
     <div class="container-fluid">
         <div class="justify-content-center row">
@@ -70,15 +84,16 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <th scope="col">STOCK</th>
                     <th scope="col">VENDIDOS</th>
                     <th scope="col">VALOR</th>
+                    <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                         
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
             
-            </div>   
-        </div>
+        </div>   
+    </div>
 
                     <!-- Modal1 crear productos-->
     <div class="modal fade" id="modal_Crear_Producto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -118,11 +133,17 @@ if(!isset($_SESSION['ID_USUARIO'])){
                                         
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+
+                                <div class="justify-content-center row">
+                                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" id="crear">Ingresar</button>
+                                </div>
                     </div>
                 </div>
-         </div>
+                </form>
+                </div>
+        </div>
+    </div>
                             <!-- end modal -->
 
                             <!-- Modal2 editar productos -->
@@ -179,6 +200,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <script src="../../js/logica/admin_Productos.js"></script>
     <script src="../../js/librerias/sweetalert2.js"></script>
     <script src="../../js/librerias/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/b-2.2.3/datatables.min.js"></script>
 </body>
 
 </html>

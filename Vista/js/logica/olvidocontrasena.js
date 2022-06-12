@@ -1,47 +1,51 @@
-
 //Aqui es donde usará jQuery
 $(document).ready(function(){
+    console.log("hola");
     id=null;
-    $(document).on('click', '#btn_Enviar', function(){
-
+    $(document).on('click', '#btnEnviar', function(){
+        console.log("Hola");
         Email=$("#Email").val();
      
         //Incluir todas las validaciones..
-        if(correo!=""){
+        if(Email!=""){
             ajaxOlvidoPass(Email);
         }
         else{
             Swal.fire({
                 text:"Digite los datos del correo",
-                icon: "error",
-                title: "Correo"
+                icon: "Error",
+                title: "Email"
             })
         }
 
     });
-    $(document).on('click', '#btn_Cancelar', function(){
+    $(document).on('click', '#btnCancelar', function(){
         $(location).attr('href',"Login.php");
     });
   });
 
 // Aqui viene el uso de AJAX con jQuery
-function ajaxOlvidoPass(Email){
+function ajaxOlvidoPass(){
+    Email=$("#Email").val();
+    console.log(Email);
         $.ajax({ // sin utilizar XML,... usar json
             data: { //Datos a enviar
                    "Email" : Email
             },
             type: "POST",
             dataType: "json",
-            url: "../../../controlador/ajax/ajaxOlvidarPass.php"
+            url: "./../../controlador/ajax/ajaxOlvidarPass.php"
         })
-         .done(function(response) {   // Cuando no hay problema
+         .done(function(response) { 
+             console.log(response);
+            // Cuando no hay problema
             var mens=response.msg;
 
             if(mens!=""){
                 Swal.fire({
                     text:mens,
-                    icon: response.type,
-                    title: "Envío de correo"
+                    //icon: response.type,
+                    title: "Envío de Email"
 
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -57,12 +61,15 @@ function ajaxOlvidoPass(Email){
 
             Swal.fire({
                 title: "ALERTA",
+
                 text: "La solicitud a fallado: " +  errorThrown
             });
         });
 }
 
-
+function regresar(){
+    window.location.href ="/../../Vista/Login.php"
+  }
 
 
 
@@ -76,5 +83,4 @@ function onSignIn(googleUser){
     
     window.location.replace("tabata.php")
 }
-
 

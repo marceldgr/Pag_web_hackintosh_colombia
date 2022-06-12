@@ -25,7 +25,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
 <body>
     <header>
         <div class="company-logo"><a class="logo" href="">
-            <img src="../img/logo_hack/logo3.png" alt="">  </a>
+            <img src="../img/logo_hack/logo3.png" alt="imagen logo">  </a>
         </div>
             <div class="menu">
                     <nav class="navbar"> 
@@ -37,12 +37,12 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     </nav>
             </div>
                 <div class="fotoPefil">
-                    <a class="mostrarU" href="">
+                    <a class="mostrarU" href="Vista/Login.php">
                         <img src="../img/logo_hack/logo2.png" alt="fotoPefil">
                     </a>
                 </div>
                      <div class="header_registro">
-                        <a href="../login.php">
+                        <a href="../Login.php">
                             <div class="btn_cerrar">
                                 <input type="button" class="btn_close_login" value="Salir">
                             </div>
@@ -78,6 +78,7 @@ if(!isset($_SESSION['ID_USUARIO'])){
                     <th scope="col">Usuario</th>
                     <th scope="col">Password</th>
                     <th scope="col">Administrador</th>
+                    <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -196,6 +197,8 @@ if(!isset($_SESSION['ID_USUARIO'])){
     <script src="../js/librerias/sweetalert2.js"></script>
     <script src="../js/librerias/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/b-2.2.3/datatables.min.js"></script>
+
+
 </body>
 
 </html>

@@ -4,9 +4,9 @@ require_once(__DIR__."/../entidad/Producto.php");
 
 class ProductoDAO{
    
-    public function Registrar_Producto(Producto $Producto){
+    public function Registrar_Producto(Producto $producto){
         $data_Source= new DataSource();
-        $stmt1="INSERT INTO Productos VALUES (NULL,:Nombre,:Descripcion,:imagen,:Stock,:Vendidos,:Valor)";
+        $stmt1="INSERT INTO productos VALUES (NULL,:Nombre,:Descripcion,:imagen,:Stock,:Vendidos,:Valor)";
 
         $Resultado=$data_Source->ejecutarActulizacion($stmt1, array(
         ':Nombre'=>$producto->getNombre(),  
@@ -19,8 +19,8 @@ class ProductoDAO{
     }
     public function Ver_Productos(){
         $data_Source=new DataSource();
-        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM productos",NULL);
-        $Producto=null;
+        $data_Table=$data_Source->ejecutarConsulta("SELECT * FROM productos ",NULL);
+        $producto=null;
         $productos=array();
 
         foreach($data_Table as $indice => $valor){
@@ -38,7 +38,7 @@ class ProductoDAO{
     }
     public function Eliminar_Producto($idProducto){
         $data_Source=new DataSource();
-        $stmt1 = "DELETE FROM Productos WHERE idProducto = :idProducto";
+        $stmt1 = "DELETE FROM productos WHERE idProducto = :idProducto";
         $Resultado=$data_Source->ejecutarActulizacion($stmt1,array(':idProducto'=>$idProducto));
         return $Resultado;
     }
@@ -58,9 +58,9 @@ class ProductoDAO{
         }
         return $Producto;
     }
-    public function Editar_Producto($Producto){
+    public function Editar_Producto($producto){
         $data_Source=new DataSource();
-        $stmt1="UPDATE Productos SET Nombre=:Nombre,Descripcion=:Descripcion,imagen=:imagen,Stock=:Stock,Vendidos=:Vendidos,Valor=:Valor
+        $stmt1="UPDATE productos SET Nombre=:Nombre,Descripcion=:Descripcion,imagen=:imagen,Stock=:Stock,Vendidos=:Vendidos,Valor=:Valor
         WHERE idProducto=:idProducto";
         $Resultado=$data_Source->ejecutarActulizacion($stmt1, array(
             ':idProducto'=>$producto->getIdProducto(),

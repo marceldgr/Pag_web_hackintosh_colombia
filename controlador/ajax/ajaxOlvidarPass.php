@@ -5,8 +5,10 @@ require_once(__DIR__.'/../mdb/mdbUsuario.php');
 require_once(__DIR__.'/../../Vista/js/librerias/PHPMailer/PHPMailerAutoload.php');
 
 $Email = filter_input(INPUT_POST,'Email');
-$user = VerUsuario_Por_email($Email);
-$msg= "El email no es valido verifique el campo.";
+//$Email = "deimer2001@hotmail.com";
+
+$usuario = VerUsuario_Por_email($Email);
+$msg= "El Email no es valido verifique el campo.";
 $type_msg="ERROR";
 if($usuario != null){
     $msg=" El email se a encontrado en la base de datos.";
@@ -19,13 +21,13 @@ if($usuario != null){
             $mail->Port = 587;
             $mail->SMTPAuth = true;
             $mail->Username = "colombia.h.ackintohs.01@gmail.com"; // Usuario servidor de correo
-            $mail->Password = "eacshuannotihafr";      // Contraseña del usuario
+            $mail->Password = "racatlzwwhyrqnbn";      // Contraseña del usuario
             $mail->setFrom('colombia.h.ackintohs.01@gmail.com', 'Administrador de Hackintosh');
-            $mail->addReplyTo('colombia.h.ackintohs.01@gmail.com', 'Administrador de Hackintosh');
+            $mail->addReplyTo('usuario@servidor.com', 'Administrador de Hackintosh');
             $mail->AddAddress($Email);
             $mail->Subject  = "Cambio de contraseña en su cuenta";
             $mail->IsHTML(true);
-            $body= file_get_contents("/../../Vista/paginas/datos_admin/msj_Emil.html");
+            $body= file_get_contents("../../Vista/paginas/datos_admin/msj_Email.html");
             $body = str_replace('%usuario%', $usuario->getNombre(), $body);
             $body = str_replace('%password%', $usuario->getPassword(), $body);
             $mail->MsgHTML($body);
@@ -51,11 +53,6 @@ if($usuario != null){
         
         echo json_encode($resultado); // Convirtiendo en jSon
         
-
-
-
-
-
 
 
 ?>

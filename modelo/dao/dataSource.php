@@ -5,8 +5,8 @@ class DataSource{
 
      public function __construct(){
          try{
-             $this->cadena_Conexion="mysql:host=localhost;dbname=hackintosh_colombia;charset=utf8";
-             $this->conexion=new PDO($this->cadena_Conexion,"root","");
+             $this->cadena_Conexion="mysql:host=localhost;dbname=id18809376_hackintosh_colombia;charset=utf8";
+             $this->conexion=new PDO($this->cadena_Conexion,"id18809376_hackintosh_colombia_","IL0t@0B#/FXD}1XX");
          }catch (PDOException $ex) {
              echo $ex->getMessage();
          }

@@ -25,9 +25,9 @@ session_start();
                         <li><a href="mac_os.html">Mac Os</a></li>
                         <li><a href="Descargas.html">DESCARGAS</a></li>
                    
-                        <li><a href="shop.html">SHOP</a></li>
+                        <li><a href="shop.php">SHOP</a></li>
                         <li><a href="Contactos.html">CONTACTOS</a></li>
-                        <li><a href="/pica_fija/index_pica_fija.html">GAME</a></li>
+                        <li><a href="../../pica_fija/index_pica_fija.html">GAME</a></li>
                         <li><a href="perfil_Usuario.php">PERFIL</a></li>
                     </ul>
                 </nav>
@@ -42,21 +42,24 @@ session_start();
             </div>
         </div>
     </header>
-   <br>
     <br>
-     <hr>
+    <br>
+    <hr>
     <div class="cuerpo1">
         <input type="checkbox" class="toggle-check" id="toggle" hidden>
         <label class="toggle" for="toggle">Editar perfil</label>
-            <div class="containerEditar">
+        <div class="containerEditar">
             <div class="editar">
-                <form action="../../controlador/accion/ac_editar_Usuario.php" class="EDITAR" method="POST">
+                <form action="" class="EDITAR" method="POST" id="datos" >
                     <h1>Editar</h1>
-                    <input type="text" placeholder="Nombre" name="Nombre" value=<?php echo  $_SESSION['NOMBRE']?> >
-                    <input type="text" placeholder="Apellido" name="Apellido" value=<?php echo  $_SESSION['APELLIDO']?> >
-                    <input type="text" placeholder="Correo Electronico" name="Email" value=<?php echo  $_SESSION['EMAIL']?> >
-                    <input type="text" placeholder="Usuario" name="Usuario" value=<?php echo  $_SESSION['USUARIO']?>>
-                    <input type="password" placeholder="contraseña" name="password">
+                    <input type="text" id="Nombre" placeholder="Nombre" name="Nombre" value=<?php echo  $_SESSION['NOMBRE']?> >
+                    <input type="text" id="Apellido" placeholder="Apellido" name="Apellido" value=<?php echo  $_SESSION['APELLIDO']?> >
+                    <input type="text" readOnly = true id="Email" placeholder="Correo Electronico" name="Email" readOnly = true value=<?php echo  $_SESSION['EMAIL']?> >
+                    <input type="text" id="Usuario" placeholder="Usuario" name="Usuario" value=<?php echo  $_SESSION['USUARIO']?>>
+                    <input type="password" id="Password" placeholder="contraseña" name="password">
+                    <input id="id_usuario" name="prodId" type="hidden" value=<?php echo  $_SESSION['ID_USUARIO']?>>
+                    <input id="Adm" name="prodId" type="hidden" value=<?php echo  $_SESSION['ADMIN']?>>
+                    <input id="foto_perfil" name="prodId" type="hidden" value=<?php echo  $_SESSION['FOTO']?>>
                     <button class="Guardar"> Guardar</button>
                     <button class="Deshacer"> Deshacer</button>
                 </form>
@@ -70,7 +73,6 @@ session_start();
         <div class="foto_perfil">
             <h2><?php echo  $_SESSION['NOMBRE']?></h2>
             <div class="box_img_user" >
-                
                 <img src=<?php echo "../img/img_perfil_usuarios/".$_SESSION['FOTO']?> id="img_perfil">
                 <form id="frm_foto" action="post" enctype="multipart/form-data" action="#">
                     <input type="file" id="nueva_foto" name="nueva_foto">

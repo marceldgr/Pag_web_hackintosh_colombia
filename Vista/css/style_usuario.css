@@ -83,8 +83,8 @@ header {
 /*-----------------------------------------------*/
 /*baner de editar*/
 .cuerpo1{
-margin: 10px;
-padding: 10px;
+margin: 0;
+padding: 0;
 box-sizing: border-box;
 font-family: sans-serif;
 
@@ -203,7 +203,6 @@ font-family: sans-serif;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    margin-top: 20px;
 }
 
 .foto_perfil img {
@@ -239,6 +238,38 @@ font-family: sans-serif;
     color: rgb(94, 100, 105);
 }
 /*-------------------------------------------------------------------*/
+/*datos medio de pagos tarjeta*/
+.tarjeta{
+    margin-left:20px;
+    margin-top:10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 150%;
+}
+.tarjeta form h1{
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(110, 117, 123);
+}
+.tarjeta form h5{
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(94, 100, 105);
+}
+.tarjeta form input{
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: none;
+  background: rgb(215, 221, 221);
+  font-size: 14px;
+  outline: none;
+  border-radius: 15px;
+}
+
+/*imgen de la tarjeta*/
+
 
 /*responsid*/
 @media (max-width: 1020px) {

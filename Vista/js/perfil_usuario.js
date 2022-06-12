@@ -3,6 +3,7 @@ $(document).ready(function(){
             console.log(dimg.src);
   
 });
+var foto_perfil=$("#foto_perfil").val();
 $(document).on("click","#img_perfil",function(){
     $("#nueva_foto").click();
 });
@@ -24,13 +25,13 @@ function subir_fichero(){
         contentType: false,
         processData: false, 
 
-        success: function(response){
-            
+        success: function(out){
+            var response=JSON.parse(out);
             console.log(response);
             var dimg=document.getElementById("img_perfil");
-            console.log(dimg.src);
-            //dimg.src="../img/img_perfil_usuarios/"+response;
-            dimg.src=response;
+            console.log(dimg.src);           
+            dimg.src=response.ruta;
+            foto_perfil=response.nombre_imagen;
             console.log(dimg.src);
             Swal.fire({
                 text: "perfil actualizado",
@@ -45,6 +46,59 @@ function subir_fichero(){
         //console.log(out);
     });
     
+   
+}
+
+$(document).on('submit','#datos',function(e){
+    e.preventDefault();
+    Nombre=$("#Nombre").val();
+    Apellido=$("#Apellido").val();
+    Email=$("#Email").val();
+    Usuario=$("#Usuario").val();
+    Password=$("#Password").val();
+    Adm=$("#Adm").val();
+    console.log("hola");
+    ajax_Editar_Usuario(Nombre,Apellido,Email,Usuario,Password,Adm);
+    
+});
+
+function ajax_Editar_Usuario(Nombre,Apellido,Email,Usuario,Password,Administrador){
+    id_usuario=$("#id_usuario").val();
+    $.ajax({
+        data:{
+            "IdUsuario":id_usuario,
+            "Nombre":Nombre,
+            "Apellido":Apellido,
+            "Email": Email,
+            "Usuario":Usuario,
+            "Password": Password,
+            "Img_perfil":foto_perfil,
+            "Adm":Administrador
+        },
+        type:"post",
+        //dataType:"json",
+        cache: false,
+        url:"./../../controlador/ajax/ajaxEditarUsuario.php"
+    })
+    .done(function(out) {
+       console.log(out);
+        var response=JSON.parse(out);
+        var msj = response.msg;
+        var est=response.estado;
+        console.log(response);     
+
+        if(msj!=""){
+            Swal.fire({
+                text: msj,
+                //icon: response.type,
+                title:"Editar Usuario"
+
+            })
+            .then((result) =>{
+
+            })
+        }
+    })
    
 }
 
